@@ -38,6 +38,6 @@ class Main(pyglet.window.Window):
 
 
 if __name__ == "__main__":
-    window = Main(width=500, height=400, caption="ball", resizable=True)
+    window = Main(width=500, height=600, caption="ball", resizable=True)
     pyglet.clock.schedule_interval(window.update, 1/60)
     pyglet.app.run()
