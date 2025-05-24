@@ -4,9 +4,9 @@ from pyglet import shapes
 
 
 class Character():
-    def __init__(self, window):
+    def __init__(self, window, batch):
         self.window = window
-        self.batch = pyglet.graphics.Batch()
+        self.batch = batch
         
         # 引数として渡されたウィンドウのwidthとheightを取り出す
         self.width = self.window.get_size()[0]
@@ -14,13 +14,15 @@ class Character():
 
 
 class Hero(Character):
-    def __init__(self, window):
-        super().__init__(window)
+    def __init__(self, window, batch):
+        super().__init__(window, batch)
         self.directions = {"left": False, "right": False, "up": False, "down": False}
         self.speed = 120
         self.hero = pyglet.image.load('Hero.png')
         self.hero_grid = pyglet.image.ImageGrid(self.hero, 4, 3)
         self.hero_sprite = pyglet.sprite.Sprite(self.hero_grid[10], x = self.width / 2, y= self.height / 2 , batch=self.batch)
+
+        self.hero_sprite.z = 1
 
         # ヒーローの縦の長さ
         self.hero_height = self.hero.height / 4
@@ -177,8 +179,19 @@ class Hero(Character):
         self.hero_sprite.image = self.hero_frames[self.current_frame]
 
 
-         
-
+class Background():
+     def __init__(self, window, batch):
+        self.window = window
+        self.batch = batch
+        self.background_pic = pyglet.image.load('map_sample.png')
+        self.background_sprite = pyglet.sprite.Sprite(self.background_pic, x = 0, y = 0, batch=self.batch)
+        self.background_sprite.z = 0
+        # 引数として渡されたウィンドウのwidthとheightを取り出す
+        self.width = self.window.get_size()[0]
+        self.height = self.window.get_size()[1]
+        # スケーリング係数を設定
+        self.background_sprite.scale_x = window.width / self.background_pic.width
+        self.background_sprite.scale_y = window.height / self.background_pic.height
     
         
         
