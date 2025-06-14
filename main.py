@@ -32,7 +32,7 @@ class Main():
         self.background = Background(self.window, self.batch)
 
         # Heroクラスの呼び出し
-        self.hero = Hero(self.window, self.batch, self.keys, CELL_SIZE, self.height)
+        self.hero = Hero(self.window, self.batch, self.keys, CELL_SIZE, self.height, self.map)
         self.characters.append(self.hero)
 
         
@@ -51,7 +51,7 @@ class Main():
 
     def update(self, dt: float):
         for chara in self.characters:
-            chara.update(dt, self.map)
+            chara.update(dt)
 
 
 if __name__ == "__main__":

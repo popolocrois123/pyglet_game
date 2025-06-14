@@ -14,7 +14,7 @@ class Character():
 
 
 class Hero(Character):
-    def __init__(self, window, batch, keys, cell_size, height):
+    def __init__(self, window, batch, keys, cell_size, height, map):
         super().__init__(window, batch, keys)
 
         # ボタンの押しっぱなしの監視
@@ -26,6 +26,7 @@ class Hero(Character):
         self.speed = 30
         self.hero = pyglet.image.load('Hero.png')
         self.hero_grid = pyglet.image.ImageGrid(self.hero, 4, 3)
+        self.map = map
         
         self.hero_sprite = pyglet.sprite.Sprite(self.hero_grid[10], x = self.x, y = self.y , batch=self.batch)
         self.hero_sprite.z = 2
@@ -66,7 +67,7 @@ class Hero(Character):
         pyglet.clock.schedule_interval(self.update, 1/60.0)
 
 
-    def update(self, dt: float, map) -> None:
+    def update(self, dt: float):
         self.new_direction = None
         if self.keys[key.LEFT]:
             self.x -= self.speed * dt
@@ -84,7 +85,7 @@ class Hero(Character):
         self.hero_sprite.x = self.x
         self.hero_sprite.y = self.y
  
-        self.check_wall(map)
+        self.check_wall()
 
  
         if self.past_direction == "down" and self.new_direction == None:
