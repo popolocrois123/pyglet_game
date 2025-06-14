@@ -4,7 +4,7 @@ from pyglet import shapes
 
 
 class Character():
-    def __init__(self, window, batch):
+    def __init__(self, window, batch, keys):
         self.window = window
         self.batch = batch
         
@@ -14,16 +14,28 @@ class Character():
 
 
 class Hero(Character):
-    def __init__(self, window, batch):
-        super().__init__(window, batch)
-        self.directions = {"left": False, "right": False, "up": False, "down": False}
-        self.speed = 120
+    def __init__(self, window, batch, keys, cell_size, height):
+        super().__init__(window, batch, keys)
+
+        # ボタンの押しっぱなしの監視
+        self.keys = keys
+        # self.directions = {"left": False, "right": False, "up": False, "down": False}
+        self.x = self.width / 2
+        self.y = self.height / 2 
+        self.cell_size = cell_size
+        self.speed = 30
         self.hero = pyglet.image.load('Hero.png')
         self.hero_grid = pyglet.image.ImageGrid(self.hero, 4, 3)
-        self.hero_sprite = pyglet.sprite.Sprite(self.hero_grid[10], x = self.width / 2, y= self.height / 2 , batch=self.batch)
-
-        self.hero_sprite.z = 1
-
+        
+        self.hero_sprite = pyglet.sprite.Sprite(self.hero_grid[10], x = self.x, y = self.y , batch=self.batch)
+        self.hero_sprite.z = 2
+        self.stop_images = {
+            "down": self.hero_grid[10],
+            "up": self.hero_grid[1],
+            "right": self.hero_grid[4],
+            "left": self.hero_grid[7]
+        }
+        
         # ヒーローの縦の長さ
         self.hero_height = self.hero.height / 4
 
@@ -48,123 +60,69 @@ class Hero(Character):
         
         # 今の方向
         self.past_direction = "down"
+        self.new_direction = "down"
         # # 0.5秒ごとに update を呼ぶ（アニメの心臓部分）
         # pyglet.clock.schedule_interval(self.update, 0.1)
         pyglet.clock.schedule_interval(self.update, 1/60.0)
 
-    def on_key_press(self, symbol: int, modifiers: int) -> None:
-        # 左キーを押した時の処理
-        if symbol == key.LEFT:
-            self.directions["left"] = True
+
+    def update(self, dt: float, map) -> None:
+        self.new_direction = None
+        if self.keys[key.LEFT]:
+            self.x -= self.speed * dt
+            self.new_direction = "left"
             # self.hero_sprite.image = self.animations["left"]
-            # pyglet.clock.schedule_interval(self.update, 0.01)
-        # 右キーを押した時の処理
-        if symbol == key.RIGHT:
-            self.directions["right"] = True
-            # self.hero_sprite.image = self.animations["right"]
-            # # 0.5秒ごとに update を呼ぶ（アニメの心臓部分）
-            # pyglet.clock.schedule_interval(self.update, 0.5)
-        # 上キー
-        if symbol == key.UP:
-            self.directions["up"] = True
-            # self.hero_sprite.image = self.animations["up"]
-            # # 0.5秒ごとに update を呼ぶ（アニメの心臓部分）
-            # pyglet.clock.schedule_interval(self.update, 0.5)
-        # 下キー
-        if symbol == key.DOWN:
-            self.directions["down"] = True
-            # self.hero_sprite.image = self.animations["down"]
-            # # 0.5秒ごとに update を呼ぶ（アニメの心臓部分）
-            # pyglet.clock.schedule_interval(self.update, 0.5)
+        if self.keys[key.RIGHT]:
+            self.x += self.speed * dt
+            self.new_direction = "right"
+        if self.keys[key.UP]:
+            self.y += self.speed * dt
+            self.new_direction = "up"
+        if self.keys[key.DOWN]:
+            self.y -= self.speed * dt
+            self.new_direction = "down"
+        self.hero_sprite.x = self.x
+        self.hero_sprite.y = self.y
+ 
+        self.check_wall(map)
 
+ 
+        if self.past_direction == "down" and self.new_direction == None:
+            self.hero_sprite.image = self.stop_images["down"]
+        elif self.past_direction == "down" and self.new_direction == None:
+             self.hero_sprite.image = self.animations["down"]
+        elif self.new_direction != None:
+            if self.new_direction != self.past_direction:
+                self.hero_sprite.image = self.animations[self.new_direction]
+                self.past_direction = self.new_direction
+        elif self.new_direction == None:
+            self.hero_sprite.image = self.stop_images[self.past_direction]
 
-    def on_key_release(self, symbol: int, modifiers: int) -> None:
-        # 左キーを離した時の処理
-        if symbol == key.LEFT:
-            self.directions["left"] = False
-            self.hero_sprite.image = self.hero_grid[7]
-            
-            
-        # 右キーを離した時の処理
-        elif symbol == key.RIGHT:
-            self.directions["right"] = False
-            self.hero_sprite.image = self.hero_grid[4]
-            # pyglet.clock.unschedule(self.update)
-        # 上キー
-        elif symbol == key.UP:
-            self.directions["up"] = False
-            self.hero_sprite.image = self.hero_grid[1]
-            # pyglet.clock.unschedule(self.update)
-        # 下キー
-        elif symbol == key.DOWN:
-            self.directions["down"] = False
-            self.hero_sprite.image = self.hero_grid[10]
-            # pyglet.clock.unschedule(self.update)
+        # 移動中方角が変わった時だけアニメーション、キーを押してない時は静止
+        if self.new_direction != None:
+            if self.past_direction != self.new_direction:
+                self.hero_sprite.image = self.animations[self.new_direction]
+                self.past_direction = self.new_direction
+        else:
+             # キーを押していないときは静止画像
+            if self.past_direction:
+                self.hero_sprite.image = self.stop_images[self.past_direction]
+             
 
-        self.vector_x = 0
-        self.vector_y = 0
-
-    def update(self, dt: float) -> None:
-        new_direction = None
-        if self.directions["left"]:
-            self.vector_x = -1
-            new_direction = "left"
-            
-        if self.directions["right"]:
-            self.vector_x = 1
-            new_direction = "right"
-
-        if self.directions["up"]:
-            self.vector_y = 1
-            new_direction = "up"
-
-        if self.directions["down"]:
-            self.vector_y = -1
-            new_direction = "down"
-
-        self.hero_sprite.x += self.vector_x * self.speed * dt
-        self.hero_sprite.y += self.vector_y * self.speed * dt
-        self.check_wall()
-
-        # アニメーションの変更
-
-        if new_direction is not None and new_direction != self.past_direction:
-            self.hero_sprite.image = self.animations[new_direction]
-            self.past_direction = new_direction
-        elif new_direction is None and self.past_direction == "down":
-            self.hero_sprite.image = self.animations["down"]
-        
-
-        # if self.vector_x < 0 and self.past_direction != new_direction:
-        #     self.hero_sprite.image = self.animations["left"]
-        # if self.vector_x > 0 and self.past_direction != new_direction:
-        #     self.hero_sprite.image = self.animations["right"]
-        # if self.vector_y > 0 and self.past_direction != new_direction:
-        #     self.hero_sprite.image = self.animations["up"]
-        # if self.vector_y < 0 and self.past_direction != new_direction:
-        #     self.hero_sprite.image = self.animations["down"] 
 
     def check_wall(self):
         # 左の壁に当たった時
         if self.hero_sprite.x <= 0:
-                # self.directions["left"] = False
                 self.hero_sprite.x = 0
-                # self.vector_x = 0
         # 右の壁に当たった時
         if self.hero_sprite.x + self.hero_height >= self.width:
-                # self.directions["right"] = False
                 self.hero_sprite.x = self.width - self.hero_height
-                # self.vector_x = 0
         # 上の壁に当たった時
         if self.hero_sprite.y + self.hero_height >= self.height:
-                # self.directions["up"] = False
                 self.hero_sprite.y = self.height - self.hero_height
-                # self.vector_y = 0
         # 下の壁に当たった時
         if self.hero_sprite.y  <= 0:
-                # self.directions["down"] = False
                 self.hero_sprite.y = 0
-                # self.vector_y = 0
 
 
     # ヒーローの画像をリストに入れる関数
@@ -178,20 +136,6 @@ class Hero(Character):
         self.current_frame = (self.current_frame + 1) % 3 + key_num
         self.hero_sprite.image = self.hero_frames[self.current_frame]
 
-
-class Background():
-     def __init__(self, window, batch):
-        self.window = window
-        self.batch = batch
-        self.background_pic = pyglet.image.load('map_sample.png')
-        self.background_sprite = pyglet.sprite.Sprite(self.background_pic, x = 0, y = 0, batch=self.batch)
-        self.background_sprite.z = 0
-        # 引数として渡されたウィンドウのwidthとheightを取り出す
-        self.width = self.window.get_size()[0]
-        self.height = self.window.get_size()[1]
-        # スケーリング係数を設定
-        self.background_sprite.scale_x = window.width / self.background_pic.width
-        self.background_sprite.scale_y = window.height / self.background_pic.height
-    
+        
         
         
