@@ -1,4 +1,4 @@
-CELL_SIZE = 64
+CELL_SIZE = 32
 MAP_DATA = [
     'BBBBBBBBBBBBBBBBBBB',
     'B.................B',
