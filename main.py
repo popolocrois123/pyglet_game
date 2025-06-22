@@ -44,7 +44,7 @@ class Main():
         # Heroの操作用
         self.window.push_handlers(self)
 
-        pyglet.clock.schedule_interval(self.update, 1/60)
+        pyglet.clock.schedule_interval(self.update, 1/30)
 
         
 
