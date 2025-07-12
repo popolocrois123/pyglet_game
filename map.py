@@ -1,18 +1,24 @@
 import pyglet
 
 class Map():
-    def __init__(self, map_data, cell_size, batch, height):
+    def __init__(self, map_data, cell_size, batch, height, log_func=None):
         self.map_data = map_data
         self.cell_size = cell_size
         self.batch = batch
         self.height = height
 
+        self.log = log_func if log_func else lambda msg: None 
+
         self.tiles = []
+        # 通れないブロックのリスト
+        self.block_tiles = ["B", "T"]
 
         # playerのスタート位置
         self.player_start = (0, 0)
 
         self.load_map()
+
+        self.log("マップの初期化完了しました。")
 
 
     # セルの対応文字ごとにいろと役割を設定する（例：Bはグレーなど）
@@ -28,23 +34,34 @@ class Map():
                 # 場合分け
                 if cell == "B":
                     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y, self.cell_size, self.cell_size, 
-                                                   color=(255, 255, 255), batch=self.batch)
+                                                   color=(64, 64, 64), batch=self.batch)
                     self.tiles.append(rect)
                 elif cell == ".":
                     pass
                 elif cell == "P":
                     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
-                                                   color=(0, 0, 255), batch=self.batch)
+                                                   color=(255, 0, 0), batch=self.batch)
                     self.player_start = (x, y)
-                    print(f"{cell}: {pixel_x}, {pixel_y}")
+                    # print(f"{cell}: {pixel_x}, {pixel_y}")
+                    self.log(f"{cell}: {pixel_x}, {pixel_y}")
                 elif cell == "N":
+                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
+                                                   color=(0, 255, 255), batch=self.batch)
+                    self.tiles.append(rect)
+                elif cell == "W":
+                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
+                                                   color=(0, 0, 255), batch=self.batch)
+                    self.tiles.append(rect)
+                # テーブル
+                elif cell == "T":
                     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
                                                    color=(255, 255, 0), batch=self.batch)
                     self.tiles.append(rect)
-    
+
     def is_walkable(self, x, y):
         if 0 <= y < len(self.map_data) and 0 <= x < len(self.map_data[0]):
-            return self.map_data[y][x] != "B"
+            # 通れないにキャラが入っているかどうかを判別
+            return self.map_data[y][x] not in self.block_tiles
         return False
                         
                 
