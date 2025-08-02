@@ -14,7 +14,7 @@ class Map():
         self.block_tiles = ["B", "T"]
 
         # playerのスタート位置
-        self.player_start = (0, 0)
+        self.player_start = (0, 1)
 
         self.load_map()
 
@@ -38,12 +38,12 @@ class Map():
                     self.tiles.append(rect)
                 elif cell == ".":
                     pass
-                elif cell == "P":
-                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
-                                                   color=(255, 0, 0), batch=self.batch)
-                    self.player_start = (x, y)
-                    # print(f"{cell}: {pixel_x}, {pixel_y}")
-                    self.log(f"{cell}: {pixel_x}, {pixel_y}")
+                # elif cell == "P":
+                #     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
+                #                                    color=(255, 0, 0), batch=self.batch)
+                #     self.player_start = (x, y)
+                #     # print(f"{cell}: {pixel_x}, {pixel_y}")
+                #     self.log(f"{cell}: {pixel_x}, {pixel_y}")
                 elif cell == "N":
                     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
                                                    color=(0, 255, 255), batch=self.batch)
