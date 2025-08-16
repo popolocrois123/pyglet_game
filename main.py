@@ -83,6 +83,7 @@ class Main():
 
     def update(self, dt: float):
         self.customer.update(dt)
+        
         # for chara in self.characters:
         #     chara.update(dt)
 

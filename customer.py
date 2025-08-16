@@ -3,24 +3,20 @@ from setting import *
 import random
 
 class Customer:
-    def __init__(self, customer_mage, batch, window_width, window_height, log_func=None):
-        # CustomerMageクラスの呼び出し
-        self.customer_mage = customer_mage
-        
-        # 客の初期位置の座標（グリッド）
-        self.initial_x, self.initial_y = self.customer_mage.initial_x, self.customer_mage.initial_y
+    def __init__(self, start_pos, state, indow_height, cell_size, color, batch):
 
-        # ターゲット座標（グリッド）
-        self.target_x, self.target_y = 17, 12
 
-        # 定数
-        self.window_width = window_width
+        self.grid_x, self.grid_y = start_pos
+        self.target_pos_x, self.target_pos_y = start_pos
+        self.cell_size = cell_size
         self.window_height = window_height
-        # キャラクターの速度
-        self.MOVE_SPEED = 100 # ピクセル/秒
+        self.state = state
+        self.color = color
 
-        self.color = (255, 0, 0)
-
+        self.elapsed_time = 0
+        self.animation_speed = 0.15
+        self.sprite.scale = 2.0
+        
         # 客の画像
         self.sprite = pyglet.shapes.Rectangle(
             x=self.initial_x * CELL_SIZE,
@@ -32,50 +28,58 @@ class Customer:
         )
 
         # 移動用変数
-        # 移動中の座標 0: x移動中、1: y移動中、　2:完了
-        self.phase = 0
-        self.from_x = self.sprite.x
-        self.from_y = self.sprite.y
-        self.to_x = self.target_x * CELL_SIZE
-        self.to_y = self.window_height - (self.target_y + 1) * CELL_SIZE
-        # 詠歌時間
-        self.elapsed = 0
-        # 4秒で移動する
-        self.duration = 4
+        self.moving = False
+        self.move_duration = 0.2
+        self.move_timer = 0.0
+        self.start_pixel = (self.sprite.x, self.sprite.y)
 
-        self.log = log_func if log_func else lambda msg: None 
-        self.count = 0
-        self.log("Customerクラス初期化完了しました")
+    def start_moving_to(self, new_x, new_y):
+        self.start_grid = (self.grid_x, self.grid_y)
+        self.target_grid = (new_x, new_y)
+        self.start_pixel = (self.sprite.x, self.sprite.y)
+        self.dest_pixel = (
+        new_x * self.cell_size,
+        self.window_height - (new_y + 1) * self.cell_size
+        )
 
+        dx = new_x - self.grid_x
+        dy = new_y - self.grid_y
 
-    def update(self, dt):
-        if self.phase == 0:
-            # 最初の1回目はdtが異常になることがあるので無視
-            if self.elapsed == 0 and dt > 1.0:
-                print("スキップ: 初期フレームが重すぎ")
-                return
-            self.elapsed += dt
-            t = min(self.elapsed / self.duration, 1.0)
-            new_x = self.from_x + (self.to_x - self.from_x) * t
-            self.sprite.x = new_x
-            print(f"[x移動] t={t: .2f}, x={new_x:.2f}]")
+        self.move_timer = 0.0
+        self.moving = True
+
+        
+    def move_target(self, game_map, dt):
+        if self.moving:
+            self.move_timer += dt
+            t = min(self.move_timer / self.move_duration, 1.0)
+            sx, sy = self.start_pixel
+            dx, dy = self.dest_pixel
+            
+            # Rectangleの位置を更新
+            self.sprite.x = sx + (dx - sx) * t
+            self.sprite.y = sy + (dy - sy) * t
+
             if t >= 1.0:
-                self.phase = 1
-                # 経過時間をリセット
-                # 現在のｙを保存
-                self.elapsed = 0.0
-                self.y_start_fixed = self.sprite.y
+                self.moving = False
+                self.grid_x, self.grid_y = self.target_grid
+                
+        else:
+            if self.grid_x != self.target_pos_x:
+                step_x = 1 if self.target_pos_x > self.grid_x else -1
+                next_x = self.grid_x + step_x
+                if game_map.is_walkable(next_x, self.grid_y):
+                    self.start_moving_to(next_x, self.grid_y)
+                    return
 
-        elif self.phase == 1:
-            self.elapsed += dt
-            t = min(self.elapsed / self.duration, 1.0)
-            new_y = self.from_y + (self.to_y - self.from_y) * t
+            if self.grid_y != self.target_pos_y:
+                step_y = 1 if self.target_pos_y > self.grid_y else -1
+                next_y = self.grid_y + step_y
+                if game_map.is_walkable(self.grid_x, next_y):
+                    self.start_moving_to(self.grid_x, next_y)
 
-            self.sprite.y = new_y
-            print(f"[Y移動] t={t:.2f}, y={new_y:.2f}")
-            if t >= 1.0:
-                self.phase = 2
-                print("移動完了")
+    def update(self, dt, game_map):
+        self.move_target(game_map, dt)
 
 
 class CustomerMage():
