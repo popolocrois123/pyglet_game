@@ -6,7 +6,7 @@ from setting import *
 from logger import Logger
 import time
 from customer import Customer
-from simple_mover import SimpleMover
+from customer_manager import CustomerManager
 
 
 class Main():
@@ -54,13 +54,14 @@ class Main():
         # px, py = self.map.player_start
 
         # CustomerMageクラスの呼び出し
+        self.customer_manager = CustomerManager(self, log_func=self.logger.log)
 
         # Heroクラスの呼び出し
         # self.hero = Hero(px, py, self.window, self.batch, CELL_SIZE, self.map, self.keys, log_func=self.logger.log)
         # ここに入れる
-        self.simple_mover = SimpleMover((1, 1), (10, 1), 
-                                        batch=self.batch,
-                                        log_func=self.logger.log)
+        # self.simple_mover = SimpleMover((1, 1), (10, 1), 
+        #                                 batch=self.batch,
+        #                                 log_func=self.logger.log)
         # self.customer = Customer(self.customer_mage,
         #                     batch=self.batch,
         #                     window_width=self.width,
@@ -88,7 +89,8 @@ class Main():
 
     def update(self, dt: float):
         # self.customer.update(dt)
-        self.simple_mover.update(dt)
+        # self.simple_mover.update(dt)
+        self.customer_manager.update(dt)
 
         # for chara in self.characters:
         #     chara.update(dt)
