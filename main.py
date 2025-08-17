@@ -5,7 +5,8 @@ from map import Background, Map
 from setting import *
 from logger import Logger
 import time
-from customer import Customer, CustomerMage
+from customer import Customer
+from simple_mover import SimpleMover
 
 
 class Main():
@@ -56,14 +57,18 @@ class Main():
 
         # Heroクラスの呼び出し
         # self.hero = Hero(px, py, self.window, self.batch, CELL_SIZE, self.map, self.keys, log_func=self.logger.log)
-        self.customer_mage = CustomerMage()
-        self.customer = Customer(self.customer_mage,
-                            batch=self.batch,
-                            window_width=self.width,
-                            window_height=self.height,
-                            log_func=self.logger.log,
-                            )
+        # ここに入れる
+        self.simple_mover = SimpleMover((1, 1), (10, 1), 
+                                        batch=self.batch,
+                                        log_func=self.logger.log)
+        # self.customer = Customer(self.customer_mage,
+        #                     batch=self.batch,
+        #                     window_width=self.width,
+        #                     window_height=self.height,
+        #                     log_func=self.logger.log,
+        #                     )
         # self.characters.append(self.customer)
+
 
         # mainでデバッグを使う方法
         self.logger.log("mainの初期化完了しました。")
@@ -82,10 +87,12 @@ class Main():
         #     chara.batch.draw()
 
     def update(self, dt: float):
-        self.customer.update(dt)
-        
+        # self.customer.update(dt)
+        self.simple_mover.update(dt)
+
         # for chara in self.characters:
         #     chara.update(dt)
+
 
 
 
