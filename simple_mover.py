@@ -2,9 +2,10 @@ import pyglet
 from setting import *
 
 class SimpleMover:
-    def __init__(self, start_pos, target_pos, batch, log_func=None):
+    def __init__(self, start_pos, target_pos, state, batch, log_func=None):
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
+        self.state = state
         self.grid_x, self.grid_y = start_pos
         self.target_x, self.target_y = target_pos
 

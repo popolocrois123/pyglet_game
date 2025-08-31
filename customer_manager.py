@@ -12,9 +12,58 @@ class CustomerManager:
         self.batch = self.parent.batch
         # # 入口の位置
         # self.entrance_pos = parent.map.get_entrance_positions()
-        self.simple_mover = SimpleMover((1, 1), (10, 1), 
-                                        batch=self.batch,
-                                        log_func=self.log)
+        
+        self.customers = [] # 顧客本体のリスト
+
+        # 初期顧客数
+        self.num_customers_to_initialize = num_customers
+
+        # 新規顧客の生成
+        self.spawn_timer = 0.0
+        self.spawn_interval = 5 # 5秒ごとに新しい顧客を生成
+        self.max_customers = 10   # 任意：上限を設定したい場合
+
+        # 初期顧客
+        self.setup_initial_customers()
+
+    # 初期顧客の生成
+    def setup_initial_customers(self):
+        # ⭐ 初期顧客を spawn_customer() 経由で生成
+        for ct in range(self.num_customers_to_initialize):
+            self.spawn_customer(ct)
 
     def update(self, dt):
-        self.simple_mover.update(dt)
+        # self.simple_mover.update(dt)
+        pass
+
+    # 顧客生成
+    def spawn_customer(self, count):
+        # マップクラスのエリアを取得する必要
+        # 決めた場所、ランダムの座標を決める
+        customer_pos = [(2, 1), (4, 2)]
+
+        # 状態を決める
+        # 顧客生成(店外)
+        state = "outside"
+
+        # customerのインスタンスを作成する
+        # customer = Customer(customer_pos, state, 
+        #                     self.window_height, self.cell_size, 
+        #                     self.color, self.batch)
+        
+        simple_mover = SimpleMover(customer_pos[count], customer_pos[count], 
+                                    state,
+                                    batch=self.batch,
+                                    log_func=self.log)
+
+
+        # そのインスタンスをリストの中にいれて管理する
+        self.customers.append(simple_mover)
+        # 生成する時に生成するエリアを決める
+
+        # ログで確認
+        self.log(f"【顧客生成】pos: {customer_pos} state: {state}")
+
+        # 何個生成するかのmaxを決める
+        # 生成するスパン
+        # （例えば10秒で生成など）
