@@ -54,7 +54,8 @@ class Main():
         # px, py = self.map.player_start
 
         # CustomerMageクラスの呼び出し
-        self.customer_manager = CustomerManager(self, log_func=self.logger.log)
+        self.customer_manager = CustomerManager(self, MAP_DATA,
+                                log_func=self.logger.log)
 
         # Heroクラスの呼び出し
         # self.hero = Hero(px, py, self.window, self.batch, CELL_SIZE, self.map, self.keys, log_func=self.logger.log)
@@ -94,11 +95,6 @@ class Main():
 
         # for chara in self.characters:
         #     chara.update(dt)
-
-
-
-
-
 
 
 if __name__ == "__main__":

@@ -2,14 +2,19 @@ from customer import Customer
 import time
 import pyglet
 from simple_mover import SimpleMover
+import random
 
 class CustomerManager:
-    def __init__(self, parent, num_customers=2, log_func=None):
+    def __init__(self, parent, map_data, num_customers=2, log_func=None):
         self.parent = parent
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
         # self.window_height = parent.window_height
         self.batch = self.parent.batch
+
+        # map_dataの取得
+        self.map_data = map_data
+
         # # 入口の位置
         # self.entrance_pos = parent.map.get_entrance_positions()
         
@@ -26,6 +31,7 @@ class CustomerManager:
         # 初期顧客
         self.setup_initial_customers()
 
+
     # 初期顧客の生成
     def setup_initial_customers(self):
         # ⭐ 初期顧客を spawn_customer() 経由で生成
@@ -38,9 +44,18 @@ class CustomerManager:
 
     # 顧客生成
     def spawn_customer(self, count):
-        # マップクラスのエリアを取得する必要
+        # マップのグリッドサイズの取得
+        row_grid = len(self.map_data)
+        # マップクラスのエリアを取得する
+        self.map_data_F = [(x, row_grid - y - 1) for y, row in enumerate(self.map_data) 
+                           for x, cell in enumerate(self.map_data[y]) 
+                           if cell == "F"]
+        # print(self.map_data_F)
         # 決めた場所、ランダムの座標を決める
-        customer_pos = [(2, 1), (4, 2)]
+        random_cell = random.randrange(1, 18)
+        random_row = random.randrange(12, 14)
+
+        customer_pos = [(random_cell, random_row), (17, 2)]
 
         # 状態を決める
         # 顧客生成(店外)
@@ -65,5 +80,6 @@ class CustomerManager:
         self.log(f"【顧客生成】pos: {customer_pos} state: {state}")
 
         # 何個生成するかのmaxを決める
+        
         # 生成するスパン
         # （例えば10秒で生成など）

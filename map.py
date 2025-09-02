@@ -44,6 +44,11 @@ class Map():
                 #     self.player_start = (x, y)
                 #     # print(f"{cell}: {pixel_x}, {pixel_y}")
                 #     self.log(f"{cell}: {pixel_x}, {pixel_y}")
+
+                # 入り口
+                elif cell == "F":
+                    pass
+
                 elif cell == "N":
                     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
                                                    color=(0, 255, 255), batch=self.batch)
@@ -57,6 +62,8 @@ class Map():
                     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
                                                    color=(255, 255, 0), batch=self.batch)
                     self.tiles.append(rect)
+
+
 
     def is_walkable(self, x, y):
         if 0 <= y < len(self.map_data) and 0 <= x < len(self.map_data[0]):
