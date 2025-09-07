@@ -5,7 +5,7 @@ from simple_mover import SimpleMover
 import random
 
 class CustomerManager:
-    def __init__(self, parent, map_data, num_customers=2, log_func=None):
+    def __init__(self, parent, map_data, num_customers=5, log_func=None):
         self.parent = parent
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
@@ -14,6 +14,10 @@ class CustomerManager:
 
         # map_dataの取得
         self.map_data = map_data
+
+        # ランダムエリアを取得
+        self.general_area = self.parent.map.general_costomer_area
+        # print(self.general)
 
         # # 入口の位置
         # self.entrance_pos = parent.map.get_entrance_positions()
@@ -35,63 +39,33 @@ class CustomerManager:
     # 初期顧客の生成
     def setup_initial_customers(self):
         # ⭐ 初期顧客を spawn_customer() 経由で生成
-        for ct in range(self.num_customers_to_initialize):
-            self.spawn_customer(ct)
+        for _ in range(self.num_customers_to_initialize):
+            self.spawn_customer()
 
     def update(self, dt):
         # self.simple_mover.update(dt)
         pass
 
     # 顧客生成
-    def spawn_customer(self, count):
+    def spawn_customer(self):
+        # general_area: 生成エリア　から取り出す
+        random_G = random.choice(self.general_area) if self.general_area else None
         # マップのグリッドサイズの取得
         row_grid = len(self.map_data)
-        # マップクラスのエリアを取得する
-        self.map_data_G = [(x, row_grid - y - 1) for y, row in enumerate(self.map_data) 
-                           for x, cell in enumerate(self.map_data[y]) 
-                           if cell == "G"]
-        print(self.map_data_G)
-        print(list(min(self.map_data_G))) # (1, 12)
-        print(list(max(self.map_data_G))) # (17, 13)
-        map_1 = list(min(self.map_data_G))
-        map_2 = list(max(self.map_data_G))
-        print(map_1[0])
-        print(map_2)
-
-        print("")
-        print(list(min(self.map_data_G))[0])
-        # print(max(list(self.map_data_G)[0] + 1))
-        # 決めた場所、ランダムの座標を決める
-        min_cell = map_1[0] # 1
-        max_cell = map_2[1] + 1 # 18
-
-        min_row = map_1[1] # 12
-        max_row = map_2[1] + 1 # 14
-
-        print(min_cell)
-        print(max_cell)
-        print(min_row)
-        print(max_row)
-                      
-        random_cell = random.randrange(min_cell, max_cell)
-        random_row = random.randrange(min_row, max_row)
-
-        # random_cell = random.randrange(1, 18)
-        # random_row = random.randrange(12, 14)
-
-        customer_pos = [(random_cell, random_row), (17, 2)]
-        # customer_pos = [(17, 13), (17, 2)]
+        # タプルからxとyを取り出す
+        # xはそのままで
+        x = random_G[0]
+        # データの原点は左上、ゲームは左下が原点なのでそのためにy座標を変換する
+        y = row_grid - random_G[1] - 1
+        # gridにx,yを代入する
+        grid = (x, y)
 
         # 状態を決める
         # 顧客生成(店外)
         state = "outside"
 
-        # customerのインスタンスを作成する
-        # customer = Customer(customer_pos, state, 
-        #                     self.window_height, self.cell_size, 
-        #                     self.color, self.batch)
-        
-        simple_mover = SimpleMover(customer_pos[count], customer_pos[count], 
+        # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
+        simple_mover = SimpleMover(grid, grid,
                                     state,
                                     batch=self.batch,
                                     log_func=self.log)
@@ -102,7 +76,7 @@ class CustomerManager:
         # 生成する時に生成するエリアを決める
 
         # ログで確認
-        self.log(f"【顧客生成】pos: {customer_pos} state: {state}")
+        self.log(f"【顧客生成】pos: {random_G} state: {state}")
 
         # 何個生成するかのmaxを決める
         

@@ -13,12 +13,17 @@ class Map():
         # 通れないブロックのリスト
         self.block_tiles = ["B", "T"]
 
+        # 生成場所
+        self.general_costomer_area = []
+
+
         # playerのスタート位置
         self.player_start = (0, 1)
 
         self.load_map()
 
         self.log("マップの初期化完了しました。")
+        # print(self.general_costomer_area)
 
 
     # セルの対応文字ごとにいろと役割を設定する（例：Bはグレーなど）
@@ -47,7 +52,7 @@ class Map():
 
                 # 入り口
                 elif cell == "G":
-                    pass
+                    self.general_costomer_area.append((x, y))
 
                 elif cell == "N":
                     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
