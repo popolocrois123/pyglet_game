@@ -47,15 +47,40 @@ class CustomerManager:
         # マップのグリッドサイズの取得
         row_grid = len(self.map_data)
         # マップクラスのエリアを取得する
-        self.map_data_F = [(x, row_grid - y - 1) for y, row in enumerate(self.map_data) 
+        self.map_data_G = [(x, row_grid - y - 1) for y, row in enumerate(self.map_data) 
                            for x, cell in enumerate(self.map_data[y]) 
-                           if cell == "F"]
-        # print(self.map_data_F)
+                           if cell == "G"]
+        print(self.map_data_G)
+        print(list(min(self.map_data_G))) # (1, 12)
+        print(list(max(self.map_data_G))) # (17, 13)
+        map_1 = list(min(self.map_data_G))
+        map_2 = list(max(self.map_data_G))
+        print(map_1[0])
+        print(map_2)
+
+        print("")
+        print(list(min(self.map_data_G))[0])
+        # print(max(list(self.map_data_G)[0] + 1))
         # 決めた場所、ランダムの座標を決める
-        random_cell = random.randrange(1, 18)
-        random_row = random.randrange(12, 14)
+        min_cell = map_1[0] # 1
+        max_cell = map_2[1] + 1 # 18
+
+        min_row = map_1[1] # 12
+        max_row = map_2[1] + 1 # 14
+
+        print(min_cell)
+        print(max_cell)
+        print(min_row)
+        print(max_row)
+                      
+        random_cell = random.randrange(min_cell, max_cell)
+        random_row = random.randrange(min_row, max_row)
+
+        # random_cell = random.randrange(1, 18)
+        # random_row = random.randrange(12, 14)
 
         customer_pos = [(random_cell, random_row), (17, 2)]
+        # customer_pos = [(17, 13), (17, 2)]
 
         # 状態を決める
         # 顧客生成(店外)

@@ -4,8 +4,8 @@ MAX_LOGS = 100
 LOG_PATH = "customer_lifecycle.log"
 MAP_DATA = [
     'BBBBBBBBBBBBBBBBBBB',
-    'NFFFFFFFFFFFFFFFFFN',
-    'NFFFFFFFFFFFFFFFFFN',
+    'NGGGGGGGGGGGGGGGGGN',
+    'NGGGGGGGGGGGGGGGGGN',
     'BBBBBBBBBBBBBBBB..B',
     'B................WB',
     'B................WB',

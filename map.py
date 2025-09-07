@@ -46,7 +46,7 @@ class Map():
                 #     self.log(f"{cell}: {pixel_x}, {pixel_y}")
 
                 # 入り口
-                elif cell == "F":
+                elif cell == "G":
                     pass
 
                 elif cell == "N":
