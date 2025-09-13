@@ -77,4 +77,6 @@ class SimpleMover:
 
                 self.start_move_to(new_x, new_y)
 
+    
+
 

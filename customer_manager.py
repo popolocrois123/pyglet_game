@@ -35,6 +35,9 @@ class CustomerManager:
         # 初期顧客
         self.setup_initial_customers()
 
+        # 客のターゲット座標のリスト
+        self.target_list = []
+
 
     # 初期顧客の生成
     def setup_initial_customers(self):
@@ -44,7 +47,12 @@ class CustomerManager:
 
     def update(self, dt):
         # self.simple_mover.update(dt)
-        pass
+        for cu in self.customers:
+            # self.setup_target()
+            self.setup_target(cu)
+            cu.update(dt)
+
+
 
     # 顧客生成
     def spawn_customer(self):
@@ -82,3 +90,9 @@ class CustomerManager:
         
         # 生成するスパン
         # （例えば10秒で生成など）
+
+    # 生成した客のターゲット座標の設定
+    def setup_target(self, cu):
+        cu.target_x = 17
+        cu.target_y = 2
+

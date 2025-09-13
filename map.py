@@ -11,7 +11,7 @@ class Map():
 
         self.tiles = []
         # 通れないブロックのリスト
-        self.block_tiles = ["B", "T"]
+        self.block_tiles = ["B", "T", "C"]
 
         # 生成場所
         self.general_costomer_area = []
@@ -37,10 +37,14 @@ class Map():
                 # ブロックごとの座標
                 # print(f"{cell}: {pixel_x}, {pixel_y}")
                 # 場合分け
+                # 壁
                 if cell == "B":
-                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y, self.cell_size, self.cell_size, 
-                                                   color=(64, 64, 64), batch=self.batch)
+                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y, self.cell_size, 
+                                                   self.cell_size, color=(64, 64, 64), 
+                                                   batch=self.batch)
                     self.tiles.append(rect)
+
+                # 何もない場所（移動可能）
                 elif cell == ".":
                     pass
                 # elif cell == "P":
@@ -50,23 +54,38 @@ class Map():
                 #     # print(f"{cell}: {pixel_x}, {pixel_y}")
                 #     self.log(f"{cell}: {pixel_x}, {pixel_y}")
 
-                # 入り口
+                # 生成エリア
                 elif cell == "G":
                     self.general_costomer_area.append((x, y))
 
+                # 入り口
                 elif cell == "N":
-                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
-                                                   color=(0, 255, 255), batch=self.batch)
+                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, 
+                                                   self.cell_size, color=(0, 255, 255), 
+                                                   batch=self.batch)
                     self.tiles.append(rect)
+                
+                # 待機場所
                 elif cell == "W":
-                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
-                                                   color=(0, 0, 255), batch=self.batch)
+                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, 
+                                                   self.cell_size, color=(0, 0, 255), 
+                                                   batch=self.batch)
                     self.tiles.append(rect)
+
                 # テーブル
                 elif cell == "T":
-                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, self.cell_size, 
-                                                   color=(255, 255, 0), batch=self.batch)
+                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, 
+                                                   self.cell_size, color=(255, 255, 0), 
+                                                   batch=self.batch)
                     self.tiles.append(rect)
+
+                # キャラクター
+                elif cell == "C":
+                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, 
+                                                   self.cell_size, color=(255, 0, 0), 
+                                                   batch=self.batch)
+                    self.tiles.append(rect)
+
 
 
 

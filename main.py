@@ -63,7 +63,7 @@ class Main():
         # self.simple_mover = SimpleMover((1, 1), (10, 1), 
         #                                 batch=self.batch,
         #                                 log_func=self.logger.log)
-        # self.customer = Customer(self.customer_mage,
+        # self.customer = Customer(self.customer_manager,
         #                     batch=self.batch,
         #                     window_width=self.width,
         #                     window_height=self.height,
