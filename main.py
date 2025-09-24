@@ -54,7 +54,7 @@ class Main():
         # px, py = self.map.player_start
 
         # CustomerMageクラスの呼び出し
-        self.customer_manager = CustomerManager(self, MAP_DATA,
+        self.customer_manager = CustomerManager(self, MAP_DATA, self.map,
                                 log_func=self.logger.log)
 
         # Heroクラスの呼び出し

@@ -3,19 +3,18 @@ from setting import *
 import random
 
 class Customer:
-    def __init__(self, start_pos, state, indow_height, cell_size, color, batch):
-
-
+    def __init__(self, start_pos, state, window_height, cell_size, color, batch):
+        # 初期グリッド
         self.grid_x, self.grid_y = start_pos
+        # ターゲットグリッド
         self.target_pos_x, self.target_pos_y = start_pos
         self.cell_size = cell_size
         self.window_height = window_height
         self.state = state
         self.color = color
 
+        # 経過時間
         self.elapsed_time = 0
-        self.animation_speed = 0.15
-        self.sprite.scale = 2.0
         
         # 客の画像
         self.sprite = pyglet.shapes.Rectangle(
@@ -30,7 +29,7 @@ class Customer:
         # 移動用変数
         self.moving = False
         self.move_duration = 0.2
-        self.move_timer = 0.0
+        self.move_timer = 0.0/8
         self.start_pixel = (self.sprite.x, self.sprite.y)
 
     def start_moving_to(self, new_x, new_y):
@@ -82,13 +81,7 @@ class Customer:
         self.move_target(game_map, dt)
 
 
-class CustomerMage():
-    def __init__(self):
-        random_x = random.randint(1, 5)
-        random_y = random.randint(1, 3)
-        self.initial_x = random_x
-        self.initial_y = random_y
-        
+
         
 
 

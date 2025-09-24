@@ -5,7 +5,7 @@ from simple_mover import SimpleMover
 import random
 
 class CustomerManager:
-    def __init__(self, parent, map_data, num_customers=5, log_func=None):
+    def __init__(self, parent, map_data, map, num_customers=5, log_func=None):
         self.parent = parent
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
@@ -14,6 +14,12 @@ class CustomerManager:
 
         # map_dataの取得
         self.map_data = map_data
+
+        # map_dataのコピーを作成
+        self.map_data_copy = self.map_data
+
+        # mapクラスの呼び出し
+        self.map = map
 
         # ランダムエリアを取得
         self.general_area = self.parent.map.general_costomer_area
@@ -74,7 +80,8 @@ class CustomerManager:
 
         # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
         simple_mover = SimpleMover(grid, grid,
-                                    state,
+                                    state, self.map,
+                                    self.map_data_copy,
                                     batch=self.batch,
                                     log_func=self.log)
 
