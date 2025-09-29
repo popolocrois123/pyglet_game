@@ -16,6 +16,9 @@ class Map():
         # 生成場所
         self.general_costomer_area = []
 
+        # 店の入り口
+        self.entrance_pos = None
+
 
         # playerのスタート位置
         self.player_start = (0, 1)
@@ -64,6 +67,10 @@ class Map():
                                                    self.cell_size, color=(0, 255, 255), 
                                                    batch=self.batch)
                     self.tiles.append(rect)
+
+                # 入り口
+                elif cell == "E":
+                    self.entrance_pos = (x, y)
                 
                 # 待機場所
                 elif cell == "W":

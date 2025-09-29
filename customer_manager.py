@@ -15,11 +15,11 @@ class CustomerManager:
         # map_dataの取得
         self.map_data = map_data
 
-        # map_dataのコピーを作成
-        self.map_data_copy = self.map_data
-
         # mapクラスの呼び出し
         self.map = map
+
+        # yの計算
+        self.real_grid_y = len(self.map_data)
 
         # ランダムエリアを取得
         self.general_area = self.parent.map.general_costomer_area
@@ -53,10 +53,11 @@ class CustomerManager:
 
     def update(self, dt):
         # self.simple_mover.update(dt)
-        for cu in self.customers:
-            # self.setup_target()
-            self.setup_target(cu)
-            cu.update(dt)
+        # for cu in self.customers:
+        #     # self.setup_target()
+        #     self.setup_target(cu)
+        self.assign_entrance()
+        self.move_to_entrance(dt)
 
 
 
@@ -81,7 +82,6 @@ class CustomerManager:
         # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
         simple_mover = SimpleMover(grid, grid,
                                     state, self.map,
-                                    self.map_data_copy,
                                     batch=self.batch,
                                     log_func=self.log)
 
@@ -99,7 +99,34 @@ class CustomerManager:
         # （例えば10秒で生成など）
 
     # 生成した客のターゲット座標の設定
-    def setup_target(self, cu):
-        cu.target_x = 17
-        cu.target_y = 2
+    # def setup_target(self, cu):
+    #     cu.target_x = 17
+    #     cu.target_y = 2
+
+    # 入り口までアサインする（受付）
+    def assign_entrance(self):
+        for cu in self.customers:
+            if cu.state == "outside":
+                # self.setup_target()
+                # アンパックする
+                # self.log(f"{self.map.entrance_pos}")
+                x, y = self.map.entrance_pos
+                y = self.real_grid_y - (y + 1)
+                cu.setup_new_target(x, y)
+                # self.setup_target(cu)
+                # cu.update(dt)
+                cu.state = "moving_to_entrance"
+        
+
+                # ログで確認
+                self.log(f"【入り口でアサインする】pos: {x, y} state: {cu.state}")
+
+        # cu.target_x = 17
+        # cu.target_y = 2
+
+    def move_to_entrance(self, dt):
+        for cu in self.customers:
+            if cu.state == "moving_to_entrance":
+                cu.update(dt)
+
 

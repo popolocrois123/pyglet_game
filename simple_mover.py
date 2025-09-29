@@ -2,14 +2,12 @@ import pyglet
 from setting import *
 
 class SimpleMover:
-    def __init__(self, start_pos, target_pos, state, map, map_data_copy, batch, log_func=None):
+    def __init__(self, start_pos, target_pos, state, map, batch, log_func=None):
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
         self.state = state
         self.map = map
 
-        # map_dataのコピーを取得
-        self.map_data_copy = map_data_copy
         # 最初の出現場所の記録
         self.origin = "G"
 
@@ -72,14 +70,14 @@ class SimpleMover:
 
                 # 移動したグリッドのsettingがCになる
 
-                self.real_grid_y = len(MAP_DATA) - self.grid_y - 1
+                # self.real_grid_y = len(MAP_DATA) - self.grid_y - 1
                 # 元のMAD_DATAの保存
                 # self.origin_tile_name = self.map_data_copy[self.real_grid_y][self.grid_x]
                 # print(self.origin_tile_name) 
                 
                 # print(MAP_DATA)
-                MAP_DATA[self.real_grid_y] = self.map_data_copy[self.real_grid_y][:self.grid_x] + "C" + MAP_DATA[self.real_grid_y][(self.grid_x + 1):]
-                print(MAP_DATA)
+                # MAP_DATA[self.real_grid_y] = self.map_data_copy[self.real_grid_y][:self.grid_x] + "C" + MAP_DATA[self.real_grid_y][(self.grid_x + 1):]
+                # # print(MAP_DATA)
                 # self.return_map_to_origin(self.origin_tile_name)
 
         # 1マスの移動が完了している場合
@@ -135,12 +133,17 @@ class SimpleMover:
         # self.origin_tile_name = self.map_data_copy[self.real_grid_y][self.grid_x]
         # print(self.origin_tile_name)
         # print(self.origin_tile_name)
-        print(MAP_DATA[self.real_grid_y])
+        # print(MAP_DATA[self.real_grid_y])
         MAP_DATA[self.real_grid_y] = MAP_DATA[self.real_grid_y][:(self.grid_x-step_x-step_x)] + self.origin + MAP_DATA[self.real_grid_y][(self.grid_x-step_x):]
         # print(MAP_DATA)
 
     def return_map_to_origin_y(self, origin):
         pass
+    
+    # customer_managerから座標を受け取ってセットする
+    def setup_new_target(self, x, y):
+        self.target_x = x
+        self.target_y = y
     
 
 

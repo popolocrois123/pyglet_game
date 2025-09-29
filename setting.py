@@ -6,7 +6,7 @@ MAP_DATA = [
     'BBBBBBBBBBBBBBBBBBB',
     'NGGGGGGGGGGGGGGGGGN',
     'NGGGGGGGGGGGGGGGGGN',
-    'BBBBBBBBBBBBBBBB..B',
+    'BBBBBBBBBBBBBBBBOEB',
     'B................WB',
     'B................WB',
     'B..T...T.........WB',
