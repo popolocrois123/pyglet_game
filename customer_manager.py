@@ -3,6 +3,7 @@ import time
 import pyglet
 from simple_mover import SimpleMover
 import random
+import queue
 
 class CustomerManager:
     def __init__(self, parent, map_data, map, num_customers=5, log_func=None):
@@ -32,6 +33,9 @@ class CustomerManager:
 
         # 初期顧客数
         self.num_customers_to_initialize = num_customers
+
+        # キャラのキューを作成
+        self.chara_queue = queue.Queue()
 
         # 新規顧客の生成
         self.spawn_timer = 0.0
@@ -78,6 +82,8 @@ class CustomerManager:
         # 状態を決める
         # 顧客生成(店外)
         state = "outside"
+
+
 
         # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
         simple_mover = SimpleMover(grid, grid,
@@ -128,5 +134,7 @@ class CustomerManager:
         for cu in self.customers:
             if cu.state == "moving_to_entrance":
                 cu.update(dt)
+                # キャラのキューに追加
+                self.chara_queue.put(cu)
 
 

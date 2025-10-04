@@ -16,7 +16,6 @@ class SimpleMover:
 
         self.real_grid_y = len(MAP_DATA) - self.grid_y - 1
 
-
         self.pixel_x = self.grid_x * CELL_SIZE
         self.pixel_y = self.grid_y * CELL_SIZE
 

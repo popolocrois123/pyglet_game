@@ -1,4 +1,5 @@
 import pyglet
+import queue
 
 class Map():
     def __init__(self, map_data, cell_size, batch, height, log_func=None):
@@ -11,14 +12,19 @@ class Map():
 
         self.tiles = []
         # 通れないブロックのリスト
-        self.block_tiles = ["B", "T", "C"]
+        self.block_tiles = ["B", "T"]
+
+        # 待機場所ｗの数
+        self.w_count = self.map_data.count("W")
+
+        # 待機場所のキュー作成
+        self.wait_queue = queue.Queue(self.w_count)
 
         # 生成場所
         self.general_costomer_area = []
 
         # 店の入り口
         self.entrance_pos = None
-
 
         # playerのスタート位置
         self.player_start = (0, 1)
@@ -78,6 +84,8 @@ class Map():
                                                    self.cell_size, color=(0, 0, 255), 
                                                    batch=self.batch)
                     self.tiles.append(rect)
+                    self.wait_queue.put((x, y))
+
 
                 # テーブル
                 elif cell == "T":
@@ -89,7 +97,7 @@ class Map():
                 # キャラクター
                 elif cell == "C":
                     rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, 
-                                                   self.cell_size, color=(255, 0, 0), 
+                                                  self.cell_size, color=(255, 0, 0), 
                                                    batch=self.batch)
                     self.tiles.append(rect)
 
