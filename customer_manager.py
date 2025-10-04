@@ -19,6 +19,9 @@ class CustomerManager:
         # mapクラスの呼び出し
         self.map = map
 
+        # マップの待機場所の座標のqueueを呼び出し
+        self.wait_queue = self.map.wait_queue
+
         # yの計算
         self.real_grid_y = len(self.map_data)
 
@@ -62,6 +65,10 @@ class CustomerManager:
         #     self.setup_target(cu)
         self.assign_entrance()
         self.move_to_entrance(dt)
+        # self.moving_to_waiting_area(dt)
+
+
+
 
 
 
@@ -118,14 +125,23 @@ class CustomerManager:
                 # self.log(f"{self.map.entrance_pos}")
                 x, y = self.map.entrance_pos
                 y = self.real_grid_y - (y + 1)
+                # x, y = self.wait_queue.get()
+                # y = self.real_grid_y - (y + 1)
+                # print(x, y)
+                # print(self.wait_queue.get())
                 cu.setup_new_target(x, y)
                 # self.setup_target(cu)
                 # cu.update(dt)
                 cu.state = "moving_to_entrance"
+
+                x, y = (self.wait_queue.pop())
+                cu.setup_new_target(x, y)
         
 
                 # ログで確認
                 self.log(f"【入り口でアサインする】pos: {x, y} state: {cu.state}")
+
+                # pyglet.clock.schedule_once(lambda dt: self.moving_to_waiting_area(cu), 3)
 
         # cu.target_x = 17
         # cu.target_y = 2
@@ -137,4 +153,12 @@ class CustomerManager:
                 # キャラのキューに追加
                 self.chara_queue.put(cu)
 
+    def moving_to_waiting_area(self, cu):
+        cu.state = "moving_to_wating_area"
+        # # x, y = self.wait_queue.get()
+        x, y = (self.wait_queue.pop())
+        # # y = self.real_grid_y - (y + 1)
+        cu.setup_new_target(x, y)
+        # print(x, y)
+        
 

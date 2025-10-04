@@ -18,7 +18,8 @@ class Map():
         self.w_count = self.map_data.count("W")
 
         # 待機場所のキュー作成
-        self.wait_queue = queue.Queue(self.w_count)
+        # self.wait_queue = queue.Queue(self.w_count)
+        self.wait_queue = []
 
         # 生成場所
         self.general_costomer_area = []
@@ -84,7 +85,10 @@ class Map():
                                                    self.cell_size, color=(0, 0, 255), 
                                                    batch=self.batch)
                     self.tiles.append(rect)
-                    self.wait_queue.put((x, y))
+                    print(f"元のxy{x, y}")
+                    y = len(self.map_data) - (y + 1)
+                    self.wait_queue.append((x, y))
+                    # print(self.wait_queue.pop())
 
 
                 # テーブル
