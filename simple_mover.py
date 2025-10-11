@@ -2,7 +2,14 @@ import pyglet
 from setting import *
 
 class SimpleMover:
+
+    _id_counter = 0
+
     def __init__(self, start_pos, target_pos, state, map, batch, log_func=None):
+        # 各顧客に一意のIDを付与
+        self.id = SimpleMover._id_counter
+        SimpleMover._id_counter += 1
+        
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
         self.state = state

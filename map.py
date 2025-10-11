@@ -85,7 +85,7 @@ class Map():
                                                    self.cell_size, color=(0, 0, 255), 
                                                    batch=self.batch)
                     self.tiles.append(rect)
-                    print(f"元のxy{x, y}")
+                    # print(f"元のxy{x, y}")
                     y = len(self.map_data) - (y + 1)
                     self.wait_queue.append((x, y))
                     # print(self.wait_queue.pop())

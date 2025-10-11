@@ -4,6 +4,7 @@ import pyglet
 from simple_mover import SimpleMover
 import random
 import queue
+from loguru import logger
 
 class CustomerManager:
     def __init__(self, parent, map_data, map, num_customers=5, log_func=None):
@@ -19,7 +20,7 @@ class CustomerManager:
         # mapクラスの呼び出し
         self.map = map
 
-        # マップの待機場所の座標のqueueを呼び出し
+        # マップの待機場所の座標のqueueを呼び出し 1つめ
         self.wait_queue = self.map.wait_queue
 
         # yの計算
@@ -32,13 +33,23 @@ class CustomerManager:
         # # 入口の位置
         # self.entrance_pos = parent.map.get_entrance_positions()
         
-        self.customers = [] # 顧客本体のリスト
+
+        
 
         # 初期顧客数
         self.num_customers_to_initialize = num_customers
 
-        # キャラのキューを作成
-        self.chara_queue = queue.Queue()
+        # mapのWの場所のリストを取得
+        self.wait_queue = self.map.wait_queue
+
+        # 顧客の入口での管理のためのキュー
+        # 1, 待機場所管理リスト
+        self.wait_chair = [False for i in range(len(self.wait_queue))]
+        # print(self.wait_chair)
+        # 2, 顧客本体のリスト
+        self.customers = []
+        # 3, 顧客と待機場所の紐づけ
+        self.waiting_queue = []
 
         # 新規顧客の生成
         self.spawn_timer = 0.0
@@ -63,13 +74,17 @@ class CustomerManager:
         # for cu in self.customers:
         #     # self.setup_target()
         #     self.setup_target(cu)
+        # 入口まで割り当て
         self.assign_entrance()
+
+        # 入口まで移動
         self.move_to_entrance(dt)
-        # self.moving_to_waiting_area(dt)
 
+        # 待機場所への割り当て
+        self.assign_wait_area()
 
-
-
+        # 待機場所への移動
+        self.moving_to_waiting_area(dt)
 
 
     # 顧客生成
@@ -97,19 +112,29 @@ class CustomerManager:
                                     state, self.map,
                                     batch=self.batch,
                                     log_func=self.log)
+        
+        # # カスタマーのIDを変化させる
+        # simple_mover.id += 1
 
-
-        # そのインスタンスをリストの中にいれて管理する
+        # # そのインスタンスをリストの中にいれて管理する
         self.customers.append(simple_mover)
+
+        # # 紐付けようのリストに入れる
+        # self.waiting_queue.append(simple_mover)
+        
+
         # 生成する時に生成するエリアを決める
 
         # ログで確認
         self.log(f"【顧客生成】pos: {random_G} state: {state}")
+        logger.debug(f"【顧客生成】pos: {random_G} state: {state}")
 
         # 何個生成するかのmaxを決める
         
         # 生成するスパン
         # （例えば10秒で生成など）
+
+        
 
     # 生成した客のターゲット座標の設定
     # def setup_target(self, cu):
@@ -134,31 +159,110 @@ class CustomerManager:
                 # cu.update(dt)
                 cu.state = "moving_to_entrance"
 
-                x, y = (self.wait_queue.pop())
-                cu.setup_new_target(x, y)
+                # x, y = (self.wait_queue.pop())
+                # cu.setup_new_target(x, y)
         
 
                 # ログで確認
                 self.log(f"【入り口でアサインする】pos: {x, y} state: {cu.state}")
+                logger.debug(f"【入り口でアサインする】pos: {x, y} state: {cu.state}")
 
                 # pyglet.clock.schedule_once(lambda dt: self.moving_to_waiting_area(cu), 3)
 
         # cu.target_x = 17
         # cu.target_y = 2
 
+
     def move_to_entrance(self, dt):
         for cu in self.customers:
             if cu.state == "moving_to_entrance":
+                cu.state = "arrive"
                 cu.update(dt)
-                # キャラのキューに追加
-                self.chara_queue.put(cu)
 
-    def moving_to_waiting_area(self, cu):
-        cu.state = "moving_to_wating_area"
-        # # x, y = self.wait_queue.get()
-        x, y = (self.wait_queue.pop())
-        # # y = self.real_grid_y - (y + 1)
-        cu.setup_new_target(x, y)
-        # print(x, y)
+                for j, used in enumerate(self.wait_chair):
+                    if not used:
+                        # self.wait_chair[j] == True
+                        cu.state = "arrive"
+                        
+                        
+                        # self.chara_queue.put(cu)
+                        self.log(f"【入り口まで移動しました】pos: {cu.target_x, cu.target_y} state: {cu.state}")
+                        logger.debug(f"【入り口まで移動しました】pos: {cu.target_x, cu.target_y} state: {cu.state}")
+                        
+                # キャラのキューに追加
+                # そのインスタンスをリストの中にいれて管理する
+                # そのインスタンスをリストの中にいれて管理する
+                # self.customers.append(cu)
+
+
+    def assign_wait_area(self):
+        for cu in self.customers:
+            if cu.state == "arrive":
+                # 最も近い人を待機場所に割り当てる
+                for j, chaired in enumerate(self.wait_chair):
+                    if not chaired:
+                        self.wait_chair[j] = True
+                        # 紐付けようのリストに入れる
+                        self.waiting_queue.append((cu, j))
+                        # self.wait_queue_j = self.wait_queue[j]
+                        target = self.wait_queue[j]
+                        cu.setup_new_target(*target)
+
+                        
+                        # target = self.wait_queue[j]
+                        # print(target)
+
+                        # cu.setup_new_target(*target)
+                        cu.state = "moving_to_wait"
+                        self.log(f"【待機場所割当】id: {cu.id} index: W[{j}] pos: {target} \
+                                state: {cu.state}")
+                        logger.debug(f"【待機場所割当】id: {cu.id} index: W[{j}] pos: {target} \
+                                state: {cu.state}")
+                        
+
+                        break
+                        
+                        
+
+                # x, y = self.map.entrance_pos
+                # y = self.real_grid_y - (y + 1)
+                
+                # x, y = self.wait_queue.get()
+                # y = self.real_grid_y - (y + 1)
+                # print(x, y)
+                # print(self.wait_queue.get())
+                # cu.setup_new_target(x, y)
+                # self.setup_target(cu)
+                # cu.update(dt)
+
+                # x, y = (self.wait_queue.pop())
+                # cu.setup_new_target(x, y)
+        
+
+                # ログで確認
+                # self.log(f"【入り口でアサインする】pos: {x, y} state: {cu.state}")
+
+                # pyglet.clock.schedule_once(lambda dt: self.moving_to_waiting_area(cu), 3)
+
+
+                
+
+    def moving_to_waiting_area(self, dt):
+        for index, cu_waiting_queue in enumerate(self.waiting_queue):
+            cu = cu_waiting_queue[0]
+            if cu.state == "moving_to_wait":
+                # print(f"{self.wait_queue}")
+                x, y = (self.wait_queue[index])
+                # print(f"元のxy{x, y}")
+                cu.setup_new_target(x, y)
+                cu.update(dt)
+                
+
+        # cu.state = "moving_to_wating_area"
+        # # # x, y = self.wait_queue.get()
+        # x, y = (self.wait_queue.pop())
+        # # # y = self.real_grid_y - (y + 1)
+        # cu.setup_new_target(x, y)
+        # # print(x, y)
         
 
