@@ -7,7 +7,7 @@ import queue
 from loguru import logger
 
 class CustomerManager:
-    def __init__(self, parent, map_data, map, num_customers=5, log_func=None):
+    def __init__(self, parent, map_data, map, num_customers=20, log_func=None):
         self.parent = parent
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
@@ -126,8 +126,7 @@ class CustomerManager:
         # 生成する時に生成するエリアを決める
 
         # ログで確認
-        self.log(f"【顧客生成】pos: {random_G} state: {state}")
-        logger.debug(f"【顧客生成】pos: {random_G} state: {state}")
+        logger.debug(f"【顧客生成】id: {simple_mover.id} pos: {random_G} state: {state}")
 
         # 何個生成するかのmaxを決める
         
@@ -164,8 +163,7 @@ class CustomerManager:
         
 
                 # ログで確認
-                self.log(f"【入り口でアサインする】pos: {x, y} state: {cu.state}")
-                logger.debug(f"【入り口でアサインする】pos: {x, y} state: {cu.state}")
+                logger.debug(f"【入り口でアサインする】id: {cu.id} pos: {x, y} state: {cu.state}")
 
                 # pyglet.clock.schedule_once(lambda dt: self.moving_to_waiting_area(cu), 3)
 
@@ -176,18 +174,15 @@ class CustomerManager:
     def move_to_entrance(self, dt):
         for cu in self.customers:
             if cu.state == "moving_to_entrance":
-                cu.state = "arrive"
                 cu.update(dt)
+                if cu.reached:
+                    cu.state = "arrive"
+                    logger.debug(f"【入り口まで移動しました】id: {cu.id} pos: {cu.target_x, cu.target_y} state: {cu.state}")
+                
 
-                for j, used in enumerate(self.wait_chair):
-                    if not used:
-                        # self.wait_chair[j] == True
-                        cu.state = "arrive"
                         
                         
-                        # self.chara_queue.put(cu)
-                        self.log(f"【入り口まで移動しました】pos: {cu.target_x, cu.target_y} state: {cu.state}")
-                        logger.debug(f"【入り口まで移動しました】pos: {cu.target_x, cu.target_y} state: {cu.state}")
+                # self.chara_queue.put(cu)
                         
                 # キャラのキューに追加
                 # そのインスタンスをリストの中にいれて管理する
@@ -205,8 +200,10 @@ class CustomerManager:
                         # 紐付けようのリストに入れる
                         self.waiting_queue.append((cu, j))
                         # self.wait_queue_j = self.wait_queue[j]
-                        target = self.wait_queue[j]
-                        cu.setup_new_target(*target)
+                        # target = self.wait_queue[j]
+                        x, y = self.wait_queue[j]
+                        y = self.real_grid_y - (y + 1)
+                        cu.setup_new_target(x, y)
 
                         
                         # target = self.wait_queue[j]
@@ -214,9 +211,7 @@ class CustomerManager:
 
                         # cu.setup_new_target(*target)
                         cu.state = "moving_to_wait"
-                        self.log(f"【待機場所割当】id: {cu.id} index: W[{j}] pos: {target} \
-                                state: {cu.state}")
-                        logger.debug(f"【待機場所割当】id: {cu.id} index: W[{j}] pos: {target} \
+                        logger.debug(f"【待機場所割当】id: {cu.id} index: W[{j}] pos: {x, y} \
                                 state: {cu.state}")
                         
 

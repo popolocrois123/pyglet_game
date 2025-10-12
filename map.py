@@ -1,5 +1,7 @@
 import pyglet
 import queue
+from loguru import logger
+
 
 class Map():
     def __init__(self, map_data, cell_size, batch, height, log_func=None):
@@ -31,6 +33,9 @@ class Map():
         self.player_start = (0, 1)
 
         self.load_map()
+
+        # 待機場所がマップ座標とpygletの座標系と原点が違うのでリバースしている
+        self.wait_queue.reverse()
 
         self.log("マップの初期化完了しました。")
         # print(self.general_costomer_area)
@@ -88,6 +93,8 @@ class Map():
                     # print(f"元のxy{x, y}")
                     y = len(self.map_data) - (y + 1)
                     self.wait_queue.append((x, y))
+
+                    # logger.info(f"【待機場所】{x, y}")
                     # print(self.wait_queue.pop())
 
 

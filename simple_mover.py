@@ -1,5 +1,6 @@
 import pyglet
 from setting import *
+from loguru import logger
 
 class SimpleMover:
 
@@ -48,6 +49,11 @@ class SimpleMover:
         self.MAP_DATA_COPY = MAP_DATA
         # print(self.MAP_DATA_COPY)
 
+        # 到着判定フラグ
+        self.reached = False
+
+        self.count = 0
+
 
     # 目標値が定まった状態でその座標に移動開始する
     def start_move_to(self, new_x, new_y):
@@ -74,17 +80,6 @@ class SimpleMover:
             if t >= 1.0:
                 self.moving = False
 
-                # 移動したグリッドのsettingがCになる
-
-                # self.real_grid_y = len(MAP_DATA) - self.grid_y - 1
-                # 元のMAD_DATAの保存
-                # self.origin_tile_name = self.map_data_copy[self.real_grid_y][self.grid_x]
-                # print(self.origin_tile_name) 
-                
-                # print(MAP_DATA)
-                # MAP_DATA[self.real_grid_y] = self.map_data_copy[self.real_grid_y][:self.grid_x] + "C" + MAP_DATA[self.real_grid_y][(self.grid_x + 1):]
-                # # print(MAP_DATA)
-                # self.return_map_to_origin(self.origin_tile_name)
 
         # 1マスの移動が完了している場合
         else:
@@ -112,15 +107,25 @@ class SimpleMover:
                     # if self.map.is_walkable(self.grid_x, new_y):
                     #     self.start_move_to(self.grid_x, new_y)
                     #     return
-                else:
+                # else:
                     # 既に目的地に到達
-                    return
+                    # self.reached = True
+                    # logger.debug(f"【入り口まで移動しました】id: {self.id}")
+                    # return
                 self.start_move_to(new_x, new_y)
                 
                 # if self.map.is_walkable(new_x, new_y):
                 #     self.start_move_to(new_x, new_y)
                 # else:
                 #     self.start_move_to(self.grid_x, self.grid_y)
+            else:
+                # 既に目的地に到達
+                self.reached = True
+                # if self.count == 0:
+                #     logger.debug(f"【入り口まで移動しました】id: {self.id}")
+                #     self.count = 1
+                return
+
 
     # MAP_DATAでキャラが動いた場所をCにする
     def change_map_to_chara(self):
