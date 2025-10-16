@@ -39,6 +39,10 @@ class CustomerManager:
         # 初期顧客数
         self.num_customers_to_initialize = num_customers
 
+
+        # 現在の客の数の管理
+        self.count_num_customers = 0
+
         # mapのWの場所のリストを取得
         self.wait_queue = self.map.wait_queue
 
@@ -54,7 +58,7 @@ class CustomerManager:
         # 新規顧客の生成
         self.spawn_timer = 0.0
         self.spawn_interval = 5 # 5秒ごとに新しい顧客を生成
-        self.max_customers = 10   # 任意：上限を設定したい場合
+        self.max_customers = 8   # 任意：上限を設定したい場合
 
         # 初期顧客
         self.setup_initial_customers()
@@ -143,7 +147,7 @@ class CustomerManager:
     # 入り口までアサインする（受付）
     def assign_entrance(self):
         for cu in self.customers:
-            if cu.state == "outside":
+            if (cu.state == "outside") and (self.count_num_customers <= self.max_customers):
                 # self.setup_target()
                 # アンパックする
                 # self.log(f"{self.map.entrance_pos}")
@@ -165,6 +169,9 @@ class CustomerManager:
                 # ログで確認
                 logger.debug(f"【入り口でアサインする】id: {cu.id} pos: {x, y} state: {cu.state}")
 
+                # 客の数をカウント
+                self.count_num_customers += 1
+
                 # pyglet.clock.schedule_once(lambda dt: self.moving_to_waiting_area(cu), 3)
 
         # cu.target_x = 17
@@ -179,7 +186,6 @@ class CustomerManager:
                     cu.state = "arrive"
                     logger.debug(f"【入り口まで移動しました】id: {cu.id} pos: {cu.target_x, cu.target_y} state: {cu.state}")
                 
-
                         
                         
                 # self.chara_queue.put(cu)
