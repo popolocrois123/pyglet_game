@@ -265,5 +265,10 @@ class CustomerManager:
         # # # y = self.real_grid_y - (y + 1)
         # cu.setup_new_target(x, y)
         # # print(x, y)
+
+
+    # 客が削除される
+    def delete_customer(self):
+        pass
         
 

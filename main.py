@@ -7,6 +7,7 @@ from logger import Logger
 import time
 from customer import Customer
 from customer_manager import CustomerManager
+from seat_manager import SeatManager
 
 
 class Main():
@@ -56,6 +57,9 @@ class Main():
         # CustomerMageクラスの呼び出し
         self.customer_manager = CustomerManager(self, MAP_DATA, self.map,
                                 log_func=self.logger.log)
+        
+        # SeatManagerクラスの呼び出し
+        self.seat_manager = SeatManager(self)
 
         # Heroクラスの呼び出し
         # self.hero = Hero(px, py, self.window, self.batch, CELL_SIZE, self.map, self.keys, log_func=self.logger.log)
