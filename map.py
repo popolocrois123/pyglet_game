@@ -23,6 +23,9 @@ class Map():
         # self.wait_queue = queue.Queue(self.w_count)
         self.wait_queue = []
 
+        # 席のキュー
+        self.seat_queue = []
+
         # 生成場所
         self.general_costomer_area = []
 
@@ -112,6 +115,15 @@ class Map():
                                                    batch=self.batch)
                     self.tiles.append(rect)
 
+                # 席
+                elif cell == "S":
+                    rect = pyglet.shapes.Rectangle(pixel_x, pixel_y,  self.cell_size, 
+                                                   self.cell_size, color=(0, 100, 255), 
+                                                   batch=self.batch)
+                    self.tiles.append(rect)
+                    # print(f"元のxy{x, y}")
+                    # y = len(self.map_data) - (y + 1)
+                    self.seat_queue.append((x, y))
 
 
 

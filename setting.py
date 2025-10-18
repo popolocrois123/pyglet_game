@@ -9,13 +9,13 @@ MAP_DATA = [
     'BBBBBBBBBBBBBBBBOEB',
     'B................WB',
     'B................WB',
-    'B..T...T.........WB',
+    'B.STS.STS........WB',
     'B................WB',
-    'B..T...T.........WB',
+    'B.STS.STS........WB',
     'B................WB',
-    'B..T...T.........WB',
+    'B.STS.STS........WB',
     'B................WB',
-    'B..T...T.........WB',
+    'B.STS.STS........WB',
     'B.................B',
     'BBBBBBBBBBBBBBBBBBB'
 ]

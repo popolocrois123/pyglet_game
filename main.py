@@ -59,7 +59,7 @@ class Main():
                                 log_func=self.logger.log)
         
         # SeatManagerクラスの呼び出し
-        self.seat_manager = SeatManager(self)
+        self.seat_manager = SeatManager(self, self.map)
 
         # Heroクラスの呼び出し
         # self.hero = Hero(px, py, self.window, self.batch, CELL_SIZE, self.map, self.keys, log_func=self.logger.log)
@@ -96,6 +96,7 @@ class Main():
         # self.customer.update(dt)
         # self.simple_mover.update(dt)
         self.customer_manager.update(dt)
+        self.seat_manager.update(dt)
 
         # for chara in self.characters:
         #     chara.update(dt)

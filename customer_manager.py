@@ -148,22 +148,10 @@ class CustomerManager:
     def assign_entrance(self):
         for cu in self.customers:
             if (cu.state == "outside") and (self.count_num_customers <= self.max_customers):
-                # self.setup_target()
-                # アンパックする
-                # self.log(f"{self.map.entrance_pos}")
                 x, y = self.map.entrance_pos
                 y = self.real_grid_y - (y + 1)
-                # x, y = self.wait_queue.get()
-                # y = self.real_grid_y - (y + 1)
-                # print(x, y)
-                # print(self.wait_queue.get())
                 cu.setup_new_target(x, y)
-                # self.setup_target(cu)
-                # cu.update(dt)
                 cu.state = "moving_to_entrance"
-
-                # x, y = (self.wait_queue.pop())
-                # cu.setup_new_target(x, y)
         
 
                 # ログで確認
@@ -171,11 +159,6 @@ class CustomerManager:
 
                 # 客の数をカウント
                 self.count_num_customers += 1
-
-                # pyglet.clock.schedule_once(lambda dt: self.moving_to_waiting_area(cu), 3)
-
-        # cu.target_x = 17
-        # cu.target_y = 2
 
 
     def move_to_entrance(self, dt):
@@ -185,7 +168,7 @@ class CustomerManager:
                 if cu.reached:
                     cu.state = "arrive"
                     logger.debug(f"【入り口まで移動しました】id: {cu.id} pos: {cu.target_x, cu.target_y} state: {cu.state}")
-                
+
                         
                         
                 # self.chara_queue.put(cu)
@@ -257,6 +240,10 @@ class CustomerManager:
                 # print(f"元のxy{x, y}")
                 cu.setup_new_target(x, y)
                 cu.update(dt)
+                cu.state = "waiting"
+                # logger.debug(f"【待機場所に到着】id: {cu.id} pos: {x, y} \
+                #                 state: {cu.state}")
+                break
                 
 
         # cu.state = "moving_to_wating_area"
