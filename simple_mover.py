@@ -22,7 +22,7 @@ class SimpleMover:
         self.grid_x, self.grid_y = start_pos
         self.target_x, self.target_y = target_pos
 
-        self.real_grid_y = len(MAP_DATA) - self.grid_y - 1
+        # self.real_grid_y = len(MAP_DATA) - self.grid_y - 1
 
         self.pixel_x = self.grid_x * CELL_SIZE
         self.pixel_y = self.grid_y * CELL_SIZE
@@ -52,7 +52,7 @@ class SimpleMover:
         # 到着判定フラグ
         self.reached = False
 
-        self.count = 0
+        self.count = 1
 
 
     # 目標値が定まった状態でその座標に移動開始する
@@ -130,23 +130,7 @@ class SimpleMover:
     # MAP_DATAでキャラが動いた場所をCにする
     def change_map_to_chara(self):
         pass
-
-    # MAP_DATAで化キャラが通り過ぎた場所を元のマップのタイルにする
-    def return_map_to_origin_x(self, step_x):
-        # 移動した後グリッドのsettingが元に戻る
-        # 元のMAD_DATAの保存
-        # self.real_grid_y = len(MAP_DATA) - self.grid_y - 1
-        # print(self.map_data_copy)
-        self.origin = self.map_data_copy[self.real_grid_y][self.grid_x-step_x]
-        # print(self.origin)
-
-        # 元のタイル
-        # self.origin_tile_name = self.map_data_copy[self.real_grid_y][self.grid_x]
-        # print(self.origin_tile_name)
-        # print(self.origin_tile_name)
-        # print(MAP_DATA[self.real_grid_y])
-        MAP_DATA[self.real_grid_y] = MAP_DATA[self.real_grid_y][:(self.grid_x-step_x-step_x)] + self.origin + MAP_DATA[self.real_grid_y][(self.grid_x-step_x):]
-        # print(MAP_DATA)
+    
 
     def return_map_to_origin_y(self, origin):
         pass
@@ -155,6 +139,9 @@ class SimpleMover:
     def setup_new_target(self, x, y):
         self.target_x = x
         self.target_y = y
+        # if self.count < 10:
+        #     logger.info(f"{self.target_x, self.target_y}")
+        #     self.count += 1
     
 
 

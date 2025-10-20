@@ -7,15 +7,15 @@ MAP_DATA = [
     'NGGGGGGGGGGGGGGGGGN',
     'NGGGGGGGGGGGGGGGGGN',
     'BBBBBBBBBBBBBBBBOEB',
-    'B................WB',
-    'B................WB',
-    'B.STS.STS........WB',
+    'B.................B',
     'B................WB',
     'B.STS.STS........WB',
     'B................WB',
     'B.STS.STS........WB',
     'B................WB',
     'B.STS.STS........WB',
+    'B.................B',
+    'B.STS.STS.........B',
     'B.................B',
     'BBBBBBBBBBBBBBBBBBB'
 ]

@@ -96,7 +96,7 @@ class Main():
         # self.customer.update(dt)
         # self.simple_mover.update(dt)
         self.customer_manager.update(dt)
-        self.seat_manager.update(dt)
+        # self.seat_manager.update(dt)
 
         # for chara in self.characters:
         #     chara.update(dt)

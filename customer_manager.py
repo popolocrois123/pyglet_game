@@ -7,7 +7,7 @@ import queue
 from loguru import logger
 
 class CustomerManager:
-    def __init__(self, parent, map_data, map, num_customers=20, log_func=None):
+    def __init__(self, parent, map_data, map, num_customers=10, log_func=None):
         self.parent = parent
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
@@ -19,9 +19,6 @@ class CustomerManager:
 
         # mapクラスの呼び出し
         self.map = map
-
-        # マップの待機場所の座標のqueueを呼び出し 1つめ
-        self.wait_queue = self.map.wait_queue
 
         # yの計算
         self.real_grid_y = len(self.map_data)
@@ -45,6 +42,7 @@ class CustomerManager:
 
         # mapのWの場所のリストを取得
         self.wait_queue = self.map.wait_queue
+        logger.info(f"待機場所の座標{self.wait_queue}")
 
         # 顧客の入口での管理のためのキュー
         # 1, 待機場所管理リスト
@@ -66,6 +64,7 @@ class CustomerManager:
         # 客のターゲット座標のリスト
         self.target_list = []
 
+        self.count = 1
 
     # 初期顧客の生成
     def setup_initial_customers(self):
@@ -99,9 +98,12 @@ class CustomerManager:
         row_grid = len(self.map_data)
         # タプルからxとyを取り出す
         # xはそのままで
-        x = random_G[0]
+
+        x, y = self.map.to_pyglet_x_y(random_G[0], random_G[1])
+        # x = random_G[0]
+        # y = random_G[1]
         # データの原点は左上、ゲームは左下が原点なのでそのためにy座標を変換する
-        y = row_grid - random_G[1] - 1
+        # y = row_grid - random_G[1] - 1
         # gridにx,yを代入する
         grid = (x, y)
 
@@ -149,7 +151,8 @@ class CustomerManager:
         for cu in self.customers:
             if (cu.state == "outside") and (self.count_num_customers <= self.max_customers):
                 x, y = self.map.entrance_pos
-                y = self.real_grid_y - (y + 1)
+                x, y = self.map.to_pyglet_x_y(x, y)
+                # y = self.real_grid_y - (y + 1)
                 cu.setup_new_target(x, y)
                 cu.state = "moving_to_entrance"
         
@@ -186,12 +189,15 @@ class CustomerManager:
                 for j, chaired in enumerate(self.wait_chair):
                     if not chaired:
                         self.wait_chair[j] = True
+    
                         # 紐付けようのリストに入れる
                         self.waiting_queue.append((cu, j))
                         # self.wait_queue_j = self.wait_queue[j]
                         # target = self.wait_queue[j]
                         x, y = self.wait_queue[j]
-                        y = self.real_grid_y - (y + 1)
+                        x, y = self.map.to_pyglet_x_y(x, y)
+                        logger.info(f"待機場所への割り当ての座標{x, y}")
+                        # y = self.real_grid_y - (y + 1)
                         cu.setup_new_target(x, y)
 
                         
@@ -237,13 +243,23 @@ class CustomerManager:
             if cu.state == "moving_to_wait":
                 # print(f"{self.wait_queue}")
                 x, y = (self.wait_queue[index])
+                x, y = self.map.to_pyglet_x_y(x, y)
+                # logger.info(f"元のxy{x, y}")
                 # print(f"元のxy{x, y}")
                 cu.setup_new_target(x, y)
                 cu.update(dt)
-                cu.state = "waiting"
-                # logger.debug(f"【待機場所に到着】id: {cu.id} pos: {x, y} \
-                #                 state: {cu.state}")
-                break
+                # if self.count == 1:
+                #     logger.info(f"{cu.target_x, cu.target_y}")
+                #     self.count = 2
+                if cu.grid_x == cu.target_x and cu.grid_y == cu.target_y:
+                # logger.info(f"{cu.grid_x, cu.grid_y}")
+                # if cu.reached:
+                    cu.state = "waiting_to_sit_to_seat"
+                    logger.debug(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
+                                    state: {cu.state}")
+                # #     break
+                    
+                
                 
 
         # cu.state = "moving_to_wating_area"
@@ -257,5 +273,8 @@ class CustomerManager:
     # 客が削除される
     def delete_customer(self):
         pass
-        
 
+    def chack_waiting(self):
+        # for index, cu_waiting_queue in enumerate(self.waiting_queue):
+        #     cu = cu_waiting_queue[0]
+        pass

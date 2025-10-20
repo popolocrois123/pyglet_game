@@ -50,8 +50,14 @@ class Map():
     def load_map(self):
         for y, row in enumerate(self.map_data):
             for x, cell in enumerate(row):
+                # x, y = self.to_pyglet_x_y(x, y)
+                # y = self.height - (y + 1)
+                # y = len(self.map_data) - (y + 1)
                 pixel_x = x * self.cell_size
                 pixel_y = self.height - (y + 1) * self.cell_size
+                # pixel_y = y * self.cell_size
+
+
                 # ブロックごとの座標
                 # print(f"{cell}: {pixel_x}, {pixel_y}")
                 # 場合分け
@@ -94,7 +100,7 @@ class Map():
                                                    batch=self.batch)
                     self.tiles.append(rect)
                     # print(f"元のxy{x, y}")
-                    y = len(self.map_data) - (y + 1)
+                    # y = len(self.map_data) - (y + 1)
                     self.wait_queue.append((x, y))
 
                     # logger.info(f"【待機場所】{x, y}")
@@ -133,6 +139,10 @@ class Map():
             return self.map_data[y][x] not in self.block_tiles
         return False
                         
+
+    # リストのｘ、ｙをpygletのx,yに変換する
+    def to_pyglet_x_y(self, x, y):
+        return x, len(self.map_data) - (y + 1)
                 
 
 class Background():

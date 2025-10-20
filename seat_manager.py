@@ -30,32 +30,33 @@ class SeatManager():
         # 客を席にセット
         self.assign_seat()
 
-        # 客を席に移動
-        self.move_to_seat(dt)
+        # # 客を席に移動
+        # self.move_to_seat(dt)
 
-        # 客がごはんを食べる
-        self.eating()
+        # # 客がごはんを食べる
+        # self.eating()
 
-        # 客が出口まで移動する
-        self.move_to_exit
+        # # 客が出口まで移動する
+        # self.move_to_exit
 
 
     def assign_seat(self):
         for cu in self.customers:
-            if cu.state == "waiting":
-                # 最も近い人を待機場所に割り当てる
-                for j, in_use in enumerate(self.seat_in_use):
-                    if not in_use:
-                        self.seat_in_use[j] = True
-                        x, y = self.seat_positions[j]
-                        y = self.real_grid_y - (y + 1)
-                        cu.setup_new_target(x, y)
-                        cu.state = "moving_to_seat"
-                        logger.debug(f"【席にアサインする】id: {cu.id} index: W[{j}] pos: {x, y} \
-                                state: {cu.state}")
-                        self.state = "moving_to_seat"
-                        self.seat_queue.append((cu, j))
-                        break
+            if cu.state == "waiting_to_sit_to_seat":
+                # # 最も近い人を待機場所に割り当てる
+                # for j, in_use in enumerate(self.seat_in_use):
+                #     if not in_use:
+                #         self.seat_in_use[j] = True
+                #         x, y = self.seat_positions[j]
+                #         y = self.real_grid_y - (y + 1)
+                #         cu.setup_new_target(x, y)
+                #         cu.state = "moving_to_seat"
+                logger.debug(f"【席にアサインする】id: {cu.id}\
+                        state: {cu.state}")
+                #         self.state = "moving_to_seat"
+                #         self.seat_queue.append((cu, j))
+                #         break
+
         
 
 
