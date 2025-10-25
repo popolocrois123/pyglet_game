@@ -92,38 +92,19 @@ class SimpleMover:
                     step_x = 1 if dx > 0 else -1
                     new_x = self.grid_x + step_x
                     new_y = self.grid_y
-                    # if self.map.is_walkable(new_x, self.grid_y):
-                    #     self.start_move_to(new_x, self.grid_y)
-                    #     return
 
-                    # 動く方向と反対の方向の事前のマップを元のマップに戻す
-                    # print(self.map_data_copy)
-                    # self.return_map_to_origin_x(step_x)
 
                 elif dy != 0:
                     step_y = 1 if dy > 0 else -1
                     new_x = self.grid_x
                     new_y = self.grid_y + step_y
-                    # if self.map.is_walkable(self.grid_x, new_y):
-                    #     self.start_move_to(self.grid_x, new_y)
-                    #     return
-                # else:
-                    # 既に目的地に到達
-                    # self.reached = True
-                    # logger.debug(f"【入り口まで移動しました】id: {self.id}")
-                    # return
+
+
                 self.start_move_to(new_x, new_y)
                 
-                # if self.map.is_walkable(new_x, new_y):
-                #     self.start_move_to(new_x, new_y)
-                # else:
-                #     self.start_move_to(self.grid_x, self.grid_y)
             else:
                 # 既に目的地に到達
                 self.reached = True
-                # if self.count == 0:
-                #     logger.debug(f"【入り口まで移動しました】id: {self.id}")
-                #     self.count = 1
                 return
 
 
@@ -139,9 +120,7 @@ class SimpleMover:
     def setup_new_target(self, x, y):
         self.target_x = x
         self.target_y = y
-        # if self.count < 10:
-        #     logger.info(f"{self.target_x, self.target_y}")
-        #     self.count += 1
+
     
 
 

@@ -37,8 +37,11 @@ class Map():
 
         self.load_map()
 
-        # 待機場所がマップ座標とpygletの座標系と原点が違うのでリバースしている
+        # # 待機場所がマップ座標とpygletの座標系と原点が違うのでリバースしている
+        # logger.info(f"wait_queueの確認（リバース変更前）{self.wait_queue}")
+
         self.wait_queue.reverse()
+        # logger.info(f"wait_queueの確認（リバース変更後）{self.wait_queue}")
 
         self.log("マップの初期化完了しました。")
         # print(self.general_costomer_area)
@@ -54,7 +57,8 @@ class Map():
                 # y = self.height - (y + 1)
                 # y = len(self.map_data) - (y + 1)
                 pixel_x = x * self.cell_size
-                pixel_y = self.height - (y + 1) * self.cell_size
+                # pixel_y = self.height - (y + 1) * self.cell_size
+                pixel_y = (len(self.map_data) - (y + 1)) * self.cell_size
                 # pixel_y = y * self.cell_size
 
 
@@ -92,6 +96,8 @@ class Map():
                 # 入り口
                 elif cell == "E":
                     self.entrance_pos = (x, y)
+                    logger.info(f"【入り口の座標の追加】{x, y}")
+
                 
                 # 待機場所
                 elif cell == "W":
@@ -99,11 +105,11 @@ class Map():
                                                    self.cell_size, color=(0, 0, 255), 
                                                    batch=self.batch)
                     self.tiles.append(rect)
-                    # print(f"元のxy{x, y}")
+                    print(f"もとの待機場所xy{x, y}")
                     # y = len(self.map_data) - (y + 1)
                     self.wait_queue.append((x, y))
 
-                    # logger.info(f"【待機場所】{x, y}")
+                    logger.info(f"【待機場所の座標の追加】{x, y}")
                     # print(self.wait_queue.pop())
 
 
@@ -142,7 +148,7 @@ class Map():
 
     # リストのｘ、ｙをpygletのx,yに変換する
     def to_pyglet_x_y(self, x, y):
-        return x, len(self.map_data) - (y + 1)
+        return x, len(self.map_data) - y - 1
                 
 
 class Background():
