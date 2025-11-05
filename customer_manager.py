@@ -7,7 +7,7 @@ import queue
 from loguru import logger
 
 class CustomerManager:
-    def __init__(self, parent, map_data, map, num_customers=10, log_func=None):
+    def __init__(self, parent, map_data, map, num_customers=3, log_func=None):
         self.parent = parent
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 

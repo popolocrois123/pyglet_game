@@ -67,9 +67,24 @@ class SeatManager():
                         # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
                         # self.parent.customer_manager.wait_chair[j] = False
                         logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        logger.info(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
 
+                        
+                        # cuからwaiting_queueのcuに連結された番号を取り出す
+                        for cu_value in self.parent.customer_manager.waiting_queue:
+                            if cu in cu_value:
+                                cu_number = cu_value[1]
+
+                        # 番号に該当するwait_chairをFalseにすることで席を空席にする
+                        self.parent.customer_manager.wait_chair[cu_number] = False
+                        # wait_chair_num = self.parent.customer_manager.waiting_queue
+                        
+                        # waiting_queueからcuを取り出す 
                         self.parent.customer_manager.waiting_queue = [x for x in self.parent.customer_manager.waiting_queue if x[0] != cu]
+
                         logger.info(f"new waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        logger.info(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
+
                         # self.parent.customer_manager.waiting_queue.pop
 
                         # print(cu)
