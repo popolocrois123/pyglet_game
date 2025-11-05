@@ -105,11 +105,11 @@ class Map():
                                                    self.cell_size, color=(0, 0, 255), 
                                                    batch=self.batch)
                     self.tiles.append(rect)
-                    print(f"もとの待機場所xy{x, y}")
+                    # print(f"もとの待機場所xy{x, y}")
                     # y = len(self.map_data) - (y + 1)
                     self.wait_queue.append((x, y))
 
-                    logger.info(f"【待機場所の座標の追加】{x, y}")
+                    # logger.info(f"【待機場所の座標の追加】{x, y}")
                     # print(self.wait_queue.pop())
 
 

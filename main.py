@@ -14,8 +14,8 @@ class Main():
     def __init__(self):
         
         # 客の動きを記録
-        self.log_file = open(LOG_PATH, "w", encoding="utf-8")
-        self.start_time = time.time()
+        # self.log_file = open(LOG_PATH, "w", encoding="utf-8")
+        # self.start_time = time.time()
 
         # ログ関数を作って渡す
         self.logger = Logger(LOG_PATH, max_logs=MAX_LOGS)
@@ -74,14 +74,10 @@ class Main():
     def on_draw(self):
         self.window.clear()
         self.batch.draw()
-        # for chara in self.characters:
-        #     chara.batch.draw()
 
     def update(self, dt: float):
-        # self.customer.update(dt)
-        # self.simple_mover.update(dt)
         self.customer_manager.update(dt)
-        # self.seat_manager.update(dt)
+        self.seat_manager.update(dt)
         
 
 if __name__ == "__main__":

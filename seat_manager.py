@@ -17,6 +17,8 @@ class SeatManager():
         self.seat_in_use = [False for i in range(len(self.seat_positions))]
         # 2, カスタマーのリストを取得
         self.customers = self.parent.customer_manager.customers
+        for cu in self.customers:
+            logger.info(f"{cu.reached}")
         # 3, 顧客と座席の紐づけ
         self.seat_queue = []
 
@@ -26,12 +28,14 @@ class SeatManager():
         self.real_grid_y = len(self.map.map_data)
 
 
+
+
     def update(self, dt):
         # 客を席にセット
         self.assign_seat()
 
         # # 客を席に移動
-        # self.move_to_seat(dt)
+        self.move_to_seat(dt)
 
         # # 客がごはんを食べる
         # self.eating()
@@ -43,19 +47,38 @@ class SeatManager():
     def assign_seat(self):
         for cu in self.customers:
             if cu.state == "waiting_to_sit_to_seat":
+                # waiting_queueの取得
+                # self.waiting_queue = self.parent.customer_manager.waiting_queue
                 # # 最も近い人を待機場所に割り当てる
-                # for j, in_use in enumerate(self.seat_in_use):
-                #     if not in_use:
-                #         self.seat_in_use[j] = True
-                #         x, y = self.seat_positions[j]
-                #         y = self.real_grid_y - (y + 1)
-                #         cu.setup_new_target(x, y)
-                #         cu.state = "moving_to_seat"
-                logger.debug(f"【席にアサインする】id: {cu.id}\
+                for j, in_use in enumerate(self.seat_in_use):
+                    if not in_use:
+                        self.seat_in_use[j] = True
+                        x, y = self.seat_positions[j]
+                        y = self.real_grid_y - (y + 1)
+                        cu.setup_new_target(x, y)
+                        cu.state = "moving_to_seat"
+                        logger.debug(f"【席にアサインする】id: {cu.id}\
                         state: {cu.state}")
-                #         self.state = "moving_to_seat"
-                #         self.seat_queue.append((cu, j))
-                #         break
+                        self.seat_queue.append((cu, j))
+
+                        # wait_chairとwaiting_queueを変更する
+                        # # logの確認
+                        # logger.info(f"wait_chair: {self.parent.customer_manager.wait_chair}")
+                        # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        # self.parent.customer_manager.wait_chair[j] = False
+                        logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+
+                        self.parent.customer_manager.waiting_queue = [x for x in self.parent.customer_manager.waiting_queue if x[0] != cu]
+                        logger.info(f"new waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        # self.parent.customer_manager.waiting_queue.pop
+
+                        # print(cu)
+
+                        # logger.info(f"wait_chair: {self.parent.customer_manager.wait_chair}")
+                        # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+
+                        break
+                # pass
 
         
 
