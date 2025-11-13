@@ -7,7 +7,7 @@ import queue
 from loguru import logger
 
 class CustomerManager:
-    def __init__(self, parent, map_data, map, num_customers=3, log_func=None):
+    def __init__(self, parent, map_data, map, num_customers=25, log_func=None):
         self.parent = parent
         self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
@@ -35,6 +35,12 @@ class CustomerManager:
         self.wait_queue = self.map.wait_queue
         # logger.info(f"待機場所の座標{self.wait_queue}")
 
+        # 入り口のキュー（エントランスと待合室のマックスの人数）
+        self.max_entrance_buffer = len(self.wait_queue) + 1
+
+        # 現在の入り口キューへの客入りの状況
+        self.current_entrance_buffer = 0
+
         # 顧客の入口での管理のためのキュー
         # 1, 待機場所管理リスト
         self.wait_chair = [False for i in range(len(self.wait_queue))]
@@ -47,7 +53,9 @@ class CustomerManager:
         # 新規顧客の生成
         self.spawn_timer = 0.0
         self.spawn_interval = 5 # 5秒ごとに新しい顧客を生成
-        self.max_customers = 8   # 任意：上限を設定したい場合
+        # self.max_customers = 7   # 任意：上限を設定したい場合
+        self.max_customers = 30  # 任意：上限を設定したい場合
+        # logger.info(f"max_customer: {self.max_customers}")
 
         # 初期顧客
         self.setup_initial_customers()
@@ -111,23 +119,27 @@ class CustomerManager:
     # 入り口までアサインする（受付）
     def assign_entrance(self):
         for cu in self.customers:
-            if (cu.state == "outside") and (self.count_num_customers <= self.max_customers):
+            if cu.state == "outside":
+                if self.current_entrance_buffer <= self.max_entrance_buffer:
                 # logger.info(f"self.customersの座標の確認assign_entrance {cu.grid_x, cu.grid_y}")
 
-                x, y = self.map.entrance_pos
-                # logger.info(f"入り口の目標座標の確認（変更前）{x,y} 高さ{len(self.map_data)}")
-                x, y = self.map.to_pyglet_x_y(x, y)
-                # logger.info(f"入り口の目標座標の確認（変更後）{x,y} 高さ{len(self.map_data)}")
-                # y = self.real_grid_y - (y + 1)
-                cu.setup_new_target(x, y)
-                cu.state = "moving_to_entrance"
+                    x, y = self.map.entrance_pos
+                    # logger.info(f"入り口の目標座標の確認（変更前）{x,y} 高さ{len(self.map_data)}")
+                    x, y = self.map.to_pyglet_x_y(x, y)
+                    # logger.info(f"入り口の目標座標の確認（変更後）{x,y} 高さ{len(self.map_data)}")
+                    # y = self.real_grid_y - (y + 1)
+                    cu.setup_new_target(x, y)
+                    cu.state = "moving_to_entrance"
 
 
-                # ログで確認
-                # logger.debug(f"【入り口でアサインする】id: {cu.id} pos: {x, y} state: {cu.state}")
+                    # ログで確認
+                    # logger.debug(f"【入り口でアサインする】id: {cu.id} pos: {x, y} state: {cu.state}")
 
-                # 客の数をカウント
-                self.count_num_customers += 1
+                    # 客の数をカウント
+                    self.count_num_customers += 1
+
+                    self.current_entrance_buffer += 1
+
 
 
     def move_to_entrance(self, dt):
@@ -178,7 +190,6 @@ class CustomerManager:
                         # logger.debug(f"【待機場所割当】id: {cu.id} index: W[{j}] pos: {x, y} \
                         #         state: {cu.state}")
                         
-
                         break
 
                 

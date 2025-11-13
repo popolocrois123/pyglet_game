@@ -66,9 +66,10 @@ class SeatManager():
                         # logger.info(f"wait_chair: {self.parent.customer_manager.wait_chair}")
                         # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
                         # self.parent.customer_manager.wait_chair[j] = False
-                        logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
-                        logger.info(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
-
+                        # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        # logger.info(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
+                        # logger.info(f"waiting_queue: {len()}")
+                        
                         
                         # cuからwaiting_queueのcuに連結された番号を取り出す
                         for cu_value in self.parent.customer_manager.waiting_queue:
@@ -82,8 +83,10 @@ class SeatManager():
                         # waiting_queueからcuを取り出す 
                         self.parent.customer_manager.waiting_queue = [x for x in self.parent.customer_manager.waiting_queue if x[0] != cu]
 
-                        logger.info(f"new waiting_queue: {self.parent.customer_manager.waiting_queue}")
-                        logger.info(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
+                        # logger.info(f"new waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        # logger.info(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
+                        logger.info(f"wait_queue: {self.parent.customer_manager.wait_queue}")
+
 
                         # self.parent.customer_manager.waiting_queue.pop
 
@@ -91,6 +94,8 @@ class SeatManager():
 
                         # logger.info(f"wait_chair: {self.parent.customer_manager.wait_chair}")
                         # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+
+                        self.parent.customer_manager.current_entrance_buffer -= 1
 
                         break
                 # pass
@@ -102,6 +107,7 @@ class SeatManager():
     def move_to_seat(self, dt):
         for cu in self.customers:
             if cu.state == "moving_to_seat":
+                cu.color = (0, 255, 0)
                 cu.update(dt)
 
     def eating(self):
