@@ -1,6 +1,6 @@
 import pyglet
 from loguru import logger
-
+from setting import *
 
 class SeatManager():
     def __init__(self, parent, map):
@@ -27,6 +27,8 @@ class SeatManager():
         # yの計算
         self.real_grid_y = len(self.map.map_data)
 
+        # 席について食べているか、動き始めるかの判定
+        self.start_to_exit = False
 
 
 
@@ -37,11 +39,11 @@ class SeatManager():
         # # 客を席に移動
         self.move_to_seat(dt)
 
-        # # 客がごはんを食べる
-        # self.eating()
+        # 客がごはんを食べる
+        self.eating(dt)
 
-        # # 客が出口まで移動する
-        # self.move_to_exit
+        # 客が出口まで移動する
+        self.move_to_exit(dt)
 
 
     def assign_seat(self):
@@ -107,11 +109,38 @@ class SeatManager():
     def move_to_seat(self, dt):
         for cu in self.customers:
             if cu.state == "moving_to_seat":
-                cu.color = (0, 255, 0)
                 cu.update(dt)
+                if cu.reached:
+                    cu.state = "seated"
+                    cu.reached = False
+                # cu.state = "seated"
+                logger.debug(f"【席につく】id: {cu.id}\
+                        state: {cu.state}")
+    
 
-    def eating(self):
-        pass
+    def eating(self, dt):
+        for cu in self.customers:
+            if cu.state == "seated":
+                cu.stay_timer += dt
+                if cu.stay_timer >= STAY_DURATION:
+                    print("席に到着")
+                    x, y = self.map.exit_pos
+                    y = self.real_grid_y - (y + 1)
+                    cu.setup_new_target(x, y)
 
-    def move_to_exit(self):
-        pass
+                    cu.state = "leaving"
+    #             # 3秒後に enable_move を呼び出す
+    #             pyglet.clock.schedule_once(cu.update, 10.0)
+    #             # if self.start_to_exit == False:
+    #             #     # 3秒後に enable_move を呼び出す
+    #             #     pyglet.clock.schedule_once(cu.update, 10.0)
+    #             #     self.start_to_exit = True
+    #             logger.debug(f"【食事中】id: {cu.id}\
+    #                     state: {cu.state}")
+    #             break
+
+
+    def move_to_exit(self, dt):
+        for cu in self.customers:
+            if cu.state == "leaving":
+                cu.update(dt)

@@ -140,6 +140,9 @@ class CustomerManager:
 
                     self.current_entrance_buffer += 1
 
+                    # [宿題]色を変える: 緑に
+                    cu.sprite.color=(0, 255, 0)
+
 
 
     def move_to_entrance(self, dt):
@@ -189,6 +192,8 @@ class CustomerManager:
                         cu.state = "moving_to_wait"
                         # logger.debug(f"【待機場所割当】id: {cu.id} index: W[{j}] pos: {x, y} \
                         #         state: {cu.state}")
+
+                        
                         
                         break
 
@@ -222,6 +227,8 @@ class CustomerManager:
                     cu.reached = False
                     # logger.debug(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
                     #                 state: {cu.state}")
+                    # 宿題の色の変更:　黄緑
+                    cu.sprite.color = (173, 255, 47)
                 # #     break
 
     # 客が削除される

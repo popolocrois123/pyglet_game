@@ -54,6 +54,9 @@ class SimpleMover:
 
         self.count = 1
 
+        # 退店処理
+        self.stay_timer = 0.0
+
 
     # 目標値が定まった状態でその座標に移動開始する
     def start_move_to(self, new_x, new_y):
@@ -65,8 +68,6 @@ class SimpleMover:
     
     def update(self, dt):
         if self.moving:
-            # 宿題の色の変更:　動いている間は緑に変わる
-            self.sprite.color = (0, 255, 0)
             self.move_timer += dt
             t = min(self.move_timer / self.move_duration, 1.0)
             sx, sy = self.start_pixel
@@ -105,8 +106,6 @@ class SimpleMover:
                 self.start_move_to(new_x, new_y)
                 
             else:
-                # 宿題：止まったときに赤に戻る
-                self.sprite.color=(255, 0, 0)
                 # 既に目的地に到達
                 self.reached = True
                 return

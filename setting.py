@@ -1,5 +1,7 @@
 CELL_SIZE = 32
 MAX_LOGS = 100
+
+STAY_DURATION = 2.5
 # lofファイルの読み込み
 LOG_PATH = "customer_lifecycle.log"
 MAP_DATA = [

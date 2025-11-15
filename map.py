@@ -32,6 +32,9 @@ class Map():
         # 店の入り口
         self.entrance_pos = None
 
+        # 店の出口
+        self.exit_pos = None
+
         # playerのスタート位置
         self.player_start = (0, 1)
 
@@ -39,8 +42,8 @@ class Map():
 
         # # 待機場所がマップ座標とpygletの座標系と原点が違うのでリバースしている
         # logger.info(f"wait_queueの確認（リバース変更前）{self.wait_queue}")
-
         self.wait_queue.reverse()
+        
         # logger.info(f"wait_queueの確認（リバース変更後）{self.wait_queue}")
 
         self.log("マップの初期化完了しました。")
@@ -97,6 +100,11 @@ class Map():
                 elif cell == "E":
                     self.entrance_pos = (x, y)
                     logger.info(f"【入り口の座標の追加】{x, y}")
+
+                # 出口
+                elif cell == "O":
+                    self.exit_pos = (x, y)
+                    logger.info(f"【出口座標の追加】{x, y}")
 
                 
                 # 待機場所
