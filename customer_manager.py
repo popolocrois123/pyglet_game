@@ -7,9 +7,8 @@ import queue
 from loguru import logger
 
 class CustomerManager:
-    def __init__(self, parent, map_data, map, num_customers=25, log_func=None):
+    def __init__(self, parent, map_data, map, num_customers=25):
         self.parent = parent
-        self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
         self.batch = self.parent.batch
 
@@ -33,7 +32,7 @@ class CustomerManager:
 
         # mapのWの場所のリストを取得
         self.wait_queue = self.map.wait_queue
-        # logger.info(f"待機場所の座標{self.wait_queue}")
+        # logger.debug(f"待機場所の座標{self.wait_queue}")
 
         # 入り口のキュー（エントランスと待合室のマックスの人数）
         self.max_entrance_buffer = len(self.wait_queue) + 1
@@ -55,7 +54,7 @@ class CustomerManager:
         self.spawn_interval = 5 # 5秒ごとに新しい顧客を生成
         # self.max_customers = 7   # 任意：上限を設定したい場合
         self.max_customers = 30  # 任意：上限を設定したい場合
-        # logger.info(f"max_customer: {self.max_customers}")
+        # logger.debug(f"max_customer: {self.max_customers}")
 
         # 初期顧客
         self.setup_initial_customers()
@@ -84,6 +83,9 @@ class CustomerManager:
         # 待機場所への移動
         self.moving_to_waiting_area(dt)
 
+        # 客の削除
+        self.delete_customer()
+
 
     # 顧客生成
     def spawn_customer(self):
@@ -106,8 +108,7 @@ class CustomerManager:
         # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
         simple_mover = SimpleMover(grid, grid,
                                     state, self.map,
-                                    batch=self.batch,
-                                    log_func=self.log)
+                                    batch=self.batch)
 
         # # そのインスタンスをリストの中にいれて管理する
         self.customers.append(simple_mover)
@@ -121,12 +122,12 @@ class CustomerManager:
         for cu in self.customers:
             if cu.state == "outside":
                 if self.current_entrance_buffer <= self.max_entrance_buffer:
-                # logger.info(f"self.customersの座標の確認assign_entrance {cu.grid_x, cu.grid_y}")
+                # logger.debug(f"self.customersの座標の確認assign_entrance {cu.grid_x, cu.grid_y}")
 
                     x, y = self.map.entrance_pos
-                    # logger.info(f"入り口の目標座標の確認（変更前）{x,y} 高さ{len(self.map_data)}")
+                    # logger.debug(f"入り口の目標座標の確認（変更前）{x,y} 高さ{len(self.map_data)}")
                     x, y = self.map.to_pyglet_x_y(x, y)
-                    # logger.info(f"入り口の目標座標の確認（変更後）{x,y} 高さ{len(self.map_data)}")
+                    # logger.debug(f"入り口の目標座標の確認（変更後）{x,y} 高さ{len(self.map_data)}")
                     # y = self.real_grid_y - (y + 1)
                     cu.setup_new_target(x, y)
                     cu.state = "moving_to_entrance"
@@ -140,8 +141,8 @@ class CustomerManager:
 
                     self.current_entrance_buffer += 1
 
-                    # [宿題]色を変える: 緑に
-                    cu.sprite.color=(0, 255, 0)
+                    # # [宿題]色を変える: 緑に
+                    # cu.sprite.color=(0, 255, 0)
 
 
 
@@ -154,37 +155,37 @@ class CustomerManager:
                     cu.reached = False
                     # logger.debug(f"【入り口まで移動しました】id: {cu.id} pos: {cu.target_x, cu.target_y} state: {cu.state}")
                     
-                    # logger.info(f"self.customersの座標の確認move_to_entrance {cu.grid_x, cu.grid_y}")
+                    # logger.debug(f"self.customersの座標の確認move_to_entrance {cu.grid_x, cu.grid_y}")
 
 
 
     def assign_wait_area(self):
         for cu in self.customers:
-            # logger.info(f"self.customesから呼び出した客の座標{cu.grid_x, cu.grid_y}")
+            # logger.debug(f"self.customesから呼び出した客の座標{cu.grid_x, cu.grid_y}")
             if cu.state == "arrive":
                 # 最も近い人を待機場所に割り当てる
-                # logger.info(f"{self.wait_chair}")
+                # logger.debug(f"{self.wait_chair}")
                 for j, chaired in enumerate(self.wait_chair):
                     if not chaired:
                         self.wait_chair[j] = True
                         
                         # 紐付けようのリストに入れる
                         self.waiting_queue.append((cu, j))
-                        # logger.info(f"waiting_queueの一つの座標{self.waiting_queue[j][0].grid_x, self.waiting_queue[j][0].grid_y}")
+                        # logger.debug(f"waiting_queueの一つの座標{self.waiting_queue[j][0].grid_x, self.waiting_queue[j][0].grid_y}")
 
                         # self.wait_queue_j = self.wait_queue[j]
                         # target = self.wait_queue[j]
                         x, y = self.wait_queue[j]
                         # x, y = self.map.entrance_pos
-                        # logger.info(f"wait_queueの一つの座標の確認1{x,y} 高さ{len(self.map_data)}")
-                        # logger.info(f"wait_queueの座標{self.wait_queue}")
-                        # logger.info(f"wait_queueの確認（変更前）{self.wait_queue} 高さ{len(self.map_data)}")
+                        # logger.debug(f"wait_queueの一つの座標の確認1{x,y} 高さ{len(self.map_data)}")
+                        # logger.debug(f"wait_queueの座標{self.wait_queue}")
+                        # logger.debug(f"wait_queueの確認（変更前）{self.wait_queue} 高さ{len(self.map_data)}")
 
                         # y = self.real_grid_y - (y + 1)
                         x, y = self.map.to_pyglet_x_y(x, y)
-                        # logger.info(f"待機場所への割り当ての座標{x, y}")
-                        # logger.info(f"wait_queueの確認（変更後）{x, y}")
-                        # logger.info(f"self.customersの座標の確認assign_wait_area {cu.grid_x, cu.grid_y}")
+                        # logger.debug(f"待機場所への割り当ての座標{x, y}")
+                        # logger.debug(f"wait_queueの確認（変更後）{x, y}")
+                        # logger.debug(f"self.customersの座標の確認assign_wait_area {cu.grid_x, cu.grid_y}")
                         
                         # cu.setup_new_target(x, y)
 
@@ -202,13 +203,13 @@ class CustomerManager:
     def moving_to_waiting_area(self, dt):
         for index, cu_waiting_queue in enumerate(self.waiting_queue):
             cu = cu_waiting_queue[0]
-            # logger.info(f"{cu.grid_x, cu.grid_y}")
+            # logger.debug(f"{cu.grid_x, cu.grid_y}")
             if cu.state == "moving_to_wait":
                 # print(f"{len(self.waiting_queue)}")
                 x, y = (self.wait_queue[index])
-                # logger.info(f"変更前のｘｙ{x, y}")
+                # logger.debug(f"変更前のｘｙ{x, y}")
                 x, y = self.map.to_pyglet_x_y(x, y)
-                # logger.info(f"変更後のｘｙ{x, y}")
+                # logger.debug(f"変更後のｘｙ{x, y}")
                 # print(f"元のxy{x, y}")
                 cu.setup_new_target(x, y)
                 # cu.state = "waiting_to_sit_to_seat"
@@ -217,23 +218,33 @@ class CustomerManager:
                 # cu.state = "waiting_to_sit_to_seat"
 
                 # if self.count == 1:
-                #     logger.info(f"{cu.target_x, cu.target_y}")
+                #     logger.debug(f"{cu.target_x, cu.target_y}")
                 #     self.count = 2
 
                 # if cu.grid_x == cu.target_x and cu.grid_y == cu.target_y:
-                # # logger.info(f"{cu.grid_x, cu.grid_y}")
+                # # logger.debug(f"{cu.grid_x, cu.grid_y}")
                 if cu.reached:
                     cu.state = "waiting_to_sit_to_seat"
                     cu.reached = False
                     # logger.debug(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
                     #                 state: {cu.state}")
-                    # 宿題の色の変更:　黄緑
-                    cu.sprite.color = (173, 255, 47)
+                    # # 宿題の色の変更:　黄緑
+                    # cu.sprite.color = (173, 255, 47)
                 # #     break
 
     # 客が削除される
     def delete_customer(self):
-        pass
+        for i, cu in enumerate(self.customers):
+            # logger.info(f"state: {cu.state}")
+            if cu.state == "exited":
+                logger.info(f"state: {cu.state}")
+                # # そのインスタンスをリストの中にいれて管理する
+                
+                # 明示的にスプライトを削除
+                if hasattr(cu, 'sprite') and cu.sprite:
+                    cu.sprite.delete()
+
+                self.customers.pop(i)
 
     def chack_waiting(self):
         # for index, cu_waiting_queue in enumerate(self.waiting_queue):

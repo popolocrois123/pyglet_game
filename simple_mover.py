@@ -6,12 +6,11 @@ class SimpleMover:
 
     _id_counter = 0
 
-    def __init__(self, start_pos, target_pos, state, map, batch, log_func=None):
+    def __init__(self, start_pos, target_pos, state, map, batch):
         # 各顧客に一意のIDを付与
         self.id = SimpleMover._id_counter
         SimpleMover._id_counter += 1
         
-        self.log = log_func if log_func else lambda msg: None  # ログがなければ無効化
 
         self.state = state
         self.map = map
@@ -43,7 +42,6 @@ class SimpleMover:
 
         self.start_pixel = (self.pixel_x, self.pixel_y)
         self.dest_pixel = (self.pixel_x, self.pixel_y)
-        self.log(f"{self.pixel_x}: {self.pixel_y}")
 
         # 元のMAD_DATAの保存
         self.MAP_DATA_COPY = MAP_DATA
@@ -77,7 +75,7 @@ class SimpleMover:
 
             self.sprite.x = self.pixel_x
             self.sprite.y = self.pixel_y
-            self.log(f"{self.pixel_x}: {self.pixel_y}")
+
 
 
             if t >= 1.0:

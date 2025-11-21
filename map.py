@@ -4,13 +4,12 @@ from loguru import logger
 
 
 class Map():
-    def __init__(self, map_data, cell_size, batch, height, log_func=None):
+    def __init__(self, map_data, cell_size, batch, height):
         self.map_data = map_data
         self.cell_size = cell_size
         self.batch = batch
         self.height = height
 
-        self.log = log_func if log_func else lambda msg: None 
 
         self.tiles = []
         # 通れないブロックのリスト
@@ -41,12 +40,12 @@ class Map():
         self.load_map()
 
         # # 待機場所がマップ座標とpygletの座標系と原点が違うのでリバースしている
-        # logger.info(f"wait_queueの確認（リバース変更前）{self.wait_queue}")
+        # logger.debug(f"wait_queueの確認（リバース変更前）{self.wait_queue}")
         self.wait_queue.reverse()
         
-        # logger.info(f"wait_queueの確認（リバース変更後）{self.wait_queue}")
+        # logger.debug(f"wait_queueの確認（リバース変更後）{self.wait_queue}")
 
-        self.log("マップの初期化完了しました。")
+        # self.log("マップの初期化完了しました。")
         # print(self.general_costomer_area)
 
 
@@ -99,12 +98,12 @@ class Map():
                 # 入り口
                 elif cell == "E":
                     self.entrance_pos = (x, y)
-                    logger.info(f"【入り口の座標の追加】{x, y}")
+                    logger.debug(f"【入り口の座標の追加】{x, y}")
 
                 # 出口
                 elif cell == "O":
                     self.exit_pos = (x, y)
-                    logger.info(f"【出口座標の追加】{x, y}")
+                    logger.debug(f"【出口座標の追加】{x, y}")
 
                 
                 # 待機場所
@@ -117,7 +116,7 @@ class Map():
                     # y = len(self.map_data) - (y + 1)
                     self.wait_queue.append((x, y))
 
-                    # logger.info(f"【待機場所の座標の追加】{x, y}")
+                    # logger.debug(f"【待機場所の座標の追加】{x, y}")
                     # print(self.wait_queue.pop())
 
 

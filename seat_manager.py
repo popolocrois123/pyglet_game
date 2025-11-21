@@ -18,7 +18,7 @@ class SeatManager():
         # 2, カスタマーのリストを取得
         self.customers = self.parent.customer_manager.customers
         for cu in self.customers:
-            logger.info(f"{cu.reached}")
+            logger.debug(f"{cu.reached}")
         # 3, 顧客と座席の紐づけ
         self.seat_queue = []
 
@@ -65,12 +65,12 @@ class SeatManager():
 
                         # wait_chairとwaiting_queueを変更する
                         # # logの確認
-                        # logger.info(f"wait_chair: {self.parent.customer_manager.wait_chair}")
-                        # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        # logger.debug(f"wait_chair: {self.parent.customer_manager.wait_chair}")
+                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
                         # self.parent.customer_manager.wait_chair[j] = False
-                        # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
-                        # logger.info(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
-                        # logger.info(f"waiting_queue: {len()}")
+                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
+                        # logger.debug(f"waiting_queue: {len()}")
                         
                         
                         # cuからwaiting_queueのcuに連結された番号を取り出す
@@ -85,17 +85,17 @@ class SeatManager():
                         # waiting_queueからcuを取り出す 
                         self.parent.customer_manager.waiting_queue = [x for x in self.parent.customer_manager.waiting_queue if x[0] != cu]
 
-                        # logger.info(f"new waiting_queue: {self.parent.customer_manager.waiting_queue}")
-                        # logger.info(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
-                        logger.info(f"wait_queue: {self.parent.customer_manager.wait_queue}")
+                        # logger.debug(f"new waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
+                        logger.debug(f"wait_queue: {self.parent.customer_manager.wait_queue}")
 
 
                         # self.parent.customer_manager.waiting_queue.pop
 
                         # print(cu)
 
-                        # logger.info(f"wait_chair: {self.parent.customer_manager.wait_chair}")
-                        # logger.info(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
+                        # logger.debug(f"wait_chair: {self.parent.customer_manager.wait_chair}")
+                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
 
                         self.parent.customer_manager.current_entrance_buffer -= 1
 
@@ -123,10 +123,11 @@ class SeatManager():
             if cu.state == "seated":
                 cu.stay_timer += dt
                 if cu.stay_timer >= STAY_DURATION:
-                    print("席に到着")
                     x, y = self.map.exit_pos
                     y = self.real_grid_y - (y + 1)
                     cu.setup_new_target(x, y)
+                    # [宿題]色を変える: 緑に
+                    cu.sprite.color=(0, 255, 0)
 
                     cu.state = "leaving"
     #             # 3秒後に enable_move を呼び出す
@@ -144,3 +145,5 @@ class SeatManager():
         for cu in self.customers:
             if cu.state == "leaving":
                 cu.update(dt)
+                if cu.reached:
+                    cu.state = "exited"

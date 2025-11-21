@@ -3,11 +3,12 @@ from pyglet.window import key
 # from model import Character, Hero
 from map import Background, Map
 from setting import *
-from logger import Logger
 import time
 from customer import Customer
 from customer_manager import CustomerManager
 from seat_manager import SeatManager
+from loguru import logger
+import sys
 
 
 class Main():
@@ -18,9 +19,20 @@ class Main():
         # self.start_time = time.time()
 
         # ログ関数を作って渡す
-        self.logger = Logger(LOG_PATH, max_logs=MAX_LOGS)
+        # self.logger = Logger(LOG_PATH, max_logs=MAX_LOGS)
         # self.log = self._create_logger()
-    
+        # logger.add(sys.stderr, level="SUCCESS")
+        ## デフォルト（INFO 以上がコンソールへ）を消す
+        logger.remove()
+
+        # INFO のみ通すコンソール出力を追加
+        logger.add(
+            sink=lambda msg: print(msg, end=""),
+            filter=lambda r: r["level"].name in ("DEBUG", "INFO"),
+            colorize=True
+        )
+
+
 
         # 引数として渡されたwidthとheightを取り出す
         self.width = len(MAP_DATA[0]) * CELL_SIZE
@@ -43,10 +55,9 @@ class Main():
         self.characters = []
 
 
-        self.logger.log("マップの読み込み開始")
+        # self.logger.log("マップの読み込み開始")
         # 背景のmapクラスの呼び出し
-        self.map = Map(MAP_DATA, CELL_SIZE, self.batch, self.height, 
-                       log_func=self.logger.log)
+        self.map = Map(MAP_DATA, CELL_SIZE, self.batch, self.height)
 
         # 背景の呼び出し
         # self.background = Background(self.window, self.batch)
@@ -55,14 +66,13 @@ class Main():
         # px, py = self.map.player_start
 
         # CustomerMageクラスの呼び出し
-        self.customer_manager = CustomerManager(self, MAP_DATA, self.map,
-                                log_func=self.logger.log)
+        self.customer_manager = CustomerManager(self, MAP_DATA, self.map)
         
         # SeatManagerクラスの呼び出し
         self.seat_manager = SeatManager(self, self.map)
 
         # mainでデバッグを使う方法
-        self.logger.log("mainの初期化完了しました。")
+        logger.debug("mainの初期化完了しました。")
 
         
         # Heroの操作用
