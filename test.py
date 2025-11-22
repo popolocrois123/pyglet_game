@@ -310,45 +310,55 @@ from loguru import logger
 # logger.critical("CRITICAL レベル（ファイルのみ）")
 
 
-from loguru import logger
+# from loguru import logger
 
-class Main():
-    def __init__(self):
-        logger.remove()
-        # INFO のみ通すコンソール出力を追加
-        logger.add(
-            sink=lambda msg: print(msg, end=""),
-            filter=lambda r: r["level"].name in ("DEBUG", "INFO"),
-            colorize=True
-        )
+# class Main():
+#     def __init__(self):
+#         logger.remove()
+#         # INFO のみ通すコンソール出力を追加
+#         logger.add(
+#             sink=lambda msg: print(msg, end=""),
+#             filter=lambda r: r["level"].name in ("DEBUG", "INFO"),
+#             colorize=True
+#         )
 
-        # mainでデバッグを使う
-        logger.debug("mainの初期化完了しました。")
+#         # mainでデバッグを使う
+#         logger.debug("mainの初期化完了しました。")
 
-        # Sample_1クラスの呼び出し
-        self.sample_1 = Sample_1(self)
+#         # Sample_1クラスの呼び出し
+#         self.sample_1 = Sample_1(self)
         
-        # Sample_2クラスの呼び出し
-        self.sample_2 = Sample_2(self)
+#         # Sample_2クラスの呼び出し
+#         self.sample_2 = Sample_2(self)
 
 
-class Sample_1():
-    def __init__(self, parent):
-        self.parent = parent
-        print("これはプリント文です")
-        self.debug_test()
+# class Sample_1():
+#     def __init__(self, parent):
+#         self.parent = parent
+#         print("これはプリント文です")
+#         self.debug_test()
 
-    def debug_test(self):
-        info_1 = "info"
-        # info文
-        logger.info(f"インフォ: Sample_1クラス: 関数内の出力{info_1}")
+#     def debug_test(self):
+#         info_1 = "info"
+#         # info文
+#         logger.info(f"インフォ: Sample_1クラス: 関数内の出力{info_1}")
 
-class Sample_2():
-    def __init__(self, parent):
-        self.parent = parent
-        debug_1 = "debug"
-        # debug文
-        logger.debug(f"デバッグ: Sample_2クラス: __init__文内の出力{debug_1}")
+# class Sample_2():
+#     def __init__(self, parent):
+#         self.parent = parent
+#         debug_1 = "debug"
+#         # debug文
+#         logger.debug(f"デバッグ: Sample_2クラス: __init__文内の出力{debug_1}")
 
-if __name__ == "__main__":
-    Main()
+# if __name__ == "__main__":
+#     Main()
+
+from loguru import logger
+logger.add("test.log", level="INFO")
+# ログテスト
+logger.debug("DEBUG レベル")
+logger.info("INFO レベル（ファイルに追加）")
+logger.success("SUCCESS")
+logger.warning("WARNING")
+logger.error("ERROR")
+logger.critical("CRITICAL")

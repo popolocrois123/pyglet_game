@@ -28,7 +28,7 @@ class Main():
         # INFO のみ通すコンソール出力を追加
         logger.add(
             sink=lambda msg: print(msg, end=""),
-            filter=lambda r: r["level"].name in ("DEBUG", "INFO"),
+            filter=lambda r: r["level"].name in ("INFO"),
             colorize=True
         )
 

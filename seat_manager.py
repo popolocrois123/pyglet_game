@@ -30,6 +30,8 @@ class SeatManager():
         # 席について食べているか、動き始めるかの判定
         self.start_to_exit = False
 
+        self.count_seated = 0
+
 
 
     def update(self, dt):
@@ -49,8 +51,6 @@ class SeatManager():
     def assign_seat(self):
         for cu in self.customers:
             if cu.state == "waiting_to_sit_to_seat":
-                # waiting_queueの取得
-                # self.waiting_queue = self.parent.customer_manager.waiting_queue
                 # # 最も近い人を待機場所に割り当てる
                 for j, in_use in enumerate(self.seat_in_use):
                     if not in_use:
@@ -62,15 +62,6 @@ class SeatManager():
                         logger.debug(f"【席にアサインする】id: {cu.id}\
                         state: {cu.state}")
                         self.seat_queue.append((cu, j))
-
-                        # wait_chairとwaiting_queueを変更する
-                        # # logの確認
-                        # logger.debug(f"wait_chair: {self.parent.customer_manager.wait_chair}")
-                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
-                        # self.parent.customer_manager.wait_chair[j] = False
-                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
-                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
-                        # logger.debug(f"waiting_queue: {len()}")
                         
                         
                         # cuからwaiting_queueのcuに連結された番号を取り出す
@@ -80,24 +71,16 @@ class SeatManager():
 
                         # 番号に該当するwait_chairをFalseにすることで席を空席にする
                         self.parent.customer_manager.wait_chair[cu_number] = False
-                        # wait_chair_num = self.parent.customer_manager.waiting_queue
-                        
+
                         # waiting_queueからcuを取り出す 
                         self.parent.customer_manager.waiting_queue = [x for x in self.parent.customer_manager.waiting_queue if x[0] != cu]
 
-                        # logger.debug(f"new waiting_queue: {self.parent.customer_manager.waiting_queue}")
-                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.wait_chair}")
                         logger.debug(f"wait_queue: {self.parent.customer_manager.wait_queue}")
 
-
-                        # self.parent.customer_manager.waiting_queue.pop
-
-                        # print(cu)
-
-                        # logger.debug(f"wait_chair: {self.parent.customer_manager.wait_chair}")
-                        # logger.debug(f"waiting_queue: {self.parent.customer_manager.waiting_queue}")
-
                         self.parent.customer_manager.current_entrance_buffer -= 1
+
+                        # 詰める処理[宿題]
+                        self.parent.customer_manager.shift_waiting_customers_forward()
 
                         break
                 # pass
@@ -107,6 +90,7 @@ class SeatManager():
 
 
     def move_to_seat(self, dt):
+        self.count_seated = 0
         for cu in self.customers:
             if cu.state == "moving_to_seat":
                 cu.update(dt)
@@ -114,8 +98,7 @@ class SeatManager():
                     cu.state = "seated"
                     cu.reached = False
                 # cu.state = "seated"
-                logger.debug(f"【席につく】id: {cu.id}\
-                        state: {cu.state}")
+                
     
 
     def eating(self, dt):
@@ -130,15 +113,14 @@ class SeatManager():
                     cu.sprite.color=(0, 255, 0)
 
                     cu.state = "leaving"
-    #             # 3秒後に enable_move を呼び出す
-    #             pyglet.clock.schedule_once(cu.update, 10.0)
-    #             # if self.start_to_exit == False:
-    #             #     # 3秒後に enable_move を呼び出す
-    #             #     pyglet.clock.schedule_once(cu.update, 10.0)
-    #             #     self.start_to_exit = True
-    #             logger.debug(f"【食事中】id: {cu.id}\
-    #                     state: {cu.state}")
-    #             break
+
+                    # 座席の解放
+                    for idx, (cust_obj, seat_i) in enumerate(self.seat_queue):
+                        if cust_obj == cu:
+                            self.seat_in_use[seat_i] = False
+                            self.seat_queue.pop(idx)
+                            logger.info(f"【座席解放】id: {cu.id} seat: [{seat_i}]")  
+
 
 
     def move_to_exit(self, dt):
@@ -147,3 +129,7 @@ class SeatManager():
                 cu.update(dt)
                 if cu.reached:
                     cu.state = "exited"
+
+
+
+    
