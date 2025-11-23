@@ -79,8 +79,18 @@ class SeatManager():
 
                         self.parent.customer_manager.current_entrance_buffer -= 1
 
+                        # 最初の席を埋まっていない
+                        # self.parent.customer_manager.wait_pos_in_use[0] = False
+
+                        # 待機場所管理リストの変更
+                        # self.parent.customer_manager.wait_chair[0] = False
+
                         # 詰める処理[宿題]
                         self.parent.customer_manager.shift_waiting_customers_forward()
+                        
+                        # 案内されたら色を変える　青に
+                        cu.sprite.color=(150, 125, 255)
+ 
 
                         break
                 # pass

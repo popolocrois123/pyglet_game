@@ -184,10 +184,15 @@ class CustomerManager:
                 cu.update(dt)
 
                 if cu.reached:
-                    cu.state = "waiting_to_sit_to_seat"
+                    if index == 0:
+                        cu.state = "waiting_to_sit_to_seat"
+                        
+                        # logger.info(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
+                        #                 state: {cu.state}")
+                    # else:
+                    #     cu.state = "waiting_for_top"
                     cu.reached = False
-                    logger.info(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
-                                    state: {cu.state}")
+                
 
 
     # 客が削除される
@@ -221,5 +226,7 @@ class CustomerManager:
                         # wait_chairのidの座席をFalseにしてiをTrueにする
                         self.wait_chair[id] = False
                         self.wait_chair[i] = True
+                        # x, y = (self.waiting_queue[id])
+                        # customer.setup_new_target(x, y)
                         customer.state = "moving_to_wait"
-
+                        break

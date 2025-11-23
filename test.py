@@ -353,12 +353,12 @@ from loguru import logger
 # if __name__ == "__main__":
 #     Main()
 
-from loguru import logger
-logger.add("test.log", level="INFO")
-# ログテスト
-logger.debug("DEBUG レベル")
-logger.info("INFO レベル（ファイルに追加）")
-logger.success("SUCCESS")
-logger.warning("WARNING")
-logger.error("ERROR")
-logger.critical("CRITICAL")
+# from loguru import logger
+# logger.add("test.log", level="INFO")
+# # ログテスト
+# logger.debug("DEBUG レベル")
+# logger.info("INFO レベル（ファイルに追加）")
+# logger.success("SUCCESS")
+# logger.warning("WARNING")
+# logger.error("ERROR")
+# logger.critical("CRITICAL")

@@ -18,6 +18,6 @@ MAP_DATA = [
     'B.STS.STS........WB',
     'B................WB',
     'B.STS.STS........WB',
-    'B.................B',
+    'B................WB',
     'BBBBBBBBBBBBBBBBBBB'
 ]
