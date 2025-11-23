@@ -7,7 +7,7 @@ import queue
 from loguru import logger
 
 class CustomerManager:
-    def __init__(self, parent, map_data, map, num_customers=25):
+    def __init__(self, parent, map_data, map, num_customers=10):
         self.parent = parent
 
         self.batch = self.parent.batch
@@ -54,9 +54,9 @@ class CustomerManager:
         self.wait_pos_in_use = [False] * len(self.wait_chair)
         # 新規顧客の生成
         self.spawn_timer = 0.0
-        self.spawn_interval = 5 # 5秒ごとに新しい顧客を生成
+        self.spawn_interval = 20 # 5秒ごとに新しい顧客を生成
         # self.max_customers = 7   # 任意：上限を設定したい場合
-        self.max_customers = 30  # 任意：上限を設定したい場合
+        self.max_customers = 20  # 任意：上限を設定したい場合
         # logger.debug(f"max_customer: {self.max_customers}")
 
         # 初期顧客
@@ -71,7 +71,10 @@ class CustomerManager:
     def setup_initial_customers(self):
         # ⭐ 初期顧客を spawn_customer() 経由で生成
         for _ in range(self.num_customers_to_initialize):
-            self.spawn_customer()
+            # もし客（self.count_num_customers）がself.max_customersより小さかったら
+            if self.count_num_customers < self.max_customers:
+                self.spawn_customer()
+                self.count_num_customers += 1
 
     def update(self, dt):
         # 入口まで割り当て
@@ -87,34 +90,45 @@ class CustomerManager:
         self.moving_to_waiting_area(dt)
 
         # 客の削除
-        self.delete_customer()
+        self.delete_customer(dt)
+
+        # 宿題
+        # ループさせる
+        # # self.setup_initial_customers()
+        self.spawn_customer()
 
 
     # 顧客生成
     def spawn_customer(self):
-        # general_area: 生成エリア　から取り出す
-        random_G = random.choice(self.general_area) if self.general_area else None
-        # マップのグリッドサイズの取得
-        row_grid = len(self.map_data)
-        # タプルからxとyを取り出す
-        # xはそのままで
-        
-        x, y = random_G
-        x, y = self.map.to_pyglet_x_y(x, y)
+        if self.count_num_customers < self.max_customers:
 
-        grid = (x, y)
+            # general_area: 生成エリア　から取り出す
+            random_G = random.choice(self.general_area) if self.general_area else None
+            # マップのグリッドサイズの取得
+            row_grid = len(self.map_data)
+            # タプルからxとyを取り出す
+            # xはそのままで
+            
+            x, y = random_G
+            x, y = self.map.to_pyglet_x_y(x, y)
 
-        # 状態を決める
-        # 顧客生成(店外)
-        state = "outside"
+            grid = (x, y)
 
-        # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
-        simple_mover = SimpleMover(grid, grid,
-                                    state, self.map,
-                                    batch=self.batch)
+            # 状態を決める
+            # 顧客生成(店外)
+            state = "outside"
 
-        # # そのインスタンスをリストの中にいれて管理する
-        self.customers.append(simple_mover)
+            # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
+            simple_mover = SimpleMover(grid, grid,
+                                        state, self.map,
+                                        batch=self.batch)
+
+            # # そのインスタンスをリストの中にいれて管理する
+            self.customers.append(simple_mover)
+
+            # 宿題
+            self.count_num_customers += 1
+
 
 
     # 入り口までアサインする（受付）
@@ -135,7 +149,7 @@ class CustomerManager:
                     # logger.debug(f"【入り口でアサインする】id: {cu.id} pos: {x, y} state: {cu.state}")
 
                     # 客の数をカウント
-                    self.count_num_customers += 1
+                    # self.count_num_customers += 1
 
                     self.current_entrance_buffer += 1
 
@@ -151,6 +165,10 @@ class CustomerManager:
                 if cu.reached:
                     cu.state = "arrive"
                     cu.reached = False
+
+                    # 宿題
+                    # # 客の数を減らす
+                    self.count_num_customers -= 1
 
 
     def assign_wait_area(self):
@@ -196,7 +214,7 @@ class CustomerManager:
 
 
     # 客が削除される
-    def delete_customer(self):
+    def delete_customer(self, dt):
         for i, cu in enumerate(self.customers):
             # logger.info(f"state: {cu.state}")
             if cu.state == "exited":
@@ -209,10 +227,19 @@ class CustomerManager:
 
                 self.customers.pop(i)
 
+                # # 宿題
+                # # # 客の数を減らす
+                # self.count_num_customers -= 1
+                # # # self.setup_initial_customers()
+                # # self.update(dt)
+                # if self.count_num_customers < self.max_customers:
+                #     self.spawn_customer()
+                #     self.count_num_customers += 1
+
+
     def chack_waiting(self):
         pass
 
-    # [宿題]
     # 詰める処理
     def shift_waiting_customers_forward(self):
         for i in range(len(self.wait_chair)):
