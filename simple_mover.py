@@ -29,12 +29,30 @@ class SimpleMover:
         self.sprite_x = self.grid_x * CELL_SIZE
         self.sprite_y = self.grid_y * CELL_SIZE
 
-        self.sprite = pyglet.shapes.Rectangle(
+        # self.sprite = pyglet.shapes.Rectangle(
+        #     x=self.pixel_x, y=self.pixel_y,
+        #     width=CELL_SIZE, height=CELL_SIZE,
+        #     color=(255, 0, 0),
+        #     batch=batch
+        # )
+
+        # [宿題]　ヒーロー画像をスプライトにいれる
+        self.sprite_sheet = pyglet.image.load('Hero.png')  # 12マスのPNG画像
+        # アニメーション設定
+        self.set_animation()
+        # キャラクターの初期設定
+        self.current_animation = 'left'  # 現在のアニメーション
+        self.current_frame = 0  # 現在のフレーム
+        # self.sprite = pyglet.sprite.Sprite(
+        #     img=self.animations[self.current_animation][self.current_frame],
+        #     x=CELL_SIZE, 
+        #     y=CELL_SIZE)
+        self.sprite = pyglet.sprite.Sprite(
+            img=self.animations["left"][1],
             x=self.pixel_x, y=self.pixel_y,
-            width=CELL_SIZE, height=CELL_SIZE,
-            color=(255, 0, 0),
             batch=batch
-        )
+            )
+
 
         self.moving = False
         self.move_duration = 0.2  # 1マス移動にかかる時間（秒）
@@ -122,6 +140,26 @@ class SimpleMover:
         self.target_x = x
         self.target_y = y
 
+    # [宿題]　アニメーションのセット
+    def set_animation(self):
+        # スプライトシートを分割（3行4列）
+        frames = []
+        frame_width = self.sprite_sheet.width // 3  # 1フレームの幅
+        frame_height = self.sprite_sheet.height // 4  # 1フレームの高さ
+        for row in range(4):
+            for col in range(3):
+                x = col * frame_width
+                y = row * frame_height
+                frame = self.sprite_sheet.get_region(x, y, frame_width, frame_height)
+                frames.append(frame)
+
+        # アニメーション用のフレームを設定
+        self.animations = {
+            'down': frames[9:12],  # 下向きのアニメーション（1行目）
+            'left': frames[6:9],  # 左向きのアニメーション（2行目）
+            'right': frames[3:6],  # 右向きのアニメーション（3行目）
+            'up': frames[0:3]  # 上向きのアニメーション（仮設定）
+        }
     
 
 
