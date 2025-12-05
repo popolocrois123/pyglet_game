@@ -28,7 +28,8 @@ class CustomerManager:
         self.num_customers_to_initialize = num_customers
 
         # 現在の客の数の管理
-        self.count_num_customers = 0
+        # 変更
+        # self.count_num_customers = 0
 
         # mapのWの場所のリストを取得
         self.wait_queue = self.map.wait_queue
@@ -54,10 +55,25 @@ class CustomerManager:
         self.wait_pos_in_use = [False] * len(self.wait_chair)
         # 新規顧客の生成
         self.spawn_timer = 0.0
-        self.spawn_interval = 20 # 5秒ごとに新しい顧客を生成
+        self.spawn_interval = 2 # 5秒ごとに新しい顧客を生成
         # self.max_customers = 7   # 任意：上限を設定したい場合
+
+        # 変更
         self.max_customers = 20  # 任意：上限を設定したい場合
         # logger.debug(f"max_customer: {self.max_customers}")
+        
+        # 宿題
+        # 顧客の数の管理
+        # 店の外の客の数
+        # self.outside_customer_num = 0
+        # # 店の外の客の最大値
+        # self.outside_customer_max = 5
+
+
+        # 店の中の客の数
+        self.inside_customer_num = 0
+        # 店の中の客の最大値
+        self.inside_customer_max = 12
 
         # 初期顧客
         self.setup_initial_customers()
@@ -72,9 +88,16 @@ class CustomerManager:
         # ⭐ 初期顧客を spawn_customer() 経由で生成
         for _ in range(self.num_customers_to_initialize):
             # もし客（self.count_num_customers）がself.max_customersより小さかったら
-            if self.count_num_customers < self.max_customers:
-                self.spawn_customer()
-                self.count_num_customers += 1
+            # 変更
+            # if self.count_num_customers < self.max_customers:
+            # if self.outside_customer_num < self.outside_customer_max:
+            self.spawn_customer()
+                # self.count_num_customers += 1
+                # logger.info(f"お客の数（初期）{self.count_num_customers}")
+                # self.outside_customer_num += 1
+                
+                
+
 
     def update(self, dt):
         # 入口まで割り当て
@@ -95,39 +118,45 @@ class CustomerManager:
         # 宿題
         # ループさせる
         # # self.setup_initial_customers()
-        self.spawn_customer()
+        if len(self.customers) < self.max_customers:
+            self.spawn_customer()
 
 
     # 顧客生成
     def spawn_customer(self):
-        if self.count_num_customers < self.max_customers:
 
-            # general_area: 生成エリア　から取り出す
-            random_G = random.choice(self.general_area) if self.general_area else None
-            # マップのグリッドサイズの取得
-            row_grid = len(self.map_data)
-            # タプルからxとyを取り出す
-            # xはそのままで
-            
-            x, y = random_G
-            x, y = self.map.to_pyglet_x_y(x, y)
+        # general_area: 生成エリア　から取り出す
+        random_G = random.choice(self.general_area) if self.general_area else None
+        # マップのグリッドサイズの取得
+        row_grid = len(self.map_data)
+        # タプルからxとyを取り出す
+        # xはそのままで
+        
+        x, y = random_G
+        x, y = self.map.to_pyglet_x_y(x, y)
 
-            grid = (x, y)
+        grid = (x, y)
 
-            # 状態を決める
-            # 顧客生成(店外)
-            state = "outside"
+        # 状態を決める
+        # 顧客生成(店外)
+        state = "outside"
 
-            # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
-            simple_mover = SimpleMover(grid, grid,
-                                        state, self.map,
-                                        batch=self.batch)
+        # 生成する直後は動かないのでスタート位置とゴール位置を同じにする
+        simple_mover = SimpleMover(grid, grid,
+                                    state, self.map,
+                                    batch=self.batch)
 
-            # # そのインスタンスをリストの中にいれて管理する
-            self.customers.append(simple_mover)
+        # # そのインスタンスをリストの中にいれて管理する
+        self.customers.append(simple_mover)
 
-            # 宿題
-            self.count_num_customers += 1
+        # # 宿題
+        # self.count_num_customers += 1
+        # logger.info(f"お客の数{self.count_num_customers}")
+        # 宿題
+        # self.outside_customer_num += 1
+        # logger.info(f"外の客の数(増える場合){self.outside_customer_num}")
+
+
 
 
 
@@ -136,26 +165,19 @@ class CustomerManager:
         for cu in self.customers:
             if cu.state == "outside":
                 if self.current_entrance_buffer <= self.max_entrance_buffer:
-                    x, y = self.map.entrance_pos
-                    # logger.debug(f"入り口の目標座標の確認（変更前）{x,y} 高さ{len(self.map_data)}")
-                    x, y = self.map.to_pyglet_x_y(x, y)
-                    # logger.debug(f"入り口の目標座標の確認（変更後）{x,y} 高さ{len(self.map_data)}")
-                    # y = self.real_grid_y - (y + 1)
-                    cu.setup_new_target(x, y)
-                    cu.state = "moving_to_entrance"
 
+                    # 変更
+                    if self.inside_customer_num < self.inside_customer_max:
+                        x, y = self.map.entrance_pos
+                        x, y = self.map.to_pyglet_x_y(x, y)
+                        # y = self.real_grid_y - (y + 1)
+                        cu.setup_new_target(x, y)
+                        cu.state = "moving_to_entrance"
 
-                    # ログで確認
-                    # logger.debug(f"【入り口でアサインする】id: {cu.id} pos: {x, y} state: {cu.state}")
-
-                    # 客の数をカウント
-                    # self.count_num_customers += 1
-
-                    self.current_entrance_buffer += 1
-
-                    # # [宿題]色を変える: 緑に
-                    # cu.sprite.color=(0, 255, 0)
-
+                        self.current_entrance_buffer += 1
+                        # 宿題
+                        self.inside_customer_num += 1
+                        # logger.info(f"中の客の数(増える場合){self.inside_customer_num}")
 
 
     def move_to_entrance(self, dt):
@@ -166,9 +188,7 @@ class CustomerManager:
                     cu.state = "arrive"
                     cu.reached = False
 
-                    # 宿題
-                    # # 客の数を減らす
-                    self.count_num_customers -= 1
+
 
 
     def assign_wait_area(self):
@@ -186,7 +206,9 @@ class CustomerManager:
                         x, y = self.wait_queue[j]
                         x, y = self.map.to_pyglet_x_y(x, y)
 
-                        cu.state = "moving_to_wait"                      
+                        cu.state = "moving_to_wait"   
+                        # self.outside_customer_num -= 1        
+
                         break
 
                 
@@ -204,9 +226,13 @@ class CustomerManager:
                 if cu.reached:
                     if index == 0:
                         cu.state = "waiting_to_sit_to_seat"
+                        # cu.reached = False
+
                         
                         # logger.info(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
                         #                 state: {cu.state}")
+                    else:
+                        cu.state = "waiting_for_top"
                     # else:
                     #     cu.state = "waiting_for_top"
                     cu.reached = False
@@ -218,7 +244,7 @@ class CustomerManager:
         for i, cu in enumerate(self.customers):
             # logger.info(f"state: {cu.state}")
             if cu.state == "exited":
-                logger.info(f"state: {cu.state}")
+                # logger.info(f"state: {cu.state}")
                 # # そのインスタンスをリストの中にいれて管理する
                 
                 # 明示的にスプライトを削除
@@ -228,13 +254,16 @@ class CustomerManager:
                 self.customers.pop(i)
 
                 # # 宿題
-                # # # 客の数を減らす
+                # # # # 客の数を減らす
                 # self.count_num_customers -= 1
                 # # # self.setup_initial_customers()
                 # # self.update(dt)
                 # if self.count_num_customers < self.max_customers:
                 #     self.spawn_customer()
                 #     self.count_num_customers += 1
+                # self.outside_customer_num -= 1
+                # logger.info(f"外の客の数(客を削除したとき){self.outside_customer_num}")
+                
 
 
     def chack_waiting(self):
@@ -245,15 +274,17 @@ class CustomerManager:
         for i in range(len(self.wait_chair)):
             if not self.wait_chair[i]:
                 # 後の顧客を詰める
-                for id, (customer, current_i) in enumerate(self.waiting_queue):
+                for idx, (customer, current_i) in enumerate(self.waiting_queue):
                     # もし、紐付けられた座席が昇順の座席よりも大きい値ならば、一致させる
-                    if id > i:
-                        # idにいる客をiに移動
-                        self.waiting_queue[id] = (customer, i)
-                        # wait_chairのidの座席をFalseにしてiをTrueにする
-                        self.wait_chair[id] = False
+                    if current_i > i:
+                        # idxにいる客をiに移動
+                        self.waiting_queue[idx] = (customer, i)
+                        # wait_chairのidxの座席をFalseにしてiをTrueにする
+                        self.wait_chair[current_i] = False
                         self.wait_chair[i] = True
-                        # x, y = (self.waiting_queue[id])
-                        # customer.setup_new_target(x, y)
+                        x, y = (self.wait_queue[i])
+                        # logger.info(f"詰める処理のx,y {x, y}, 客のid {customer.id}")
+                        customer.setup_new_target(17, 5)
                         customer.state = "moving_to_wait"
+                        # logger.info(f"詰める処理 {x, y}")
                         break

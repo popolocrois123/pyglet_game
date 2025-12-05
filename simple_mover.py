@@ -39,16 +39,16 @@ class SimpleMover:
         # [宿題]　ヒーロー画像をスプライトにいれる
         self.sprite_sheet = pyglet.image.load('Hero.png')  # 12マスのPNG画像
         # アニメーション設定
-        self.set_animation()
+        self.get_frame_sprites()
         # キャラクターの初期設定
-        self.current_animation = 'left'  # 現在のアニメーション
+        self.current_animation = 'right'  # 現在のアニメーション
         self.current_frame = 0  # 現在のフレーム
         # self.sprite = pyglet.sprite.Sprite(
         #     img=self.animations[self.current_animation][self.current_frame],
         #     x=CELL_SIZE, 
         #     y=CELL_SIZE)
         self.sprite = pyglet.sprite.Sprite(
-            img=self.animations["left"][1],
+            img=self.animation_frames[self.current_animation],
             x=self.pixel_x, y=self.pixel_y,
             batch=batch
             )
@@ -83,11 +83,69 @@ class SimpleMover:
         self.moving = True
     
     def update(self, dt):
+        self.move_target(dt)
+        
+
+
+    # MAP_DATAでキャラが動いた場所をCにする
+    def change_map_to_chara(self):
+        pass
+    
+
+    def return_map_to_origin_y(self, origin):
+        pass
+    
+    # customer_managerから座標を受け取ってセットする
+    def setup_new_target(self, x, y):
+        self.target_x = x
+        self.target_y = y
+
+    # アニメーションのセット
+    def get_frame_sprites(self):
+        # スプライトシートを分割（3行4列）
+        frames = []
+        directions = []
+        frame_width = self.sprite_sheet.width // 3  # 1フレームの幅
+        frame_height = self.sprite_sheet.height // 4  # 1フレームの高さ
+        for row in range(4):
+            for col in range(3):
+                x = col * frame_width
+                y = row * frame_height
+                frame = self.sprite_sheet.get_region(x, y, frame_width, frame_height)
+                frames.append(frame)
+
+        # # アニメーション用のフレームを設定
+        # self.animation_frames = {
+        #     'down': frames[9:12],  # 下向きのアニメーション（1行目）
+        #     'left': frames[6:9],  # 左向きのアニメーション（2行目）
+        #     'right': frames[3:6],  # 右向きのアニメーション（3行目）
+        #     'up': frames[0:3]  # 上向きのアニメーション（仮設定）
+        # }
+
+        # 宿題
+        # アニメーション用のフレームを設定
+        self.animation_frames = {
+            'down': pyglet.image.Animation.from_image_sequence(frames[9:12], 0.1, loop=True),  # 下向きのアニメーション（1行目）
+            'left': pyglet.image.Animation.from_image_sequence(frames[6:9], 0.1, loop=True),  # 左向きのアニメーション（2行目）
+            'right': pyglet.image.Animation.from_image_sequence(frames[3:6], 0.1, loop=True),  # 右向きのアニメーション（3行目）
+            'up': pyglet.image.Animation.from_image_sequence(frames[0:3], 0.1, loop=True)  # 上向きのアニメーション（仮設定）
+        }
+
+
+
+    # [宿題] updateの内容を短くする為の関数
+    def move_target(self, dt):
         if self.moving:
             self.move_timer += dt
             t = min(self.move_timer / self.move_duration, 1.0)
             sx, sy = self.start_pixel
             dx, dy = self.dest_pixel
+
+
+            # [宿題]X軸の向きを変える
+            # self.character_direction(dx, dy)
+
+
             self.pixel_x = sx + (dx - sx) * t
             self.pixel_y = sy + (dy - sy) * t
 
@@ -111,6 +169,7 @@ class SimpleMover:
                     step_x = 1 if dx > 0 else -1
                     new_x = self.grid_x + step_x
                     new_y = self.grid_y
+                    
 
 
                 elif dy != 0:
@@ -121,45 +180,26 @@ class SimpleMover:
 
                 self.start_move_to(new_x, new_y)
                 
+                
             else:
                 # 既に目的地に到達
                 self.reached = True
                 return
+            
 
 
-    # MAP_DATAでキャラが動いた場所をCにする
-    def change_map_to_chara(self):
-        pass
-    
+    # [宿題]向きの変更をする関数
+    def character_direction(self, dx, dy):
+        if dx < 0:
+            self.sprite.image = self.animation_frames["left"]
+        elif dx > 0:
+            self.sprite.image = self.animation_frames["right"]
+        elif dy < 0:
+            self.sprite.image = self.animation_frames["down"]
+        elif dy > 0:
+            self.sprite.image = self.animation_frames["up"]
+        
 
-    def return_map_to_origin_y(self, origin):
-        pass
-    
-    # customer_managerから座標を受け取ってセットする
-    def setup_new_target(self, x, y):
-        self.target_x = x
-        self.target_y = y
-
-    # [宿題]　アニメーションのセット
-    def set_animation(self):
-        # スプライトシートを分割（3行4列）
-        frames = []
-        frame_width = self.sprite_sheet.width // 3  # 1フレームの幅
-        frame_height = self.sprite_sheet.height // 4  # 1フレームの高さ
-        for row in range(4):
-            for col in range(3):
-                x = col * frame_width
-                y = row * frame_height
-                frame = self.sprite_sheet.get_region(x, y, frame_width, frame_height)
-                frames.append(frame)
-
-        # アニメーション用のフレームを設定
-        self.animations = {
-            'down': frames[9:12],  # 下向きのアニメーション（1行目）
-            'left': frames[6:9],  # 左向きのアニメーション（2行目）
-            'right': frames[3:6],  # 右向きのアニメーション（3行目）
-            'up': frames[0:3]  # 上向きのアニメーション（仮設定）
-        }
     
 
 

@@ -58,7 +58,7 @@ class SeatManager():
                         x, y = self.seat_positions[j]
                         y = self.real_grid_y - (y + 1)
                         cu.setup_new_target(x, y)
-                        cu.state = "moving_to_seat"
+                        # cu.state = "moving_to_seat"
                         logger.debug(f"【席にアサインする】id: {cu.id}\
                         state: {cu.state}")
                         self.seat_queue.append((cu, j))
@@ -89,7 +89,9 @@ class SeatManager():
                         self.parent.customer_manager.shift_waiting_customers_forward()
                         
                         # 案内されたら色を変える　青に
-                        cu.sprite.color=(150, 125, 255)
+                        # cu.sprite.color=(150, 125, 255)
+                        # self.parent.customer_manager.inside_customer_num -= 1
+                        cu.state = "moving_to_seat"
  
 
                         break
@@ -120,16 +122,20 @@ class SeatManager():
                     y = self.real_grid_y - (y + 1)
                     cu.setup_new_target(x, y)
                     # [宿題]色を変える: 緑に
-                    cu.sprite.color=(0, 255, 0)
+                    # cu.sprite.color=(0, 255, 0)
 
                     cu.state = "leaving"
+
+                    # 変更
+                    self.parent.customer_manager.inside_customer_num -= 1
 
                     # 座席の解放
                     for idx, (cust_obj, seat_i) in enumerate(self.seat_queue):
                         if cust_obj == cu:
                             self.seat_in_use[seat_i] = False
                             self.seat_queue.pop(idx)
-                            logger.info(f"【座席解放】id: {cu.id} seat: [{seat_i}]")  
+                            # logger.info(f"【座席解放】id: {cu.id} seat: [{seat_i}]") 
+ 
 
 
 
@@ -139,6 +145,9 @@ class SeatManager():
                 cu.update(dt)
                 if cu.reached:
                     cu.state = "exited"
+                    
+
+
 
 
 
