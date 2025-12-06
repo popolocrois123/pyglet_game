@@ -228,9 +228,9 @@ class CustomerManager:
                         cu.state = "waiting_to_sit_to_seat"
                         # cu.reached = False
 
-                        
-                        # logger.info(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
-                        #                 state: {cu.state}")
+                        # [宿題]
+                        logger.info(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
+                                        state: {cu.state}")
                     else:
                         cu.state = "waiting_for_top"
                     # else:
@@ -286,5 +286,7 @@ class CustomerManager:
                         # logger.info(f"詰める処理のx,y {x, y}, 客のid {customer.id}")
                         customer.setup_new_target(17, 5)
                         customer.state = "moving_to_wait"
+                        # customer.state = "waiting_to_sit_to_seat"
+
                         # logger.info(f"詰める処理 {x, y}")
                         break

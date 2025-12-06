@@ -158,7 +158,7 @@
 
 
 
-from loguru import logger
+# from loguru import logger
 
 # # デフォルトのコンソール出力を削除
 # logger.remove()  
@@ -362,3 +362,5 @@ from loguru import logger
 # logger.warning("WARNING")
 # logger.error("ERROR")
 # logger.critical("CRITICAL")
+
+print("Hello World!")
