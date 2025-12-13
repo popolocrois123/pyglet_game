@@ -13,7 +13,6 @@ import sys
 
 class Main():
     def __init__(self):
-        
         # 客の動きを記録
         # self.log_file = open(LOG_PATH, "w", encoding="utf-8")
         # self.start_time = time.time()
@@ -28,7 +27,7 @@ class Main():
         # INFO のみ通すコンソール出力を追加
         logger.add(
             sink=lambda msg: print(msg, end=""),
-            filter=lambda r: r["level"].name in ("INFO"),
+            filter=lambda r: r["level"].name in ("DEBUG"),
             colorize=True
         )
 

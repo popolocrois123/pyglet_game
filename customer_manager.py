@@ -73,7 +73,7 @@ class CustomerManager:
         # 店の中の客の数
         self.inside_customer_num = 0
         # 店の中の客の最大値
-        self.inside_customer_max = 12
+        self.inside_customer_max = 1
 
         # 初期顧客
         self.setup_initial_customers()
@@ -145,6 +145,8 @@ class CustomerManager:
         simple_mover = SimpleMover(grid, grid,
                                     state, self.map,
                                     batch=self.batch)
+        logger.info(f"キャラID：{simple_mover.id}が生成されました。 state: {state}")
+        
 
         # # そのインスタンスをリストの中にいれて管理する
         self.customers.append(simple_mover)
@@ -173,6 +175,8 @@ class CustomerManager:
                         # y = self.real_grid_y - (y + 1)
                         cu.setup_new_target(x, y)
                         cu.state = "moving_to_entrance"
+                        logger.info(f"[入り口にアサイン]キャラID：{cu.id} state: {cu.state}")
+
 
                         self.current_entrance_buffer += 1
                         # 宿題
@@ -186,6 +190,7 @@ class CustomerManager:
                 cu.update(dt)
                 if cu.reached:
                     cu.state = "arrive"
+                    logger.info(f"[入り口に移動]キャラID：{cu.id} state: {cu.state}")
                     cu.reached = False
 
 
@@ -206,7 +211,9 @@ class CustomerManager:
                         x, y = self.wait_queue[j]
                         x, y = self.map.to_pyglet_x_y(x, y)
 
-                        cu.state = "moving_to_wait"   
+                        cu.state = "moving_to_wait" 
+                        logger.info(f"[待機場所にアサイン]キャラID：{cu.id} state: {cu.state}")
+
                         # self.outside_customer_num -= 1        
 
                         break
@@ -226,10 +233,12 @@ class CustomerManager:
                 if cu.reached:
                     if index == 0:
                         cu.state = "waiting_to_sit_to_seat"
+                        # logger.info(f"[席に移動]キャラID：{cu.id} state: {cu.state}")
+
                         # cu.reached = False
 
                         # [宿題]
-                        logger.info(f"【待機場所に到着】id: {cu.id} pos: {cu.grid_x, cu.grid_y} \
+                        logger.info(f"【待機場所に到着】キャラID: {cu.id} pos: {cu.grid_x, cu.grid_y} \
                                         state: {cu.state}")
                     else:
                         cu.state = "waiting_for_top"
@@ -246,6 +255,8 @@ class CustomerManager:
             if cu.state == "exited":
                 # logger.info(f"state: {cu.state}")
                 # # そのインスタンスをリストの中にいれて管理する
+
+                logger.info(f"[キャラの削除]キャラID：{cu.id} state: {cu.state}")
                 
                 # 明示的にスプライトを削除
                 if hasattr(cu, 'sprite') and cu.sprite:

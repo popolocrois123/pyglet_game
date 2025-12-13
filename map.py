@@ -25,6 +25,9 @@ class Map():
         # 席のキュー
         self.seat_queue = []
 
+        # [宿題]机のキュー
+        self.table_queue = []
+
         # 生成場所
         self.general_costomer_area = []
 
@@ -126,6 +129,8 @@ class Map():
                                                    self.cell_size, color=(255, 255, 0), 
                                                    batch=self.batch)
                     self.tiles.append(rect)
+                    # [宿題]
+                    self.table_queue.append((x, y))
 
                 # キャラクター
                 elif cell == "C":

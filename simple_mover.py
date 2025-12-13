@@ -73,6 +73,9 @@ class SimpleMover:
         # 退店処理
         self.stay_timer = 0.0
 
+        # 向き変更の時間
+        self.elapsed = 0
+
 
     # 目標値が定まった状態でその座標に移動開始する
     def start_move_to(self, new_x, new_y):
@@ -81,6 +84,7 @@ class SimpleMover:
         self.grid_x, self.grid_y = new_x, new_y
         self.move_timer = 0.0
         self.moving = True
+
     
     def update(self, dt):
         self.move_target(dt)
@@ -141,9 +145,13 @@ class SimpleMover:
             sx, sy = self.start_pixel
             dx, dy = self.dest_pixel
 
+            self.character_direction(sx, sy, dx, dy)
 
-            # [宿題]X軸の向きを変える
-            # self.character_direction(dx, dy)
+            # if self.move_timer > 0.5:
+                # [宿題]X軸の向きを変える
+                # self.character_direction(sx, sy, dx, dy)
+                # self.move_timer = 0
+            # self.sprite.image = self.animation_frames["left"]
 
 
             self.pixel_x = sx + (dx - sx) * t
@@ -151,8 +159,6 @@ class SimpleMover:
 
             self.sprite.x = self.pixel_x
             self.sprite.y = self.pixel_y
-
-
 
             if t >= 1.0:
                 self.moving = False
@@ -170,8 +176,7 @@ class SimpleMover:
                     new_x = self.grid_x + step_x
                     new_y = self.grid_y
                     
-
-
+                    
                 elif dy != 0:
                     step_y = 1 if dy > 0 else -1
                     new_x = self.grid_x
@@ -189,15 +194,46 @@ class SimpleMover:
 
 
     # [宿題]向きの変更をする関数
-    def character_direction(self, dx, dy):
-        if dx < 0:
-            self.sprite.image = self.animation_frames["left"]
-        elif dx > 0:
-            self.sprite.image = self.animation_frames["right"]
-        elif dy < 0:
-            self.sprite.image = self.animation_frames["down"]
-        elif dy > 0:
-            self.sprite.image = self.animation_frames["up"]
+    def character_direction(self, sx, sy, dx, dy):
+        # if dx < sx:
+        #     self.sprite.image = self.animation_frames["left"]
+        # elif dx > sx:
+        #     self.sprite.image = self.animation_frames["right"]
+        # elif dy < sy:
+        #     self.sprite.image = self.animation_frames["down"]
+        # elif dy > sy:
+        #     self.sprite.image = self.animation_frames["up"]
+        # if dx < sx:
+        #     pyglet.clock.schedule_once(lambda dt: setattr(self.sprite, 'image', self.animation_frames["left"]), 3.0)
+        # elif dx > sx:
+        #     pyglet.clock.schedule_once(lambda dt: setattr(self.sprite, 'image', self.animation_frames["right"]), 3.0)
+        # elif dy < sy:
+        #     pyglet.clock.schedule_once(lambda dt: setattr(self.sprite, 'image', self.animation_frames["down"]), 3.0)
+        # elif dy > sy:
+        #     pyglet.clock.schedule_once(lambda dt: setattr(self.sprite, 'image', self.animation_frames["up"]), 3.0)
+        # if dx < sx:
+        #     self.current_animation = "left"
+        # elif dx > sx:
+        #     self.current_animation = "right"
+        # elif dy < sy:
+        #     self.current_animation = "down"
+        # elif dy > sy:
+        #     self.current_animation = "up"
+        if dx < sx:
+            direction = "left"
+        elif dx > sx:
+            direction = "right"
+        elif dy < sy:
+            direction = "down"
+        elif dy > sy:
+            direction = "up"
+        else:
+            return
+        
+        if getattr(self, "current_animation", None) != direction:
+            self.current_animation = direction
+            self.sprite.image = self.animation_frames[direction]
+
         
 
     

@@ -58,9 +58,8 @@ class SeatManager():
                         x, y = self.seat_positions[j]
                         y = self.real_grid_y - (y + 1)
                         cu.setup_new_target(x, y)
-                        # cu.state = "moving_to_seat"
-                        logger.debug(f"【席にアサインする】id: {cu.id}\
-                        state: {cu.state}")
+                        cu.state = "moving_to_seat"
+                        logger.debug(f"【席にアサイン】id: {cu.id} state: {cu.state}")
                         self.seat_queue.append((cu, j))
                         
                         
@@ -91,7 +90,6 @@ class SeatManager():
                         # 案内されたら色を変える　青に
                         # cu.sprite.color=(150, 125, 255)
                         # self.parent.customer_manager.inside_customer_num -= 1
-                        cu.state = "moving_to_seat"
  
 
                         break
@@ -108,6 +106,8 @@ class SeatManager():
                 cu.update(dt)
                 if cu.reached:
                     cu.state = "seated"
+                    logger.info(f"[席に移動]キャラID：{cu.id} state: {cu.state}")
+
                     cu.reached = False
                 # cu.state = "seated"
                 
@@ -117,6 +117,23 @@ class SeatManager():
         for cu in self.customers:
             if cu.state == "seated":
                 cu.stay_timer += dt
+                # [宿題]食べている間向きの変更をする
+                for idx, i in enumerate(self.map.table_queue):
+                    logger.debug(f"テーブルの座標{self.map.table_queue}")
+                    if cu.grid_y in i and (cu.grid_x+1) in i:
+                        direction = "right"
+                        
+                    elif cu.grid_y in i and (cu.grid_x-1) in i:
+                        direction = "left"
+
+                    else:
+                        direction = "down"
+                        logger.debug(f"キャラの座標{(cu.grid_x, cu.grid_y)}")
+
+                    
+                    cu.current_animation = direction
+                    cu.sprite.image = cu.animation_frames[direction]
+
                 if cu.stay_timer >= STAY_DURATION:
                     x, y = self.map.exit_pos
                     y = self.real_grid_y - (y + 1)
@@ -124,10 +141,19 @@ class SeatManager():
                     # [宿題]色を変える: 緑に
                     # cu.sprite.color=(0, 255, 0)
 
+                    # [宿題]　キャラの向きを机の方向にする
+                    # if cu.sprite.x == 2:
+                    # cu.current_animation = "left"
+                    # cu.sprite.image = self.animation_frames["left"]
+
                     cu.state = "leaving"
+                    logger.info(f"[出口にアサイン]キャラID：{cu.id} state: {cu.state}")
+
 
                     # 変更
                     self.parent.customer_manager.inside_customer_num -= 1
+
+                    
 
                     # 座席の解放
                     for idx, (cust_obj, seat_i) in enumerate(self.seat_queue):
@@ -145,6 +171,8 @@ class SeatManager():
                 cu.update(dt)
                 if cu.reached:
                     cu.state = "exited"
+                    logger.info(f"[出口に移動]キャラID：{cu.id} state: {cu.state}")
+
                     
 
 
