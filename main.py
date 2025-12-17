@@ -25,11 +25,16 @@ class Main():
         logger.remove()
 
         # INFO のみ通すコンソール出力を追加
-        logger.add(
-            sink=lambda msg: print(msg, end=""),
-            filter=lambda r: r["level"].name in ("DEBUG"),
-            colorize=True
-        )
+        # logger.add(
+        #     sink=lambda msg: print(msg, end=""),
+        #     filter=lambda r: r["level"].name in ("INFO"),
+        #     colorize=True
+        # )
+
+        # ログファイル
+        logger.add("log_state.log", level="INFO", encoding="utf-8")
+
+        
 
 
 

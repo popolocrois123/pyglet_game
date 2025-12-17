@@ -59,7 +59,7 @@ class SeatManager():
                         y = self.real_grid_y - (y + 1)
                         cu.setup_new_target(x, y)
                         cu.state = "moving_to_seat"
-                        logger.debug(f"【席にアサイン】id: {cu.id} state: {cu.state}")
+                        logger.info(f"【席にアサイン】id: {cu.id} state: {cu.state}")
                         self.seat_queue.append((cu, j))
                         
                         
@@ -74,7 +74,7 @@ class SeatManager():
                         # waiting_queueからcuを取り出す 
                         self.parent.customer_manager.waiting_queue = [x for x in self.parent.customer_manager.waiting_queue if x[0] != cu]
 
-                        logger.debug(f"wait_queue: {self.parent.customer_manager.wait_queue}")
+                        # logger.debug(f"wait_queue: {self.parent.customer_manager.wait_queue}")
 
                         self.parent.customer_manager.current_entrance_buffer -= 1
 
@@ -118,21 +118,33 @@ class SeatManager():
             if cu.state == "seated":
                 cu.stay_timer += dt
                 # [宿題]食べている間向きの変更をする
-                for idx, i in enumerate(self.map.table_queue):
-                    logger.debug(f"テーブルの座標{self.map.table_queue}")
-                    if cu.grid_y in i and (cu.grid_x+1) in i:
-                        direction = "right"
+                # for idx, i in enumerate(self.map.table_queue):
+                #     logger.debug(f"テーブルの座標{self.map.table_queue}")
+                #     if cu.grid_y in i and (cu.grid_x+1) in i:
+                #         direction = "right"
                         
-                    elif cu.grid_y in i and (cu.grid_x-1) in i:
-                        direction = "left"
+                #     elif cu.grid_y in i and (cu.grid_x-1) in i:
+                #         direction = "left"
 
-                    else:
-                        direction = "down"
-                        logger.debug(f"キャラの座標{(cu.grid_x, cu.grid_y)}")
+                #     else:
+                #         direction = "down"
+                #         logger.debug(f"キャラの座標{(cu.grid_x, cu.grid_y)}")
 
                     
-                    cu.current_animation = direction
-                    cu.sprite.image = cu.animation_frames[direction]
+                    # cu.current_animation = direction
+                    # cu.sprite.image = cu.animation_frames[direction]
+                for idx, cu_seatnum in enumerate(self.seat_queue):
+                    if cu in cu_seatnum:
+                        if cu_seatnum[1] % 2 == 0:
+                            direction = "right"
+                        elif cu_seatnum[1] % 2 == 1:
+                            direction = "left"
+                        else:
+                            direction ="down"
+                        
+                        cu.current_animation = direction
+                        cu.sprite.image = cu.animation_frames[direction]
+
 
                 if cu.stay_timer >= STAY_DURATION:
                     x, y = self.map.exit_pos

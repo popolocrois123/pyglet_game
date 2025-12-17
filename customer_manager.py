@@ -7,7 +7,7 @@ import queue
 from loguru import logger
 
 class CustomerManager:
-    def __init__(self, parent, map_data, map, num_customers=10):
+    def __init__(self, parent, map_data, map, num_customers=5):
         self.parent = parent
 
         self.batch = self.parent.batch
@@ -21,7 +21,6 @@ class CustomerManager:
         # yの計算
         self.real_grid_y = len(self.map_data)
 
-        # ランダムエリアを取得
         self.general_area = self.parent.map.general_costomer_area
         
         # 初期顧客数
@@ -59,7 +58,7 @@ class CustomerManager:
         # self.max_customers = 7   # 任意：上限を設定したい場合
 
         # 変更
-        self.max_customers = 20  # 任意：上限を設定したい場合
+        self.max_customers = 5  # 任意：上限を設定したい場合
         # logger.debug(f"max_customer: {self.max_customers}")
         
         # 宿題
@@ -73,7 +72,7 @@ class CustomerManager:
         # 店の中の客の数
         self.inside_customer_num = 0
         # 店の中の客の最大値
-        self.inside_customer_max = 1
+        self.inside_customer_max = 5
 
         # 初期顧客
         self.setup_initial_customers()
@@ -166,7 +165,7 @@ class CustomerManager:
     def assign_entrance(self):
         for cu in self.customers:
             if cu.state == "outside":
-                if self.current_entrance_buffer <= self.max_entrance_buffer:
+                # if self.current_entrance_buffer <= self.max_entrance_buffer:
 
                     # 変更
                     if self.inside_customer_num < self.inside_customer_max:
@@ -178,9 +177,9 @@ class CustomerManager:
                         logger.info(f"[入り口にアサイン]キャラID：{cu.id} state: {cu.state}")
 
 
-                        self.current_entrance_buffer += 1
-                        # 宿題
-                        self.inside_customer_num += 1
+                        # self.current_entrance_buffer += 1
+                        # # 宿題
+                        # self.inside_customer_num += 1
                         # logger.info(f"中の客の数(増える場合){self.inside_customer_num}")
 
 
@@ -294,7 +293,7 @@ class CustomerManager:
                         self.wait_chair[current_i] = False
                         self.wait_chair[i] = True
                         x, y = (self.wait_queue[i])
-                        # logger.info(f"詰める処理のx,y {x, y}, 客のid {customer.id}")
+                        logger.info(f"[詰める] 客のid {customer.id}, 詰める処理のx,y {x, y}, state: {customer.state}")
                         customer.setup_new_target(17, 5)
                         customer.state = "moving_to_wait"
                         # customer.state = "waiting_to_sit_to_seat"
