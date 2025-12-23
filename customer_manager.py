@@ -1,3 +1,4 @@
+from setting import *
 from customer import Customer
 import time
 import pyglet
@@ -6,8 +7,9 @@ import random
 import queue
 from loguru import logger
 
+
 class CustomerManager:
-    def __init__(self, parent, map_data, map, num_customers=5):
+    def __init__(self, parent, map_data, map, num_customers=2):
         self.parent = parent
 
         self.batch = self.parent.batch
@@ -50,15 +52,15 @@ class CustomerManager:
         self.waiting_queue = []
 
         # 待機場所が使われているかどうかのリスト
-        # [宿題]
         self.wait_pos_in_use = [False] * len(self.wait_chair)
         # 新規顧客の生成
         self.spawn_timer = 0.0
-        self.spawn_interval = 2 # 5秒ごとに新しい顧客を生成
+        # 顧客生成間隔（s）
+        self.spawn_interval = SPAWN_TIME # 5秒ごとに新しい顧客を生成
         # self.max_customers = 7   # 任意：上限を設定したい場合
 
-        # 変更
-        self.max_customers = 5  # 任意：上限を設定したい場合
+        # 生成される顧客数の上限
+        self.max_customers = MAX_CUSTOMERS  # 任意：上限を設定したい場合
         # logger.debug(f"max_customer: {self.max_customers}")
         
         # 宿題
@@ -116,9 +118,13 @@ class CustomerManager:
 
         # 宿題
         # ループさせる
+        # スポーンタイマーで客の更新
+        self.spawn_timer += dt
         # # self.setup_initial_customers()
-        if len(self.customers) < self.max_customers:
-            self.spawn_customer()
+        if self.spawn_timer >= self.spawn_interval:
+            self.spawn_timer = 0.0
+            if len(self.customers) <= self.max_customers:
+                self.spawn_customer()
 
 
     # 顧客生成
@@ -179,7 +185,7 @@ class CustomerManager:
 
                         # self.current_entrance_buffer += 1
                         # # 宿題
-                        # self.inside_customer_num += 1
+                        self.inside_customer_num += 1
                         # logger.info(f"中の客の数(増える場合){self.inside_customer_num}")
 
 
@@ -262,6 +268,8 @@ class CustomerManager:
                     cu.sprite.delete()
 
                 self.customers.pop(i)
+
+                self.inside_customer_num -= 1
 
                 # # 宿題
                 # # # # 客の数を減らす

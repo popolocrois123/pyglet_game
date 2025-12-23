@@ -1,0 +1,12 @@
+2025-11-16 00:01:16.801 | DEBUG    | __main__:<module>:305 - DEBUG レベル（ファイルのみ）
+2025-11-16 00:01:16.801 | INFO     | __main__:<module>:306 - INFO レベル（コンソールにも表示）
+2025-11-16 00:01:16.801 | SUCCESS  | __main__:<module>:307 - SUCCESS レベル（ファイルのみ）
+2025-11-16 00:01:16.801 | WARNING  | __main__:<module>:308 - WARNING レベル（ファイルのみ）
+2025-11-16 00:01:16.801 | ERROR    | __main__:<module>:309 - ERROR レベル（ファイルのみ）
+2025-11-16 00:01:16.801 | CRITICAL | __main__:<module>:310 - CRITICAL レベル（ファイルのみ）
+2025-11-20 14:47:10.258 | DEBUG    | __main__:<module>:305 - DEBUG レベル（ファイルのみ）
+2025-11-20 14:47:10.258 | INFO     | __main__:<module>:306 - INFO レベル（コンソールにも表示）
+2025-11-20 14:47:10.258 | SUCCESS  | __main__:<module>:307 - SUCCESS レベル（ファイルのみ）
+2025-11-20 14:47:10.258 | WARNING  | __main__:<module>:308 - WARNING レベル（ファイルのみ）
+2025-11-20 14:47:10.258 | ERROR    | __main__:<module>:309 - ERROR レベル（ファイルのみ）
+2025-11-20 14:47:10.258 | CRITICAL | __main__:<module>:310 - CRITICAL レベル（ファイルのみ）

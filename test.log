@@ -1,0 +1,5 @@
+2025-11-21 12:21:35.808 | INFO     | __main__:<module>:360 - INFO レベル（ファイルに追加）
+2025-11-21 12:21:35.808 | SUCCESS  | __main__:<module>:361 - SUCCESS
+2025-11-21 12:21:35.808 | WARNING  | __main__:<module>:362 - WARNING
+2025-11-21 12:21:35.808 | ERROR    | __main__:<module>:363 - ERROR
+2025-11-21 12:21:35.808 | CRITICAL | __main__:<module>:364 - CRITICAL

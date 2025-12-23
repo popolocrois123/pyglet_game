@@ -1,0 +1,825 @@
+2025-12-22 16:47:34.459 | INFO     | customer_manager:spawn_customer:147 - キャラID：0が生成されました。 state: outside
+2025-12-22 16:47:34.672 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：0 state: moving_to_entrance
+2025-12-22 16:47:34.696 | INFO     | customer_manager:spawn_customer:147 - キャラID：1が生成されました。 state: outside
+2025-12-22 16:47:34.714 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：1 state: moving_to_entrance
+2025-12-22 16:47:34.732 | INFO     | customer_manager:spawn_customer:147 - キャラID：2が生成されました。 state: outside
+2025-12-22 16:47:34.742 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：2 state: moving_to_entrance
+2025-12-22 16:47:34.769 | INFO     | customer_manager:spawn_customer:147 - キャラID：3が生成されました。 state: outside
+2025-12-22 16:47:34.779 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：3 state: moving_to_entrance
+2025-12-22 16:47:34.792 | INFO     | customer_manager:spawn_customer:147 - キャラID：4が生成されました。 state: outside
+2025-12-22 16:47:34.816 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：4 state: moving_to_entrance
+2025-12-22 16:47:34.832 | INFO     | customer_manager:spawn_customer:147 - キャラID：5が生成されました。 state: outside
+2025-12-22 16:47:34.856 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：5 state: moving_to_entrance
+2025-12-22 16:47:34.870 | INFO     | customer_manager:spawn_customer:147 - キャラID：6が生成されました。 state: outside
+2025-12-22 16:47:34.887 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：6 state: moving_to_entrance
+2025-12-22 16:47:34.904 | INFO     | customer_manager:spawn_customer:147 - キャラID：7が生成されました。 state: outside
+2025-12-22 16:47:34.920 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：7 state: moving_to_entrance
+2025-12-22 16:47:34.934 | INFO     | customer_manager:spawn_customer:147 - キャラID：8が生成されました。 state: outside
+2025-12-22 16:47:34.957 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：8 state: moving_to_entrance
+2025-12-22 16:47:34.973 | INFO     | customer_manager:spawn_customer:147 - キャラID：9が生成されました。 state: outside
+2025-12-22 16:47:34.996 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：9 state: moving_to_entrance
+2025-12-22 16:47:35.011 | INFO     | customer_manager:spawn_customer:147 - キャラID：10が生成されました。 state: outside
+2025-12-22 16:47:35.035 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：10 state: moving_to_entrance
+2025-12-22 16:47:35.049 | INFO     | customer_manager:spawn_customer:147 - キャラID：11が生成されました。 state: outside
+2025-12-22 16:47:35.078 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：11 state: moving_to_entrance
+2025-12-22 16:47:35.101 | INFO     | customer_manager:spawn_customer:147 - キャラID：12が生成されました。 state: outside
+2025-12-22 16:47:35.116 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：12 state: moving_to_entrance
+2025-12-22 16:47:35.130 | INFO     | customer_manager:spawn_customer:147 - キャラID：13が生成されました。 state: outside
+2025-12-22 16:47:35.154 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：13 state: moving_to_entrance
+2025-12-22 16:47:35.168 | INFO     | customer_manager:spawn_customer:147 - キャラID：14が生成されました。 state: outside
+2025-12-22 16:47:35.192 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：14 state: moving_to_entrance
+2025-12-22 16:47:35.210 | INFO     | customer_manager:spawn_customer:147 - キャラID：15が生成されました。 state: outside
+2025-12-22 16:47:35.226 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：15 state: moving_to_entrance
+2025-12-22 16:47:35.242 | INFO     | customer_manager:spawn_customer:147 - キャラID：16が生成されました。 state: outside
+2025-12-22 16:47:35.260 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：16 state: moving_to_entrance
+2025-12-22 16:47:35.274 | INFO     | customer_manager:spawn_customer:147 - キャラID：17が生成されました。 state: outside
+2025-12-22 16:47:35.298 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：17 state: moving_to_entrance
+2025-12-22 16:47:35.315 | INFO     | customer_manager:spawn_customer:147 - キャラID：18が生成されました。 state: outside
+2025-12-22 16:47:35.337 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：18 state: moving_to_entrance
+2025-12-22 16:47:35.351 | INFO     | customer_manager:spawn_customer:147 - キャラID：19が生成されました。 state: outside
+2025-12-22 16:47:35.368 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：19 state: moving_to_entrance
+2025-12-22 16:47:35.385 | INFO     | customer_manager:spawn_customer:147 - キャラID：20が生成されました。 state: outside
+2025-12-22 16:47:35.404 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：20 state: moving_to_entrance
+2025-12-22 16:47:35.405 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：6 state: arrive
+2025-12-22 16:47:35.405 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：6 state: moving_to_wait
+2025-12-22 16:47:35.421 | INFO     | customer_manager:spawn_customer:147 - キャラID：21が生成されました。 state: outside
+2025-12-22 16:47:35.440 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：21 state: moving_to_entrance
+2025-12-22 16:47:35.454 | INFO     | customer_manager:spawn_customer:147 - キャラID：22が生成されました。 state: outside
+2025-12-22 16:47:35.477 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：22 state: moving_to_entrance
+2025-12-22 16:47:35.491 | INFO     | customer_manager:spawn_customer:147 - キャラID：23が生成されました。 state: outside
+2025-12-22 16:47:35.515 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：23 state: moving_to_entrance
+2025-12-22 16:47:35.530 | INFO     | customer_manager:spawn_customer:147 - キャラID：24が生成されました。 state: outside
+2025-12-22 16:47:35.554 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：24 state: moving_to_entrance
+2025-12-22 16:47:35.569 | INFO     | customer_manager:spawn_customer:147 - キャラID：25が生成されました。 state: outside
+2025-12-22 16:47:35.592 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：25 state: moving_to_entrance
+2025-12-22 16:47:35.608 | INFO     | customer_manager:spawn_customer:147 - キャラID：26が生成されました。 state: outside
+2025-12-22 16:47:35.626 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：26 state: moving_to_entrance
+2025-12-22 16:47:35.641 | INFO     | customer_manager:spawn_customer:147 - キャラID：27が生成されました。 state: outside
+2025-12-22 16:47:35.661 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：27 state: moving_to_entrance
+2025-12-22 16:47:35.679 | INFO     | customer_manager:spawn_customer:147 - キャラID：28が生成されました。 state: outside
+2025-12-22 16:47:35.697 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：28 state: moving_to_entrance
+2025-12-22 16:47:35.715 | INFO     | customer_manager:spawn_customer:147 - キャラID：29が生成されました。 state: outside
+2025-12-22 16:47:35.730 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：29 state: moving_to_entrance
+2025-12-22 16:47:35.746 | INFO     | customer_manager:spawn_customer:147 - キャラID：30が生成されました。 state: outside
+2025-12-22 16:47:35.778 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：30 state: moving_to_entrance
+2025-12-22 16:47:35.797 | INFO     | customer_manager:spawn_customer:147 - キャラID：31が生成されました。 state: outside
+2025-12-22 16:47:35.812 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：31 state: moving_to_entrance
+2025-12-22 16:47:35.827 | INFO     | customer_manager:spawn_customer:147 - キャラID：32が生成されました。 state: outside
+2025-12-22 16:47:35.851 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：32 state: moving_to_entrance
+2025-12-22 16:47:35.867 | INFO     | customer_manager:spawn_customer:147 - キャラID：33が生成されました。 state: outside
+2025-12-22 16:47:35.885 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：33 state: moving_to_entrance
+2025-12-22 16:47:35.899 | INFO     | customer_manager:spawn_customer:147 - キャラID：34が生成されました。 state: outside
+2025-12-22 16:47:35.925 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：34 state: moving_to_entrance
+2025-12-22 16:47:35.941 | INFO     | customer_manager:spawn_customer:147 - キャラID：35が生成されました。 state: outside
+2025-12-22 16:47:35.964 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：35 state: moving_to_entrance
+2025-12-22 16:47:35.979 | INFO     | customer_manager:spawn_customer:147 - キャラID：36が生成されました。 state: outside
+2025-12-22 16:47:35.996 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：36 state: moving_to_entrance
+2025-12-22 16:47:36.011 | INFO     | customer_manager:spawn_customer:147 - キャラID：37が生成されました。 state: outside
+2025-12-22 16:47:36.035 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：37 state: moving_to_entrance
+2025-12-22 16:47:36.053 | INFO     | customer_manager:spawn_customer:147 - キャラID：38が生成されました。 state: outside
+2025-12-22 16:47:36.070 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：38 state: moving_to_entrance
+2025-12-22 16:47:36.093 | INFO     | customer_manager:spawn_customer:147 - キャラID：39が生成されました。 state: outside
+2025-12-22 16:47:36.111 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：39 state: moving_to_entrance
+2025-12-22 16:47:36.127 | INFO     | customer_manager:spawn_customer:147 - キャラID：40が生成されました。 state: outside
+2025-12-22 16:47:36.150 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：40 state: moving_to_entrance
+2025-12-22 16:47:36.151 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：12 state: arrive
+2025-12-22 16:47:36.151 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：12 state: moving_to_wait
+2025-12-22 16:47:36.166 | INFO     | customer_manager:spawn_customer:147 - キャラID：41が生成されました。 state: outside
+2025-12-22 16:47:36.185 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：41 state: moving_to_entrance
+2025-12-22 16:47:36.199 | INFO     | customer_manager:spawn_customer:147 - キャラID：42が生成されました。 state: outside
+2025-12-22 16:47:36.219 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：42 state: moving_to_entrance
+2025-12-22 16:47:36.232 | INFO     | customer_manager:spawn_customer:147 - キャラID：43が生成されました。 state: outside
+2025-12-22 16:47:36.257 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：43 state: moving_to_entrance
+2025-12-22 16:47:36.263 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：29 state: arrive
+2025-12-22 16:47:36.263 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：29 state: moving_to_wait
+2025-12-22 16:47:36.277 | INFO     | customer_manager:spawn_customer:147 - キャラID：44が生成されました。 state: outside
+2025-12-22 16:47:36.294 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：44 state: moving_to_entrance
+2025-12-22 16:47:36.296 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：30 state: arrive
+2025-12-22 16:47:36.297 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：30 state: moving_to_wait
+2025-12-22 16:47:36.311 | INFO     | customer_manager:spawn_customer:147 - キャラID：45が生成されました。 state: outside
+2025-12-22 16:47:36.333 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：45 state: moving_to_entrance
+2025-12-22 16:47:36.348 | INFO     | customer_manager:spawn_customer:147 - キャラID：46が生成されました。 state: outside
+2025-12-22 16:47:36.370 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：46 state: moving_to_entrance
+2025-12-22 16:47:36.386 | INFO     | customer_manager:spawn_customer:147 - キャラID：47が生成されました。 state: outside
+2025-12-22 16:47:36.424 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：47 state: moving_to_entrance
+2025-12-22 16:47:36.438 | INFO     | customer_manager:spawn_customer:147 - キャラID：48が生成されました。 state: outside
+2025-12-22 16:47:36.460 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：48 state: moving_to_entrance
+2025-12-22 16:47:36.461 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：21 state: arrive
+2025-12-22 16:47:36.462 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：21 state: moving_to_wait
+2025-12-22 16:47:36.476 | INFO     | customer_manager:spawn_customer:147 - キャラID：49が生成されました。 state: outside
+2025-12-22 16:47:36.499 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：49 state: moving_to_entrance
+2025-12-22 16:47:36.499 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：1 state: arrive
+2025-12-22 16:47:36.500 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：8 state: arrive
+2025-12-22 16:47:36.505 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：1 state: moving_to_wait
+2025-12-22 16:47:36.505 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：8 state: moving_to_wait
+2025-12-22 16:47:36.519 | INFO     | customer_manager:spawn_customer:147 - キャラID：50が生成されました。 state: outside
+2025-12-22 16:47:36.539 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：50 state: moving_to_entrance
+2025-12-22 16:47:36.561 | INFO     | customer_manager:spawn_customer:147 - キャラID：51が生成されました。 state: outside
+2025-12-22 16:47:36.583 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：51 state: moving_to_entrance
+2025-12-22 16:47:36.598 | INFO     | customer_manager:spawn_customer:147 - キャラID：52が生成されました。 state: outside
+2025-12-22 16:47:36.617 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：52 state: moving_to_entrance
+2025-12-22 16:47:36.634 | INFO     | customer_manager:spawn_customer:147 - キャラID：53が生成されました。 state: outside
+2025-12-22 16:47:36.654 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：53 state: moving_to_entrance
+2025-12-22 16:47:36.669 | INFO     | customer_manager:spawn_customer:147 - キャラID：54が生成されました。 state: outside
+2025-12-22 16:47:36.693 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：54 state: moving_to_entrance
+2025-12-22 16:47:36.707 | INFO     | customer_manager:spawn_customer:147 - キャラID：55が生成されました。 state: outside
+2025-12-22 16:47:36.727 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：55 state: moving_to_entrance
+2025-12-22 16:47:36.727 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：14 state: arrive
+2025-12-22 16:47:36.729 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：28 state: arrive
+2025-12-22 16:47:36.731 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：48 state: arrive
+2025-12-22 16:47:36.732 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：14 state: moving_to_wait
+2025-12-22 16:47:36.732 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：28 state: moving_to_wait
+2025-12-22 16:47:36.732 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：48 state: moving_to_wait
+2025-12-22 16:47:36.745 | INFO     | customer_manager:spawn_customer:147 - キャラID：56が生成されました。 state: outside
+2025-12-22 16:47:36.785 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：56 state: moving_to_entrance
+2025-12-22 16:47:36.786 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：22 state: arrive
+2025-12-22 16:47:36.802 | INFO     | customer_manager:spawn_customer:147 - キャラID：57が生成されました。 state: outside
+2025-12-22 16:47:36.826 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：57 state: moving_to_entrance
+2025-12-22 16:47:36.841 | INFO     | customer_manager:spawn_customer:147 - キャラID：58が生成されました。 state: outside
+2025-12-22 16:47:36.871 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：58 state: moving_to_entrance
+2025-12-22 16:47:36.871 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：2 state: arrive
+2025-12-22 16:47:36.872 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：51 state: arrive
+2025-12-22 16:47:36.887 | INFO     | customer_manager:spawn_customer:147 - キャラID：59が生成されました。 state: outside
+2025-12-22 16:47:36.905 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：59 state: moving_to_entrance
+2025-12-22 16:47:36.921 | INFO     | customer_manager:spawn_customer:147 - キャラID：60が生成されました。 state: outside
+2025-12-22 16:47:36.944 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：60 state: moving_to_entrance
+2025-12-22 16:47:36.945 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：40 state: arrive
+2025-12-22 16:47:36.958 | INFO     | customer_manager:spawn_customer:147 - キャラID：61が生成されました。 state: outside
+2025-12-22 16:47:36.989 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：61 state: moving_to_entrance
+2025-12-22 16:47:37.006 | INFO     | customer_manager:spawn_customer:147 - キャラID：62が生成されました。 state: outside
+2025-12-22 16:47:37.027 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：62 state: moving_to_entrance
+2025-12-22 16:47:37.031 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：43 state: arrive
+2025-12-22 16:47:37.046 | INFO     | customer_manager:spawn_customer:147 - キャラID：63が生成されました。 state: outside
+2025-12-22 16:47:37.067 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：63 state: moving_to_entrance
+2025-12-22 16:47:37.081 | INFO     | customer_manager:spawn_customer:147 - キャラID：64が生成されました。 state: outside
+2025-12-22 16:47:37.107 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：64 state: moving_to_entrance
+2025-12-22 16:47:37.108 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：46 state: arrive
+2025-12-22 16:47:37.121 | INFO     | customer_manager:spawn_customer:147 - キャラID：65が生成されました。 state: outside
+2025-12-22 16:47:37.141 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：65 state: moving_to_entrance
+2025-12-22 16:47:37.159 | INFO     | customer_manager:spawn_customer:147 - キャラID：66が生成されました。 state: outside
+2025-12-22 16:47:37.173 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：66 state: moving_to_entrance
+2025-12-22 16:47:37.188 | INFO     | customer_manager:spawn_customer:147 - キャラID：67が生成されました。 state: outside
+2025-12-22 16:47:37.213 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：67 state: moving_to_entrance
+2025-12-22 16:47:37.214 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：19 state: arrive
+2025-12-22 16:47:37.214 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：26 state: arrive
+2025-12-22 16:47:37.227 | INFO     | customer_manager:spawn_customer:147 - キャラID：68が生成されました。 state: outside
+2025-12-22 16:47:37.258 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：68 state: moving_to_entrance
+2025-12-22 16:47:37.272 | INFO     | customer_manager:spawn_customer:147 - キャラID：69が生成されました。 state: outside
+2025-12-22 16:47:37.301 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：69 state: moving_to_entrance
+2025-12-22 16:47:37.316 | INFO     | customer_manager:spawn_customer:147 - キャラID：70が生成されました。 state: outside
+2025-12-22 16:47:37.335 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：70 state: moving_to_entrance
+2025-12-22 16:47:37.349 | INFO     | customer_manager:spawn_customer:147 - キャラID：71が生成されました。 state: outside
+2025-12-22 16:47:37.378 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：71 state: moving_to_entrance
+2025-12-22 16:47:37.379 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：45 state: arrive
+2025-12-22 16:47:37.394 | INFO     | customer_manager:spawn_customer:147 - キャラID：72が生成されました。 state: outside
+2025-12-22 16:47:37.420 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：72 state: moving_to_entrance
+2025-12-22 16:47:37.441 | INFO     | customer_manager:spawn_customer:147 - キャラID：73が生成されました。 state: outside
+2025-12-22 16:47:37.455 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：73 state: moving_to_entrance
+2025-12-22 16:47:37.470 | INFO     | customer_manager:spawn_customer:147 - キャラID：74が生成されました。 state: outside
+2025-12-22 16:47:37.489 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：74 state: moving_to_entrance
+2025-12-22 16:47:37.515 | INFO     | customer_manager:spawn_customer:147 - キャラID：75が生成されました。 state: outside
+2025-12-22 16:47:37.544 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：75 state: moving_to_entrance
+2025-12-22 16:47:37.545 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：0 state: arrive
+2025-12-22 16:47:37.545 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：42 state: arrive
+2025-12-22 16:47:37.559 | INFO     | customer_manager:spawn_customer:147 - キャラID：76が生成されました。 state: outside
+2025-12-22 16:47:37.588 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：76 state: moving_to_entrance
+2025-12-22 16:47:37.604 | INFO     | customer_manager:spawn_customer:147 - キャラID：77が生成されました。 state: outside
+2025-12-22 16:47:37.642 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：77 state: moving_to_entrance
+2025-12-22 16:47:37.642 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：3 state: arrive
+2025-12-22 16:47:37.642 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：37 state: arrive
+2025-12-22 16:47:37.657 | INFO     | customer_manager:spawn_customer:147 - キャラID：78が生成されました。 state: outside
+2025-12-22 16:47:37.686 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：78 state: moving_to_entrance
+2025-12-22 16:47:37.707 | INFO     | customer_manager:spawn_customer:147 - キャラID：79が生成されました。 state: outside
+2025-12-22 16:47:37.720 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：79 state: moving_to_entrance
+2025-12-22 16:47:37.734 | INFO     | customer_manager:spawn_customer:147 - キャラID：80が生成されました。 state: outside
+2025-12-22 16:47:37.763 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：80 state: moving_to_entrance
+2025-12-22 16:47:37.777 | INFO     | customer_manager:spawn_customer:147 - キャラID：81が生成されました。 state: outside
+2025-12-22 16:47:37.816 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：81 state: moving_to_entrance
+2025-12-22 16:47:37.816 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：41 state: arrive
+2025-12-22 16:47:37.832 | INFO     | customer_manager:spawn_customer:147 - キャラID：82が生成されました。 state: outside
+2025-12-22 16:47:37.864 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：82 state: moving_to_entrance
+2025-12-22 16:47:37.879 | INFO     | customer_manager:spawn_customer:147 - キャラID：83が生成されました。 state: outside
+2025-12-22 16:47:37.928 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：83 state: moving_to_entrance
+2025-12-22 16:47:37.929 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：4 state: arrive
+2025-12-22 16:47:37.929 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：9 state: arrive
+2025-12-22 16:47:37.933 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：18 state: arrive
+2025-12-22 16:47:37.948 | INFO     | customer_manager:spawn_customer:147 - キャラID：84が生成されました。 state: outside
+2025-12-22 16:47:37.972 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：84 state: moving_to_entrance
+2025-12-22 16:47:37.979 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：72 state: arrive
+2025-12-22 16:47:37.994 | INFO     | customer_manager:spawn_customer:147 - キャラID：85が生成されました。 state: outside
+2025-12-22 16:47:38.011 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：85 state: moving_to_entrance
+2025-12-22 16:47:38.025 | INFO     | customer_manager:spawn_customer:147 - キャラID：86が生成されました。 state: outside
+2025-12-22 16:47:38.048 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：86 state: moving_to_entrance
+2025-12-22 16:47:38.063 | INFO     | customer_manager:spawn_customer:147 - キャラID：87が生成されました。 state: outside
+2025-12-22 16:47:38.107 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：87 state: moving_to_entrance
+2025-12-22 16:47:38.110 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 6 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:38.124 | INFO     | customer_manager:spawn_customer:147 - キャラID：88が生成されました。 state: outside
+2025-12-22 16:47:38.124 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 6 state: moving_to_seat
+2025-12-22 16:47:38.124 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 12, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 16:47:38.125 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 29, 詰める処理のx,y (17, 12), state: moving_to_wait
+2025-12-22 16:47:38.125 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 30, 詰める処理のx,y (17, 11), state: moving_to_wait
+2025-12-22 16:47:38.125 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 21, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:38.125 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 1, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:38.126 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 8, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:38.126 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 14, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:38.126 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 28, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:38.126 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:38.176 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：88 state: moving_to_entrance
+2025-12-22 16:47:38.177 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：15 state: arrive
+2025-12-22 16:47:38.177 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：25 state: arrive
+2025-12-22 16:47:38.178 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：44 state: arrive
+2025-12-22 16:47:38.178 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：52 state: arrive
+2025-12-22 16:47:38.178 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：62 state: arrive
+2025-12-22 16:47:38.184 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：0 state: moving_to_wait
+2025-12-22 16:47:38.198 | INFO     | customer_manager:spawn_customer:147 - キャラID：89が生成されました。 state: outside
+2025-12-22 16:47:38.254 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：89 state: moving_to_entrance
+2025-12-22 16:47:38.275 | INFO     | customer_manager:spawn_customer:147 - キャラID：90が生成されました。 state: outside
+2025-12-22 16:47:38.294 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：90 state: moving_to_entrance
+2025-12-22 16:47:38.308 | INFO     | customer_manager:spawn_customer:147 - キャラID：91が生成されました。 state: outside
+2025-12-22 16:47:38.342 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：91 state: moving_to_entrance
+2025-12-22 16:47:38.342 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：33 state: arrive
+2025-12-22 16:47:38.360 | INFO     | customer_manager:spawn_customer:147 - キャラID：92が生成されました。 state: outside
+2025-12-22 16:47:38.388 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：92 state: moving_to_entrance
+2025-12-22 16:47:38.389 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：81 state: arrive
+2025-12-22 16:47:38.402 | INFO     | customer_manager:spawn_customer:147 - キャラID：93が生成されました。 state: outside
+2025-12-22 16:47:38.441 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：93 state: moving_to_entrance
+2025-12-22 16:47:38.444 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：10 state: arrive
+2025-12-22 16:47:38.445 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：16 state: arrive
+2025-12-22 16:47:38.445 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：17 state: arrive
+2025-12-22 16:47:38.448 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：24 state: arrive
+2025-12-22 16:47:38.450 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：38 state: arrive
+2025-12-22 16:47:38.450 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：50 state: arrive
+2025-12-22 16:47:38.463 | INFO     | customer_manager:spawn_customer:147 - キャラID：94が生成されました。 state: outside
+2025-12-22 16:47:38.501 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：94 state: moving_to_entrance
+2025-12-22 16:47:38.523 | INFO     | customer_manager:spawn_customer:147 - キャラID：95が生成されました。 state: outside
+2025-12-22 16:47:38.546 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：95 state: moving_to_entrance
+2025-12-22 16:47:38.564 | INFO     | customer_manager:spawn_customer:147 - キャラID：96が生成されました。 state: outside
+2025-12-22 16:47:38.596 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：96 state: moving_to_entrance
+2025-12-22 16:47:38.596 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：53 state: arrive
+2025-12-22 16:47:38.597 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：73 state: arrive
+2025-12-22 16:47:38.611 | INFO     | customer_manager:spawn_customer:147 - キャラID：97が生成されました。 state: outside
+2025-12-22 16:47:38.637 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：97 state: moving_to_entrance
+2025-12-22 16:47:38.651 | INFO     | customer_manager:spawn_customer:147 - キャラID：98が生成されました。 state: outside
+2025-12-22 16:47:38.688 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：98 state: moving_to_entrance
+2025-12-22 16:47:38.689 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：20 state: arrive
+2025-12-22 16:47:38.689 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：35 state: arrive
+2025-12-22 16:47:38.692 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：68 state: arrive
+2025-12-22 16:47:38.704 | INFO     | customer_manager:spawn_customer:147 - キャラID：99が生成されました。 state: outside
+2025-12-22 16:47:38.719 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：99 state: moving_to_entrance
+2025-12-22 16:47:38.721 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：71 state: arrive
+2025-12-22 16:47:38.733 | INFO     | customer_manager:spawn_customer:147 - キャラID：100が生成されました。 state: outside
+2025-12-22 16:47:38.751 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：100 state: moving_to_entrance
+2025-12-22 16:47:38.754 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：78 state: arrive
+2025-12-22 16:47:38.768 | INFO     | customer_manager:spawn_customer:147 - キャラID：101が生成されました。 state: outside
+2025-12-22 16:47:38.813 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：101 state: moving_to_entrance
+2025-12-22 16:47:38.826 | INFO     | customer_manager:spawn_customer:147 - キャラID：102が生成されました。 state: outside
+2025-12-22 16:47:38.853 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：102 state: moving_to_entrance
+2025-12-22 16:47:38.854 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 12 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:38.867 | INFO     | customer_manager:spawn_customer:147 - キャラID：103が生成されました。 state: outside
+2025-12-22 16:47:38.867 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 12 state: moving_to_seat
+2025-12-22 16:47:38.867 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 29, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 16:47:38.868 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 30, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 16:47:38.868 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 21, 詰める処理のx,y (17, 11), state: waiting_for_top
+2025-12-22 16:47:38.868 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 1, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:38.868 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 8, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:38.869 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 14, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:38.869 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 28, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:38.869 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:38.870 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 0, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:38.906 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：103 state: moving_to_entrance
+2025-12-22 16:47:38.909 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：7 state: arrive
+2025-12-22 16:47:38.914 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：2 state: moving_to_wait
+2025-12-22 16:47:38.926 | INFO     | customer_manager:spawn_customer:147 - キャラID：104が生成されました。 state: outside
+2025-12-22 16:47:38.952 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：104 state: moving_to_entrance
+2025-12-22 16:47:38.955 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：36 state: arrive
+2025-12-22 16:47:38.956 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：83 state: arrive
+2025-12-22 16:47:38.971 | INFO     | customer_manager:spawn_customer:147 - キャラID：105が生成されました。 state: outside
+2025-12-22 16:47:38.991 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：105 state: moving_to_entrance
+2025-12-22 16:47:39.012 | INFO     | customer_manager:spawn_customer:147 - キャラID：106が生成されました。 state: outside
+2025-12-22 16:47:39.053 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：106 state: moving_to_entrance
+2025-12-22 16:47:39.066 | INFO     | customer_manager:spawn_customer:147 - キャラID：107が生成されました。 state: outside
+2025-12-22 16:47:39.083 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：107 state: moving_to_entrance
+2025-12-22 16:47:39.097 | INFO     | customer_manager:spawn_customer:147 - キャラID：108が生成されました。 state: outside
+2025-12-22 16:47:39.148 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：108 state: moving_to_entrance
+2025-12-22 16:47:39.148 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：5 state: arrive
+2025-12-22 16:47:39.149 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：67 state: arrive
+2025-12-22 16:47:39.164 | INFO     | customer_manager:spawn_customer:147 - キャラID：109が生成されました。 state: outside
+2025-12-22 16:47:39.197 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：109 state: moving_to_entrance
+2025-12-22 16:47:39.197 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：34 state: arrive
+2025-12-22 16:47:39.198 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：55 state: arrive
+2025-12-22 16:47:39.198 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：56 state: arrive
+2025-12-22 16:47:39.198 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：57 state: arrive
+2025-12-22 16:47:39.198 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：69 state: arrive
+2025-12-22 16:47:39.201 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 29 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:39.214 | INFO     | customer_manager:spawn_customer:147 - キャラID：110が生成されました。 state: outside
+2025-12-22 16:47:39.214 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 29 state: moving_to_seat
+2025-12-22 16:47:39.215 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 30, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 16:47:39.215 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 21, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 16:47:39.215 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 1, 詰める処理のx,y (17, 11), state: waiting_for_top
+2025-12-22 16:47:39.215 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 8, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:39.216 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 14, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:39.216 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 28, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:39.216 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:39.216 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 0, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:39.217 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 2, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:39.255 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：110 state: moving_to_entrance
+2025-12-22 16:47:39.266 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：3 state: moving_to_wait
+2025-12-22 16:47:39.278 | INFO     | customer_manager:spawn_customer:147 - キャラID：111が生成されました。 state: outside
+2025-12-22 16:47:39.299 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：111 state: moving_to_entrance
+2025-12-22 16:47:39.312 | INFO     | customer_manager:spawn_customer:147 - キャラID：112が生成されました。 state: outside
+2025-12-22 16:47:39.328 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：112 state: moving_to_entrance
+2025-12-22 16:47:39.342 | INFO     | customer_manager:spawn_customer:147 - キャラID：113が生成されました。 state: outside
+2025-12-22 16:47:39.406 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：113 state: moving_to_entrance
+2025-12-22 16:47:39.418 | INFO     | customer_manager:spawn_customer:147 - キャラID：114が生成されました。 state: outside
+2025-12-22 16:47:39.441 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：114 state: moving_to_entrance
+2025-12-22 16:47:39.441 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：11 state: arrive
+2025-12-22 16:47:39.442 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：13 state: arrive
+2025-12-22 16:47:39.442 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：31 state: arrive
+2025-12-22 16:47:39.442 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：47 state: arrive
+2025-12-22 16:47:39.443 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：60 state: arrive
+2025-12-22 16:47:39.443 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：98 state: arrive
+2025-12-22 16:47:39.455 | INFO     | customer_manager:spawn_customer:147 - キャラID：115が生成されました。 state: outside
+2025-12-22 16:47:39.501 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：115 state: moving_to_entrance
+2025-12-22 16:47:39.513 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 30 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:39.524 | INFO     | customer_manager:spawn_customer:147 - キャラID：116が生成されました。 state: outside
+2025-12-22 16:47:39.524 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 30 state: moving_to_seat
+2025-12-22 16:47:39.524 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 21, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 16:47:39.525 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 1, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 16:47:39.525 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 8, 詰める処理のx,y (17, 11), state: waiting_for_top
+2025-12-22 16:47:39.525 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 14, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:39.526 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 28, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:39.527 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:39.527 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 0, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:39.527 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 2, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:39.528 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 3, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:39.542 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：116 state: moving_to_entrance
+2025-12-22 16:47:39.543 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：4 state: moving_to_wait
+2025-12-22 16:47:39.555 | INFO     | customer_manager:spawn_customer:147 - キャラID：117が生成されました。 state: outside
+2025-12-22 16:47:39.597 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：117 state: moving_to_entrance
+2025-12-22 16:47:39.611 | INFO     | customer_manager:spawn_customer:147 - キャラID：118が生成されました。 state: outside
+2025-12-22 16:47:39.653 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：118 state: moving_to_entrance
+2025-12-22 16:47:39.654 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：95 state: arrive
+2025-12-22 16:47:39.668 | INFO     | customer_manager:spawn_customer:147 - キャラID：119が生成されました。 state: outside
+2025-12-22 16:47:39.710 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：119 state: moving_to_entrance
+2025-12-22 16:47:39.710 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：23 state: arrive
+2025-12-22 16:47:39.711 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：27 state: arrive
+2025-12-22 16:47:39.711 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：58 state: arrive
+2025-12-22 16:47:39.711 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：70 state: arrive
+2025-12-22 16:47:39.712 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：74 state: arrive
+2025-12-22 16:47:39.712 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：79 state: arrive
+2025-12-22 16:47:39.726 | INFO     | customer_manager:spawn_customer:147 - キャラID：120が生成されました。 state: outside
+2025-12-22 16:47:39.765 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：120 state: moving_to_entrance
+2025-12-22 16:47:39.786 | INFO     | customer_manager:spawn_customer:147 - キャラID：121が生成されました。 state: outside
+2025-12-22 16:47:39.815 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：121 state: moving_to_entrance
+2025-12-22 16:47:39.816 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 21 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:39.830 | INFO     | customer_manager:spawn_customer:147 - キャラID：122が生成されました。 state: outside
+2025-12-22 16:47:39.830 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 21 state: moving_to_seat
+2025-12-22 16:47:39.830 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 1, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 16:47:39.831 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 8, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 16:47:39.831 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 14, 詰める処理のx,y (17, 11), state: waiting_for_top
+2025-12-22 16:47:39.831 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 28, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:39.831 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:39.832 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 0, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:39.832 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 2, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:39.832 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 3, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:39.833 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 4, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:39.850 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：122 state: moving_to_entrance
+2025-12-22 16:47:39.851 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：5 state: moving_to_wait
+2025-12-22 16:47:39.864 | INFO     | customer_manager:spawn_customer:147 - キャラID：123が生成されました。 state: outside
+2025-12-22 16:47:39.891 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：123 state: moving_to_entrance
+2025-12-22 16:47:39.904 | INFO     | customer_manager:spawn_customer:147 - キャラID：124が生成されました。 state: outside
+2025-12-22 16:47:39.935 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：124 state: moving_to_entrance
+2025-12-22 16:47:39.949 | INFO     | customer_manager:spawn_customer:147 - キャラID：125が生成されました。 state: outside
+2025-12-22 16:47:39.971 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：125 state: moving_to_entrance
+2025-12-22 16:47:39.983 | INFO     | customer_manager:spawn_customer:147 - キャラID：126が生成されました。 state: outside
+2025-12-22 16:47:40.010 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：126 state: moving_to_entrance
+2025-12-22 16:47:40.010 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：32 state: arrive
+2025-12-22 16:47:40.011 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：90 state: arrive
+2025-12-22 16:47:40.024 | INFO     | customer_manager:spawn_customer:147 - キャラID：127が生成されました。 state: outside
+2025-12-22 16:47:40.059 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：127 state: moving_to_entrance
+2025-12-22 16:47:40.080 | INFO     | customer_manager:spawn_customer:147 - キャラID：128が生成されました。 state: outside
+2025-12-22 16:47:40.101 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：128 state: moving_to_entrance
+2025-12-22 16:47:40.113 | INFO     | customer_manager:spawn_customer:147 - キャラID：129が生成されました。 state: outside
+2025-12-22 16:47:40.137 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：129 state: moving_to_entrance
+2025-12-22 16:47:40.140 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 1 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:40.152 | INFO     | customer_manager:spawn_customer:147 - キャラID：130が生成されました。 state: outside
+2025-12-22 16:47:40.152 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 1 state: moving_to_seat
+2025-12-22 16:47:40.153 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 8, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 16:47:40.153 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 14, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 16:47:40.153 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 28, 詰める処理のx,y (17, 11), state: waiting_for_top
+2025-12-22 16:47:40.153 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:40.154 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 0, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:40.154 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 2, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:40.154 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 3, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:40.154 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 4, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:40.154 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 5, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:40.196 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：130 state: moving_to_entrance
+2025-12-22 16:47:40.196 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：7 state: moving_to_wait
+2025-12-22 16:47:40.210 | INFO     | customer_manager:spawn_customer:147 - キャラID：131が生成されました。 state: outside
+2025-12-22 16:47:40.231 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：131 state: moving_to_entrance
+2025-12-22 16:47:40.246 | INFO     | customer_manager:spawn_customer:147 - キャラID：132が生成されました。 state: outside
+2025-12-22 16:47:40.290 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：132 state: moving_to_entrance
+2025-12-22 16:47:40.291 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：39 state: arrive
+2025-12-22 16:47:40.291 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：49 state: arrive
+2025-12-22 16:47:40.291 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：80 state: arrive
+2025-12-22 16:47:40.292 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：88 state: arrive
+2025-12-22 16:47:40.292 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：92 state: arrive
+2025-12-22 16:47:40.304 | INFO     | customer_manager:spawn_customer:147 - キャラID：133が生成されました。 state: outside
+2025-12-22 16:47:40.345 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：133 state: moving_to_entrance
+2025-12-22 16:47:40.362 | INFO     | customer_manager:spawn_customer:147 - キャラID：134が生成されました。 state: outside
+2025-12-22 16:47:40.392 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：134 state: moving_to_entrance
+2025-12-22 16:47:40.405 | INFO     | customer_manager:spawn_customer:147 - キャラID：135が生成されました。 state: outside
+2025-12-22 16:47:40.444 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：135 state: moving_to_entrance
+2025-12-22 16:47:40.448 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 8 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:40.460 | INFO     | customer_manager:spawn_customer:147 - キャラID：136が生成されました。 state: outside
+2025-12-22 16:47:40.460 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 8 state: moving_to_seat
+2025-12-22 16:47:40.461 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 14, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 16:47:40.461 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 28, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 16:47:40.461 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 11), state: waiting_for_top
+2025-12-22 16:47:40.461 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 0, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:40.462 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 2, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:40.462 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 3, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:40.462 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 4, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:40.462 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 5, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:40.463 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 7, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:40.495 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：136 state: moving_to_entrance
+2025-12-22 16:47:40.500 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：9 state: moving_to_wait
+2025-12-22 16:47:40.512 | INFO     | customer_manager:spawn_customer:147 - キャラID：137が生成されました。 state: outside
+2025-12-22 16:47:40.557 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：137 state: moving_to_entrance
+2025-12-22 16:47:40.557 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：54 state: arrive
+2025-12-22 16:47:40.570 | INFO     | customer_manager:spawn_customer:147 - キャラID：138が生成されました。 state: outside
+2025-12-22 16:47:40.599 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：138 state: moving_to_entrance
+2025-12-22 16:47:40.606 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：128 state: arrive
+2025-12-22 16:47:40.618 | INFO     | customer_manager:spawn_customer:147 - キャラID：139が生成されました。 state: outside
+2025-12-22 16:47:40.673 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：139 state: moving_to_entrance
+2025-12-22 16:47:40.686 | INFO     | customer_manager:spawn_customer:147 - キャラID：140が生成されました。 state: outside
+2025-12-22 16:47:40.712 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：140 state: moving_to_entrance
+2025-12-22 16:47:40.713 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：101 state: arrive
+2025-12-22 16:47:40.713 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：112 state: arrive
+2025-12-22 16:47:40.714 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：113 state: arrive
+2025-12-22 16:47:40.730 | INFO     | customer_manager:spawn_customer:147 - キャラID：141が生成されました。 state: outside
+2025-12-22 16:47:40.798 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：141 state: moving_to_entrance
+2025-12-22 16:47:40.805 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 14 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:40.818 | INFO     | customer_manager:spawn_customer:147 - キャラID：142が生成されました。 state: outside
+2025-12-22 16:47:40.819 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 14 state: moving_to_seat
+2025-12-22 16:47:40.819 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 28, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 16:47:40.819 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 16:47:40.820 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 0, 詰める処理のx,y (17, 11), state: waiting_for_top
+2025-12-22 16:47:40.820 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 2, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:40.820 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 3, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:40.821 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 4, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:40.821 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 5, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:40.821 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 7, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:40.822 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 9, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:40.887 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：142 state: moving_to_entrance
+2025-12-22 16:47:40.888 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：64 state: arrive
+2025-12-22 16:47:40.888 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：97 state: arrive
+2025-12-22 16:47:40.888 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：110 state: arrive
+2025-12-22 16:47:40.889 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：115 state: arrive
+2025-12-22 16:47:40.889 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：10 state: moving_to_wait
+2025-12-22 16:47:40.902 | INFO     | customer_manager:spawn_customer:147 - キャラID：143が生成されました。 state: outside
+2025-12-22 16:47:40.920 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：143 state: moving_to_entrance
+2025-12-22 16:47:40.941 | INFO     | customer_manager:spawn_customer:147 - キャラID：144が生成されました。 state: outside
+2025-12-22 16:47:41.007 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：144 state: moving_to_entrance
+2025-12-22 16:47:41.008 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：122 state: arrive
+2025-12-22 16:47:41.022 | INFO     | customer_manager:spawn_customer:147 - キャラID：145が生成されました。 state: outside
+2025-12-22 16:47:41.040 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：145 state: moving_to_entrance
+2025-12-22 16:47:41.041 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：65 state: arrive
+2025-12-22 16:47:41.041 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：89 state: arrive
+2025-12-22 16:47:41.055 | INFO     | customer_manager:spawn_customer:147 - キャラID：146が生成されました。 state: outside
+2025-12-22 16:47:41.147 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：146 state: moving_to_entrance
+2025-12-22 16:47:41.167 | INFO     | customer_manager:spawn_customer:147 - キャラID：147が生成されました。 state: outside
+2025-12-22 16:47:41.201 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：147 state: moving_to_entrance
+2025-12-22 16:47:41.201 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：66 state: arrive
+2025-12-22 16:47:41.201 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：86 state: arrive
+2025-12-22 16:47:41.202 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：126 state: arrive
+2025-12-22 16:47:41.202 | INFO     | customer_manager:moving_to_waiting_area:240 - 【待機場所に到着】キャラID: 28 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:47:41.216 | INFO     | customer_manager:spawn_customer:147 - キャラID：148が生成されました。 state: outside
+2025-12-22 16:47:41.216 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 28 state: moving_to_seat
+2025-12-22 16:47:41.217 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 48, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 16:47:41.217 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 0, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 16:47:41.217 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 2, 詰める処理のx,y (17, 11), state: waiting_for_top
+2025-12-22 16:47:41.218 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 3, 詰める処理のx,y (17, 10), state: waiting_for_top
+2025-12-22 16:47:41.218 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 4, 詰める処理のx,y (17, 9), state: waiting_for_top
+2025-12-22 16:47:41.219 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 5, 詰める処理のx,y (17, 8), state: waiting_for_top
+2025-12-22 16:47:41.219 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 7, 詰める処理のx,y (17, 7), state: waiting_for_top
+2025-12-22 16:47:41.219 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 9, 詰める処理のx,y (17, 6), state: waiting_for_top
+2025-12-22 16:47:41.220 | INFO     | customer_manager:shift_waiting_customers_forward:296 - [詰める] 客のid 10, 詰める処理のx,y (17, 5), state: waiting_for_top
+2025-12-22 16:47:41.273 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：148 state: moving_to_entrance
+2025-12-22 16:47:41.283 | INFO     | customer_manager:move_to_entrance:192 - [入り口に移動]キャラID：123 state: arrive
+2025-12-22 16:47:41.284 | INFO     | customer_manager:assign_wait_area:214 - [待機場所にアサイン]キャラID：11 state: moving_to_wait
+2025-12-22 16:47:41.298 | INFO     | customer_manager:spawn_customer:147 - キャラID：149が生成されました。 state: outside
+2025-12-22 16:47:41.319 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：149 state: moving_to_entrance
+2025-12-22 16:47:41.337 | INFO     | customer_manager:spawn_customer:147 - キャラID：150が生成されました。 state: outside
+2025-12-22 16:47:41.413 | INFO     | customer_manager:assign_entrance:177 - [入り口にアサイン]キャラID：150 state: moving_to_entrance
+2025-12-22 16:47:41.428 | INFO     | customer_manager:spawn_customer:147 - キャラID：151が生成されました。 state: outside
+2025-12-22 16:57:20.483 | INFO     | customer_manager:spawn_customer:150 - キャラID：0が生成されました。 state: outside
+2025-12-22 16:57:20.585 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：0 state: moving_to_entrance
+2025-12-22 16:57:23.736 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：0 state: arrive
+2025-12-22 16:57:23.737 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：0 state: moving_to_wait
+2025-12-22 16:57:25.532 | INFO     | customer_manager:spawn_customer:150 - キャラID：1が生成されました。 state: outside
+2025-12-22 16:57:25.555 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：1 state: moving_to_entrance
+2025-12-22 16:57:26.193 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 0 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:57:26.194 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 0 state: moving_to_seat
+2025-12-22 16:57:27.498 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：1 state: arrive
+2025-12-22 16:57:27.499 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：1 state: moving_to_wait
+2025-12-22 16:57:29.890 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 1 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:57:29.891 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 1 state: moving_to_seat
+2025-12-22 16:57:31.493 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：0 state: seated
+2025-12-22 16:57:33.971 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：0 state: leaving
+2025-12-22 16:57:34.770 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：1 state: seated
+2025-12-22 16:57:37.243 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：1 state: leaving
+2025-12-22 16:57:38.074 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：0 state: exited
+2025-12-22 16:57:38.108 | INFO     | customer_manager:delete_customer:261 - [キャラの削除]キャラID：0 state: exited
+2025-12-22 16:57:40.590 | INFO     | customer_manager:spawn_customer:150 - キャラID：2が生成されました。 state: outside
+2025-12-22 16:57:40.613 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：2 state: moving_to_entrance
+2025-12-22 16:57:40.898 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：1 state: exited
+2025-12-22 16:57:40.933 | INFO     | customer_manager:delete_customer:261 - [キャラの削除]キャラID：1 state: exited
+2025-12-22 16:57:44.032 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：2 state: arrive
+2025-12-22 16:57:44.033 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：2 state: moving_to_wait
+2025-12-22 16:57:45.601 | INFO     | customer_manager:spawn_customer:150 - キャラID：3が生成されました。 state: outside
+2025-12-22 16:57:45.624 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：3 state: moving_to_entrance
+2025-12-22 16:57:46.422 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 2 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:57:46.422 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 2 state: moving_to_seat
+2025-12-22 16:57:47.816 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：3 state: arrive
+2025-12-22 16:57:47.816 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：3 state: moving_to_wait
+2025-12-22 16:57:50.257 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 3 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 16:57:50.258 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 3 state: moving_to_seat
+2025-12-22 16:57:51.769 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：2 state: seated
+2025-12-22 16:57:54.252 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：2 state: leaving
+2025-12-22 16:58:42.180 | INFO     | customer_manager:spawn_customer:137 - キャラID：0が生成されました。 state: outside
+2025-12-22 17:00:32.303 | INFO     | customer_manager:spawn_customer:150 - キャラID：0が生成されました。 state: outside
+2025-12-22 17:00:32.399 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：0 state: moving_to_entrance
+2025-12-22 17:00:36.444 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：0 state: arrive
+2025-12-22 17:00:36.444 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：0 state: moving_to_wait
+2025-12-22 17:00:37.346 | INFO     | customer_manager:spawn_customer:150 - キャラID：1が生成されました。 state: outside
+2025-12-22 17:00:37.368 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：1 state: moving_to_entrance
+2025-12-22 17:00:38.328 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：1 state: arrive
+2025-12-22 17:00:38.328 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：1 state: moving_to_wait
+2025-12-22 17:00:38.836 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 0 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:00:38.837 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 0 state: moving_to_seat
+2025-12-22 17:00:38.838 | INFO     | customer_manager:shift_waiting_customers_forward:301 - [詰める] 客のid 1, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:00:40.702 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 1 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:00:40.703 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 1 state: moving_to_seat
+2025-12-22 17:00:44.096 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：0 state: seated
+2025-12-22 17:00:45.497 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：1 state: seated
+2025-12-22 17:00:46.585 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：0 state: leaving
+2025-12-22 17:00:47.979 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：1 state: leaving
+2025-12-22 17:00:50.640 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：0 state: exited
+2025-12-22 17:00:50.673 | INFO     | customer_manager:delete_customer:261 - [キャラの削除]キャラID：0 state: exited
+2025-12-22 17:00:51.560 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：1 state: exited
+2025-12-22 17:00:51.594 | INFO     | customer_manager:delete_customer:261 - [キャラの削除]キャラID：1 state: exited
+2025-12-22 17:00:52.399 | INFO     | customer_manager:spawn_customer:150 - キャラID：2が生成されました。 state: outside
+2025-12-22 17:00:52.420 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：2 state: moving_to_entrance
+2025-12-22 17:00:56.497 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：2 state: arrive
+2025-12-22 17:00:56.498 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：2 state: moving_to_wait
+2025-12-22 17:00:57.385 | INFO     | customer_manager:spawn_customer:150 - キャラID：3が生成されました。 state: outside
+2025-12-22 17:00:57.409 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：3 state: moving_to_entrance
+2025-12-22 17:00:58.941 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 2 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:00:58.942 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 2 state: moving_to_seat
+2025-12-22 17:01:01.513 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：3 state: arrive
+2025-12-22 17:01:01.514 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：3 state: moving_to_wait
+2025-12-22 17:02:04.699 | INFO     | customer_manager:spawn_customer:150 - キャラID：0が生成されました。 state: outside
+2025-12-22 17:02:04.811 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：0 state: moving_to_entrance
+2025-12-22 17:02:06.043 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：0 state: arrive
+2025-12-22 17:02:06.044 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：0 state: moving_to_wait
+2025-12-22 17:02:08.464 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 0 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:02:08.465 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 0 state: moving_to_seat
+2025-12-22 17:02:09.739 | INFO     | customer_manager:spawn_customer:150 - キャラID：1が生成されました。 state: outside
+2025-12-22 17:02:09.756 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：1 state: moving_to_entrance
+2025-12-22 17:02:13.165 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：1 state: arrive
+2025-12-22 17:02:13.165 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：1 state: moving_to_wait
+2025-12-22 17:02:13.826 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：0 state: seated
+2025-12-22 17:02:14.765 | INFO     | customer_manager:spawn_customer:150 - キャラID：2が生成されました。 state: outside
+2025-12-22 17:02:14.770 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：2 state: moving_to_entrance
+2025-12-22 17:02:15.616 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 1 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:02:15.617 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 1 state: moving_to_seat
+2025-12-22 17:02:15.756 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：2 state: arrive
+2025-12-22 17:02:15.756 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：2 state: moving_to_wait
+2025-12-22 17:02:16.314 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：0 state: leaving
+2025-12-22 17:02:16.395 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 2 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:02:16.396 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 2 state: moving_to_seat
+2025-12-22 17:02:17.963 | INFO     | customer_manager:spawn_customer:150 - キャラID：3が生成されました。 state: outside
+2025-12-22 17:02:17.993 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：3 state: moving_to_entrance
+2025-12-22 17:02:18.634 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：0 state: exited
+2025-12-22 17:02:18.677 | INFO     | customer_manager:delete_customer:261 - [キャラの削除]キャラID：0 state: exited
+2025-12-22 17:02:18.687 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：1 state: seated
+2025-12-22 17:02:19.666 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：3 state: arrive
+2025-12-22 17:02:19.667 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：3 state: moving_to_wait
+2025-12-22 17:02:21.154 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：1 state: leaving
+2025-12-22 17:02:21.703 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：2 state: seated
+2025-12-22 17:02:22.092 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 3 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:02:22.093 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 3 state: moving_to_seat
+2025-12-22 17:02:22.997 | INFO     | customer_manager:spawn_customer:150 - キャラID：4が生成されました。 state: outside
+2025-12-22 17:02:23.004 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：4 state: moving_to_entrance
+2025-12-22 17:02:24.194 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：2 state: leaving
+2025-12-22 17:02:24.780 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：1 state: exited
+2025-12-22 17:02:24.816 | INFO     | customer_manager:delete_customer:261 - [キャラの削除]キャラID：1 state: exited
+2025-12-22 17:02:26.128 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：4 state: arrive
+2025-12-22 17:02:26.129 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：4 state: moving_to_wait
+2025-12-22 17:02:57.735 | INFO     | customer_manager:spawn_customer:150 - キャラID：0が生成されました。 state: outside
+2025-12-22 17:02:57.753 | INFO     | customer_manager:spawn_customer:150 - キャラID：1が生成されました。 state: outside
+2025-12-22 17:02:58.010 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：0 state: moving_to_entrance
+2025-12-22 17:02:58.010 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：1 state: moving_to_entrance
+2025-12-22 17:02:58.254 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：0 state: arrive
+2025-12-22 17:02:58.255 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：0 state: moving_to_wait
+2025-12-22 17:02:59.209 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：1 state: arrive
+2025-12-22 17:02:59.210 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：1 state: moving_to_wait
+2025-12-22 17:03:00.626 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 0 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:03:00.626 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 0 state: moving_to_seat
+2025-12-22 17:03:00.627 | INFO     | customer_manager:shift_waiting_customers_forward:301 - [詰める] 客のid 1, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:03:01.565 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 1 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:03:01.565 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 1 state: moving_to_seat
+2025-12-22 17:03:00.708 | INFO     | customer_manager:spawn_customer:150 - キャラID：2が生成されました。 state: outside
+2025-12-22 17:03:00.731 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：2 state: moving_to_entrance
+2025-12-22 17:03:00.970 | INFO     | customer_manager:move_to_entrance:195 - [入り口に移動]キャラID：2 state: arrive
+2025-12-22 17:03:00.970 | INFO     | customer_manager:assign_wait_area:217 - [待機場所にアサイン]キャラID：2 state: moving_to_wait
+2025-12-22 17:03:03.358 | INFO     | customer_manager:moving_to_waiting_area:243 - 【待機場所に到着】キャラID: 2 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:03:03.358 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 2 state: moving_to_seat
+2025-12-22 17:03:03.769 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：0 state: seated
+2025-12-22 17:03:04.245 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：1 state: seated
+2025-12-22 17:03:05.717 | INFO     | customer_manager:spawn_customer:150 - キャラID：3が生成されました。 state: outside
+2025-12-22 17:03:05.740 | INFO     | customer_manager:assign_entrance:180 - [入り口にアサイン]キャラID：3 state: moving_to_entrance
+2025-12-22 17:03:06.268 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：0 state: leaving
+2025-12-22 17:03:06.744 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：1 state: leaving
+2025-12-22 17:03:07.649 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：2 state: seated
+2025-12-22 17:11:58.061 | INFO     | customer_manager:spawn_customer:153 - キャラID：0が生成されました。 state: outside
+2025-12-22 17:11:58.082 | INFO     | customer_manager:spawn_customer:153 - キャラID：1が生成されました。 state: outside
+2025-12-22 17:11:56.247 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：0 state: moving_to_entrance
+2025-12-22 17:11:56.248 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：1 state: moving_to_entrance
+2025-12-22 17:11:56.653 | INFO     | customer_manager:spawn_customer:153 - キャラID：2が生成されました。 state: outside
+2025-12-22 17:11:56.677 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：2 state: moving_to_entrance
+2025-12-22 17:11:56.748 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：1 state: arrive
+2025-12-22 17:11:56.748 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：1 state: moving_to_wait
+2025-12-22 17:11:57.186 | INFO     | customer_manager:spawn_customer:153 - キャラID：3が生成されました。 state: outside
+2025-12-22 17:11:57.210 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：3 state: moving_to_entrance
+2025-12-22 17:11:57.728 | INFO     | customer_manager:spawn_customer:153 - キャラID：4が生成されました。 state: outside
+2025-12-22 17:11:57.740 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：4 state: moving_to_entrance
+2025-12-22 17:11:57.915 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：2 state: arrive
+2025-12-22 17:11:57.915 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：2 state: moving_to_wait
+2025-12-22 17:11:58.241 | INFO     | customer_manager:spawn_customer:153 - キャラID：5が生成されました。 state: outside
+2025-12-22 17:11:58.771 | INFO     | customer_manager:spawn_customer:153 - キャラID：6が生成されました。 state: outside
+2025-12-22 17:11:59.217 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 1 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:11:59.219 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 1 state: moving_to_seat
+2025-12-22 17:11:59.220 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 2, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:11:59.299 | INFO     | customer_manager:spawn_customer:153 - キャラID：7が生成されました。 state: outside
+2025-12-22 17:11:59.835 | INFO     | customer_manager:spawn_customer:153 - キャラID：8が生成されました。 state: outside
+2025-12-22 17:12:00.207 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：0 state: arrive
+2025-12-22 17:12:00.213 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：0 state: moving_to_wait
+2025-12-22 17:12:00.358 | INFO     | customer_manager:spawn_customer:153 - キャラID：9が生成されました。 state: outside
+2025-12-22 17:12:00.382 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 2 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:00.382 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 2 state: moving_to_seat
+2025-12-22 17:12:00.382 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 0, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:12:00.417 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：3 state: arrive
+2025-12-22 17:12:00.417 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：3 state: moving_to_wait
+2025-12-22 17:12:00.700 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：4 state: arrive
+2025-12-22 17:12:00.700 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：4 state: moving_to_wait
+2025-12-22 17:12:00.887 | INFO     | customer_manager:spawn_customer:153 - キャラID：10が生成されました。 state: outside
+2025-12-22 17:12:01.405 | INFO     | customer_manager:spawn_customer:153 - キャラID：11が生成されました。 state: outside
+2025-12-22 17:12:01.924 | INFO     | customer_manager:spawn_customer:153 - キャラID：12が生成されました。 state: outside
+2025-12-22 17:12:02.456 | INFO     | customer_manager:spawn_customer:153 - キャラID：13が生成されました。 state: outside
+2025-12-22 17:12:02.657 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 0 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:02.658 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 0 state: moving_to_seat
+2025-12-22 17:12:02.658 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 3, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 17:12:02.658 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 4, 詰める処理のx,y (17, 12), state: waiting_for_top
+2025-12-22 17:12:02.938 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 3 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:02.939 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 3 state: moving_to_seat
+2025-12-22 17:12:02.939 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 4, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 17:12:03.009 | INFO     | customer_manager:spawn_customer:153 - キャラID：14が生成されました。 state: outside
+2025-12-22 17:12:03.250 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 4 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:03.251 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 4 state: moving_to_seat
+2025-12-22 17:12:03.528 | INFO     | customer_manager:spawn_customer:153 - キャラID：15が生成されました。 state: outside
+2025-12-22 17:12:04.060 | INFO     | customer_manager:spawn_customer:153 - キャラID：16が生成されました。 state: outside
+2025-12-22 17:12:04.566 | INFO     | customer_manager:spawn_customer:153 - キャラID：17が生成されました。 state: outside
+2025-12-22 17:12:04.657 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：1 state: seated
+2025-12-22 17:12:05.084 | INFO     | customer_manager:spawn_customer:153 - キャラID：18が生成されました。 state: outside
+2025-12-22 17:12:05.362 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：2 state: seated
+2025-12-22 17:12:05.594 | INFO     | customer_manager:spawn_customer:153 - キャラID：19が生成されました。 state: outside
+2025-12-22 17:12:06.104 | INFO     | customer_manager:spawn_customer:153 - キャラID：20が生成されました。 state: outside
+2025-12-22 17:12:06.648 | INFO     | customer_manager:spawn_customer:153 - キャラID：21が生成されました。 state: outside
+2025-12-22 17:12:06.905 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：3 state: seated
+2025-12-22 17:12:07.116 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：0 state: seated
+2025-12-22 17:12:07.117 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：1 state: leaving
+2025-12-22 17:12:07.152 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：5 state: moving_to_entrance
+2025-12-22 17:12:07.168 | INFO     | customer_manager:spawn_customer:153 - キャラID：22が生成されました。 state: outside
+2025-12-22 17:12:07.691 | INFO     | customer_manager:spawn_customer:153 - キャラID：23が生成されました。 state: outside
+2025-12-22 17:12:07.826 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：2 state: leaving
+2025-12-22 17:12:07.859 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：6 state: moving_to_entrance
+2025-12-22 17:12:08.152 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：5 state: arrive
+2025-12-22 17:12:08.152 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：5 state: moving_to_wait
+2025-12-22 17:12:08.200 | INFO     | customer_manager:spawn_customer:153 - キャラID：24が生成されました。 state: outside
+2025-12-22 17:12:08.224 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：4 state: seated
+2025-12-22 17:12:08.375 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：6 state: arrive
+2025-12-22 17:12:08.376 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：6 state: moving_to_wait
+2025-12-22 17:12:08.731 | INFO     | customer_manager:spawn_customer:153 - キャラID：25が生成されました。 state: outside
+2025-12-22 17:12:09.264 | INFO     | customer_manager:spawn_customer:153 - キャラID：26が生成されました。 state: outside
+2025-12-22 17:12:09.393 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：3 state: leaving
+2025-12-22 17:12:09.427 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：7 state: moving_to_entrance
+2025-12-22 17:12:09.594 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：0 state: leaving
+2025-12-22 17:12:09.628 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：8 state: moving_to_entrance
+2025-12-22 17:12:09.776 | INFO     | customer_manager:spawn_customer:153 - キャラID：27が生成されました。 state: outside
+2025-12-22 17:12:09.915 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：7 state: arrive
+2025-12-22 17:12:09.916 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：7 state: moving_to_wait
+2025-12-22 17:12:10.304 | INFO     | customer_manager:spawn_customer:153 - キャラID：28が生成されました。 state: outside
+2025-12-22 17:12:10.593 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 5 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:10.594 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 5 state: moving_to_seat
+2025-12-22 17:12:10.594 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 6, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 17:12:10.595 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 7, 詰める処理のx,y (17, 12), state: moving_to_wait
+2025-12-22 17:12:10.694 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：4 state: leaving
+2025-12-22 17:12:10.730 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：9 state: moving_to_entrance
+2025-12-22 17:12:10.810 | INFO     | customer_manager:spawn_customer:153 - キャラID：29が生成されました。 state: outside
+2025-12-22 17:12:10.866 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 6 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:10.866 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 6 state: moving_to_seat
+2025-12-22 17:12:10.867 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 7, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:12:24.885 | INFO     | customer_manager:spawn_customer:153 - キャラID：0が生成されました。 state: outside
+2025-12-22 17:12:24.905 | INFO     | customer_manager:spawn_customer:153 - キャラID：1が生成されました。 state: outside
+2025-12-22 17:12:25.012 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：0 state: moving_to_entrance
+2025-12-22 17:12:25.013 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：1 state: moving_to_entrance
+2025-12-22 17:12:25.441 | INFO     | customer_manager:spawn_customer:153 - キャラID：2が生成されました。 state: outside
+2025-12-22 17:12:25.457 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：2 state: moving_to_entrance
+2025-12-22 17:12:25.947 | INFO     | customer_manager:spawn_customer:153 - キャラID：3が生成されました。 state: outside
+2025-12-22 17:12:25.968 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：3 state: moving_to_entrance
+2025-12-22 17:12:26.421 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：2 state: arrive
+2025-12-22 17:12:26.422 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：2 state: moving_to_wait
+2025-12-22 17:12:26.477 | INFO     | customer_manager:spawn_customer:153 - キャラID：4が生成されました。 state: outside
+2025-12-22 17:12:26.489 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：4 state: moving_to_entrance
+2025-12-22 17:12:26.963 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：4 state: arrive
+2025-12-22 17:12:26.963 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：4 state: moving_to_wait
+2025-12-22 17:12:26.975 | INFO     | customer_manager:spawn_customer:153 - キャラID：5が生成されました。 state: outside
+2025-12-22 17:12:27.508 | INFO     | customer_manager:spawn_customer:153 - キャラID：6が生成されました。 state: outside
+2025-12-22 17:12:27.905 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：1 state: arrive
+2025-12-22 17:12:27.907 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：1 state: moving_to_wait
+2025-12-22 17:12:28.020 | INFO     | customer_manager:spawn_customer:153 - キャラID：7が生成されました。 state: outside
+2025-12-22 17:12:28.149 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：0 state: arrive
+2025-12-22 17:12:28.150 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：0 state: moving_to_wait
+2025-12-22 17:12:26.714 | INFO     | customer_manager:spawn_customer:153 - キャラID：8が生成されました。 state: outside
+2025-12-22 17:12:26.809 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：3 state: arrive
+2025-12-22 17:12:26.810 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：3 state: moving_to_wait
+2025-12-22 17:12:27.015 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 2 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:27.016 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 2 state: moving_to_seat
+2025-12-22 17:12:27.017 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 4, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:12:27.017 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 1, 詰める処理のx,y (17, 12), state: moving_to_wait
+2025-12-22 17:12:27.018 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 0, 詰める処理のx,y (17, 11), state: moving_to_wait
+2025-12-22 17:12:27.018 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 3, 詰める処理のx,y (17, 10), state: moving_to_wait
+2025-12-22 17:12:27.242 | INFO     | customer_manager:spawn_customer:153 - キャラID：9が生成されました。 state: outside
+2025-12-22 17:12:27.568 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 4 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:27.569 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 4 state: moving_to_seat
+2025-12-22 17:12:27.569 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 1, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:12:27.570 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 0, 詰める処理のx,y (17, 12), state: moving_to_wait
+2025-12-22 17:12:27.570 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 3, 詰める処理のx,y (17, 11), state: moving_to_wait
+2025-12-22 17:12:27.750 | INFO     | customer_manager:spawn_customer:153 - キャラID：10が生成されました。 state: outside
+2025-12-22 17:12:28.514 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 1 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:28.515 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 1 state: moving_to_seat
+2025-12-22 17:12:28.517 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 0, 詰める処理のx,y (17, 13), state: waiting_for_top
+2025-12-22 17:12:28.518 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 3, 詰める処理のx,y (17, 12), state: moving_to_wait
+2025-12-22 17:12:28.787 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 0 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:28.787 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 0 state: moving_to_seat
+2025-12-22 17:12:28.788 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 3, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:12:29.244 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 3 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:29.245 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 3 state: moving_to_seat
+2025-12-22 17:12:32.386 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：2 state: seated
+2025-12-22 17:12:32.453 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：4 state: seated
+2025-12-22 17:12:32.699 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：0 state: seated
+2025-12-22 17:12:32.903 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：1 state: seated
+2025-12-22 17:12:34.118 | INFO     | seat_manager:move_to_seat:109 - [席に移動]キャラID：3 state: seated
+2025-12-22 17:12:34.877 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：2 state: leaving
+2025-12-22 17:12:34.910 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：5 state: moving_to_entrance
+2025-12-22 17:12:34.943 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：4 state: leaving
+2025-12-22 17:12:34.978 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：6 state: moving_to_entrance
+2025-12-22 17:12:35.179 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：0 state: leaving
+2025-12-22 17:12:35.212 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：7 state: moving_to_entrance
+2025-12-22 17:12:35.383 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：1 state: leaving
+2025-12-22 17:12:35.417 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：8 state: moving_to_entrance
+2025-12-22 17:12:36.594 | INFO     | seat_manager:eating:162 - [出口にアサイン]キャラID：3 state: leaving
+2025-12-22 17:12:36.628 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：9 state: moving_to_entrance
+2025-12-22 17:12:36.916 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：6 state: arrive
+2025-12-22 17:12:36.917 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：6 state: moving_to_wait
+2025-12-22 17:12:37.615 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：8 state: arrive
+2025-12-22 17:12:37.615 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：8 state: moving_to_wait
+2025-12-22 17:12:37.857 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：0 state: exited
+2025-12-22 17:12:37.891 | INFO     | customer_manager:delete_customer:264 - [キャラの削除]キャラID：0 state: exited
+2025-12-22 17:12:37.924 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：10 state: moving_to_entrance
+2025-12-22 17:12:38.093 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：9 state: arrive
+2025-12-22 17:12:38.094 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：9 state: moving_to_wait
+2025-12-22 17:12:38.109 | INFO     | customer_manager:spawn_customer:153 - キャラID：11が生成されました。 state: outside
+2025-12-22 17:12:38.377 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：7 state: arrive
+2025-12-22 17:12:38.378 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：7 state: moving_to_wait
+2025-12-22 17:12:38.548 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：1 state: exited
+2025-12-22 17:12:38.582 | INFO     | customer_manager:delete_customer:264 - [キャラの削除]キャラID：1 state: exited
+2025-12-22 17:12:38.586 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：4 state: exited
+2025-12-22 17:12:38.615 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：11 state: moving_to_entrance
+2025-12-22 17:12:38.616 | INFO     | customer_manager:delete_customer:264 - [キャラの削除]キャラID：4 state: exited
+2025-12-22 17:12:38.634 | INFO     | customer_manager:spawn_customer:153 - キャラID：12が生成されました。 state: outside
+2025-12-22 17:12:38.650 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：12 state: moving_to_entrance
+2025-12-22 17:12:38.993 | INFO     | seat_manager:move_to_exit:186 - [出口に移動]キャラID：2 state: exited
+2025-12-22 17:12:39.026 | INFO     | customer_manager:move_to_entrance:198 - [入り口に移動]キャラID：5 state: arrive
+2025-12-22 17:12:39.027 | INFO     | customer_manager:assign_wait_area:220 - [待機場所にアサイン]キャラID：5 state: moving_to_wait
+2025-12-22 17:12:39.027 | INFO     | customer_manager:delete_customer:264 - [キャラの削除]キャラID：2 state: exited
+2025-12-22 17:12:39.141 | INFO     | customer_manager:spawn_customer:153 - キャラID：13が生成されました。 state: outside
+2025-12-22 17:12:39.166 | INFO     | customer_manager:assign_entrance:183 - [入り口にアサイン]キャラID：13 state: moving_to_entrance
+2025-12-22 17:12:39.346 | INFO     | customer_manager:moving_to_waiting_area:246 - 【待機場所に到着】キャラID: 6 pos: (17, 1)                                         state: waiting_to_sit_to_seat
+2025-12-22 17:12:39.346 | INFO     | seat_manager:assign_seat:62 - 【席にアサイン】id: 6 state: moving_to_seat
+2025-12-22 17:12:39.346 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 8, 詰める処理のx,y (17, 13), state: moving_to_wait
+2025-12-22 17:12:39.347 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 9, 詰める処理のx,y (17, 12), state: moving_to_wait
+2025-12-22 17:12:39.347 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 7, 詰める処理のx,y (17, 11), state: moving_to_wait
+2025-12-22 17:12:39.348 | INFO     | customer_manager:shift_waiting_customers_forward:304 - [詰める] 客のid 5, 詰める処理のx,y (17, 10), state: moving_to_wait
